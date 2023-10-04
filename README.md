@@ -1,3 +1,8 @@
-# c14-43-m-python
+# RECYCLER - c14-43-m-python
 
-Este es un repo de prueba
+Tecnologias
+
+* Python
+* HTML5
+* CSS3
+* JS
