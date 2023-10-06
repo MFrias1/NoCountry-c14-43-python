@@ -16,6 +16,10 @@
   * Detalles sobre la importancia del reciclaje.
   * Beneficios del reciclaje para el medio ambiente y la sociedad.
   * Estadísticas sobre el impacto positivo del reciclaje.
+ 
+<div align="center">
+  <h1>Equipo de Trabajo</h1>
+</div>
 
 | <img src="https://avatars.githubusercontent.com/u/97615442?s=400&u=33d75a35edf7658497b0e95b9053991999725530&v=4" width="100"> | <img src="https://media.licdn.com/dms/image/D4D03AQHjwVw1Rr1sgQ/profile-displayphoto-shrink_200_200/0/1679258772975?e=1701907200&v=beta&t=chN4Ni2iEcsvw7uYi1lRZBabKnFxAlnIWNJzq43LIlk" width="100"> | <img src="https://avatars.githubusercontent.com/u/98651071?v=4" width="100"> | <img src="https://media.licdn.com/dms/image/D4E35AQG0Wqn0AUs8Fg/profile-framedphoto-shrink_200_200/0/1691818049473?e=1697230800&v=beta&t=FmzEbdQ2-yPqPI0wLO_21UWFfbKS4fg-kqQvQSD1ulM" width="100"> | <img src="https://media.licdn.com/dms/image/C5603AQF63qqCZnlfFA/profile-displayphoto-shrink_200_200/0/1594666436901?e=1701907200&v=beta&t=zo0G2-gPPX1WMCXNOZ9UBUdV_HCzhS_FM-WYHxy8_SQ" width="100"> |
 |:---:|:---:|:---:|:---:|:---:|
