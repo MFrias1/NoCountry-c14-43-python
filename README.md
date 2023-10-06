@@ -78,7 +78,7 @@
           <img width="110" src="https://media.licdn.com/dms/image/D4D03AQHjwVw1Rr1sgQ/profile-displayphoto-shrink_200_200/0/1679258772975?e=1701907200&v=beta&t=chN4Ni2iEcsvw7uYi1lRZBabKnFxAlnIWNJzq43LIlk"/>
         </a>
         <a href="https://github.com/gitgonlea" target="_blank" rel="author">
-          <h4 style="margin-top: 1rem;">Jan Moretti José Ignacio</h4>
+          <h4 style="margin-top: 1rem;">José Ignacio Jan</h4>
           <h4 style="margin-top: 1rem;">Backend Developer & DevOps</h4>
         </a>
         <a href="https://github.com/JoseJan21" target="_blank">
