@@ -44,7 +44,7 @@
           <img width="110" src="https://media.licdn.com/dms/image/D4D35AQGSsclzbfbVSg/profile-framedphoto-shrink_200_200/0/1688407879854?e=1697220000&v=beta&t=KoR8YPMvU4WTZO_Jj99x9_zpQqz-3N11x8tbmnOcU38"/>
         </a>
         <a href="https://github.com/danielzinnoprogramador" target="_blank" rel="author">
-          <h4 style="margin-top: 1rem;">Daniel Alejandro Zinno</h4>
+          <h4 style="margin-top: 1rem;">Daniel Zinno</h4>
           <h4 style="margin-top: 1rem;">FrontEnd Developer</h4>
         </a>
         <a href="https://github.com/danielzinnoprogramador" target="_blank">
