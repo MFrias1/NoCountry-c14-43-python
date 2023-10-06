@@ -58,7 +58,7 @@
         <td>
       <div align="center">
         <a href="https://github.com/MFrias1" target="_blank" rel="author">
-          <img width="110" src="https://avatars.githubusercontent.com/u/55055505?v=4"/>
+          <img width="110" src="https://avatars.githubusercontent.com/u/91628860?v=4"/>
         </a>
         <a href="https://github.com/miguelbel00" target="_blank" rel="author">
           <h4 style="margin-top: 1rem;">Mayra Anahi Frias</h4>
