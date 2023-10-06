@@ -15,9 +15,9 @@
   * Beneficios del reciclaje para el medio ambiente y la sociedad.
   * Estadísticas sobre el impacto positivo del reciclaje.
 
-##    Integrantes                Rol                             Linkedin                                    GitHub
-|-----------------------|--------------------|----------------------------------------------|-----------------------------------|
-|  Alejandra Zapata     |   Backend - Devops | https://www.linkedin.com/in/alejandrazapatap/|https://github.com/alejandrazapatap|
+    Integrantes                Rol               
+|-----------------------|--------------------|
+|  Alejandra Zapata     |   Backend - Devops | 
 |  Alejandra Calzolari  |   FrontEnd - PM    |
 |  Leandro Cano         |   Backend          |
 |  Daniel Cazabat       |   Tester           |
