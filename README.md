@@ -1,6 +1,6 @@
 <div align="center">
   <h1>Edtech sitio web de educación y conciencia de la importancia del reciclaje♻</h1>
-  <img width="150" style="margin-bottom: 1.5rem" src="public/Images/logoPanel.png" />
+  <img width="150" style="margin-bottom: 1.5rem" src="https://www.pngfind.com/pngs/m/562-5621318_reciclar-logotipos-de-empresas-de-reciclaje-hd-png.png" />
 </div>
 
 ---
