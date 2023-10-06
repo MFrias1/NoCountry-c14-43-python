@@ -43,7 +43,7 @@
         <a href="https://www.linkedin.com/in/daniel-zinno/" target="_blank" rel="author">
           <img width="110" src="https://media.licdn.com/dms/image/D4D35AQGSsclzbfbVSg/profile-framedphoto-shrink_200_200/0/1688407879854?e=1697227200&v=beta&t=mSp-bcXMaG311Abw0gbvYplJEuZ1dvWW_NdjZQPvzVA"/>
         </a>
-        <a href="https://github.com/danielzinnoprogramado" target="_blank" rel="author">
+        <a href="https://github.com/danielzinnoprogramador" target="_blank" rel="author">
           <h4 style="margin-top: 1rem;">Daniel Zinno</h4>
           <h4 style="margin-top: 1rem;">Frontend Developer</h4>
         </a>
