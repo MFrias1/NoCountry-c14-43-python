@@ -118,7 +118,7 @@
         </a>
         <a href="https://github.com/scarolayton" target="_blank" rel="author">
           <h4 style="margin-top: 1rem;">Alejandra Calzolari</h4>
-          <h4 style="margin-top: 1rem;">Frontend Developer - Project Manager</h4>
+          <h4 style="margin-top: 1rem;">Frontend Developer & PM</h4>
         </a>
         <a href="https://github.com/AleCalzo" target="_blank">
           <img src="https://img.shields.io/static/v1?style=for-the-badge&message=GitHub&color=172B4D&logo=GitHub&logoColor=FFFFFF&label="/>
