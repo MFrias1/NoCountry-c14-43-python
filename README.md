@@ -141,7 +141,7 @@
           <img src="https://img.shields.io/static/v1?style=for-the-badge&message=GitHub&color=172B4D&logo=GitHub&logoColor=FFFFFF&label="/>
         </a>
         <a href="https://www.linkedin.com/in/aalvarop-pe/" target="_blank">
-          <img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/>
+          <img src="https://media.licdn.com/dms/image/C5603AQF63qqCZnlfFA/profile-displayphoto-shrink_200_200/0/1594666436901?e=1701907200&v=beta&t=zo0G2-gPPX1WMCXNOZ9UBUdV_HCzhS_FM-WYHxy8_SQ"/>
         </a>
       </div>
     </td>
