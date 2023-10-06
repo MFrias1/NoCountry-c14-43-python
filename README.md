@@ -147,17 +147,17 @@
     </td>
     <td>
       <div align="center">
-        <a href="https://github.com/alejandrazapatap" target="_blank" rel="author">
+        <a href="https://github.com/LeanCano" target="_blank" rel="author">
           <img width="110" src="#"/>
         </a>
-        <a href="https://www.linkedin.com/in/alejandrazapatap/" target="_blank" rel="author">
-          <h4 style="margin-top: 1rem;">Aaron</h4>
-          <h4 style="margin-top: 1rem;">Developer</h4>
+        <a href="https://www.linkedin.com/in/Leandrocanoc/" target="_blank" rel="author">
+          <h4 style="margin-top: 1rem;">Leandro Cano Castaño</h4>
+          <h4 style="margin-top: 1rem;">Backend Developer</h4>
         </a>
-        <a href="https://github.com/alejandrazapatap" target="_blank">
+        <a href="https://github.com/LeanCano" target="_blank">
           <img src="https://img.shields.io/static/v1?style=for-the-badge&message=GitHub&color=172B4D&logo=GitHub&logoColor=FFFFFF&label="/>
         </a>
-        <a href="https://www.linkedin.com/in/alejandrazapatap/" target="_blank">
+        <a href="https://www.linkedin.com/in/Leandrocanoc/" target="_blank">
           <img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/>
         </a>
       </div>
@@ -173,7 +173,7 @@
           <img width="110" src="#"/>
         </a>
         <a href="https://www.linkedin.com/in/alejandrazapatap/" target="_blank" rel="author">
-          <h4 style="margin-top: 1rem;">Daniel</h4>
+          <h4 style="margin-top: 1rem;">Aaron</h4>
           <h4 style="margin-top: 1rem;">Developer</h4>
         </a>
         <a href="https://github.com/alejandrazapatap" target="_blank">
@@ -190,7 +190,7 @@
           <img width="110" src="#"/>
         </a>
         <a href="https://github.com/alejandrazapatap" target="_blank" rel="author">
-          <h4 style="margin-top: 1rem;">Team Leader</h4>
+          <h4 style="margin-top: 1rem;">Daniel</h4>
           <h4 style="margin-top: 1rem;">Developer</h4>
         </a>
         <a href="https://github.com/alejandrazapatap" target="_blank">
