@@ -9,7 +9,9 @@
 ---
 
 <div align="center"<br>
-     <h3>⛏Languages and Tools🛠</h3>
+     <div align="center">
+  <h1>Herramientas y Lenguajes</h1>
+</div>
      <div>
       <img src="https://github.com/devicons/devicon/blob/master/icons/python/python-original.svg" title="Python" alt="Python" width="40" heigth="40"/>&nbsp;
       <img src="https://github.com/devicons/devicon/blob/master/icons/mysql/mysql-original.svg" title="Python" alt="HTML" width="40" heigth="40"/>&nbsp;
