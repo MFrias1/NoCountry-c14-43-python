@@ -14,12 +14,12 @@
 </div>
      <div>
       <img src="https://github.com/devicons/devicon/blob/master/icons/python/python-original.svg" title="Python" alt="Python" width="40" heigth="40"/>&nbsp;
-      <img src="https://github.com/devicons/devicon/blob/master/icons/mysql/mysql-original.svg" title="Python" alt="HTML" width="40" heigth="40"/>&nbsp;
-      <img src="https://github.com/devicons/devicon/blob/master/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" title="Python" alt="HTML" width="40" heigth="40"/>&nbsp;
-      <img src="https://github.com/devicons/devicon/blob/master/icons/fastapi/fastapi-original.svg" title="Python" alt="HTML" width="40" heigth="40"/>&nbsp;
-      <img src="https://github.com/devicons/devicon/blob/master/icons/github/github-original.svg" title="Python" alt="HTML" width="40" heigth="40"/>&nbsp;
-      <img src="https://github.com/devicons/devicon/blob/master/icons/javascript/javascript-plain.svg" title="Python" alt="HTML" width="40" heigth="40"/>
-       <img src="https://github.com/devicons/devicon/blob/master/icons/linux/linux-plain.svg" title="Python" alt="HTML" width="40" heigth="40"/>
+      <img src="https://github.com/devicons/devicon/blob/master/icons/mysql/mysql-original.svg" title="MySql" alt="HTML" width="40" heigth="40"/>&nbsp;
+      <img src="https://github.com/devicons/devicon/blob/master/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" title="MySQL Server" alt="HTML" width="40" heigth="40"/>&nbsp;
+      <img src="https://github.com/devicons/devicon/blob/master/icons/fastapi/fastapi-original.svg" title="FastApi" alt="HTML" width="40" heigth="40"/>&nbsp;
+      <img src="https://github.com/devicons/devicon/blob/master/icons/github/github-original.svg" title="GitHub" alt="HTML" width="40" heigth="40"/>&nbsp;
+      <img src="https://github.com/devicons/devicon/blob/master/icons/javascript/javascript-plain.svg" title="JavaScript" alt="HTML" width="40" heigth="40"/>
+       <img src="https://github.com/devicons/devicon/blob/master/icons/linux/linux-plain.svg" title="Linux" alt="HTML" width="40" heigth="40"/>
      </div>
 </div>
 
