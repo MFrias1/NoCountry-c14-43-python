@@ -6,6 +6,18 @@
 ---
 ### El proyecto de reciclaje tiene como objetivo principal crear una página web educativa centrada en la concienciación y educación sobre la importancia del reciclaje. Esta página proporcionará información detallada sobre por qué el reciclaje es esencial para el medio ambiente y la sociedad, guías prácticas sobre cómo reciclar diferentes tipos de materiales, historias inspiradoras de éxito relacionadas con el reciclaje y recursos adicionales para fomentar prácticas de reciclaje responsables. El proyecto se enfoca en transmitir un mensaje claro sobre la relevancia del reciclaje y en brindar herramientas y recursos para que los usuarios puedan contribuir de manera activa al cuidado del medio ambiente a través del reciclaje.
 
+<div align="center"<br>
+     <h3>⛏Languages and Tools🛠</h3>
+     <div>
+      <img src="https://github.com/devicons/devicon/blob/master/icons/python/python-original.svg" title="Python" alt="Python" width="40" heigth="40"/>&nbsp;
+      <img src="https://github.com/devicons/devicon/blob/master/icons/mysql/mysql-original.svg" title="Python" alt="HTML" width="40" heigth="40"/>&nbsp;
+      <img src="https://github.com/devicons/devicon/blob/master/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" title="Python" alt="HTML" width="40" heigth="40"/>&nbsp;
+      <img src="https://github.com/devicons/devicon/blob/master/icons/fastapi/fastapi-original.svg" title="Python" alt="HTML" width="40" heigth="40"/>&nbsp;
+      <img src="https://github.com/devicons/devicon/blob/master/icons/github/github-original.svg" title="Python" alt="HTML" width="40" heigth="40"/>&nbsp;
+      <img src="https://github.com/devicons/devicon/blob/master/icons/javascript/javascript-plain.svg" title="Python" alt="HTML" width="40" heigth="40"/>
+       <img src="https://github.com/devicons/devicon/blob/master/icons/linux/linux-plain.svg" title="Python" alt="HTML" width="40" heigth="40"/>
+     </div>
+</div>
 ## Página de Inicio:
 
 * Introducción al propósito de la página.
