@@ -44,7 +44,7 @@
           <img width="110" src="https://media.licdn.com/dms/image/D4D35AQGSsclzbfbVSg/profile-framedphoto-shrink_200_200/0/1688407879854?e=1697220000&v=beta&t=KoR8YPMvU4WTZO_Jj99x9_zpQqz-3N11x8tbmnOcU38"/>
         </a>
         <a href="https://github.com/danielzinnoprogramador" target="_blank" rel="author">
-          <h4 style="margin-top: 1rem;">Daniel Alejandro Zinno</h4>
+          <h4 style="margin-top: 1rem;">Daniel Zinno</h4>
           <h4 style="margin-top: 1rem;">FrontEnd Developer</h4>
         </a>
         <a href="https://github.com/danielzinnoprogramador" target="_blank">
@@ -61,7 +61,7 @@
           <img width="110" src="https://avatars.githubusercontent.com/u/91628860?v=4"/>
         </a>
         <a href="https://github.com/miguelbel00" target="_blank" rel="author">
-          <h4 style="margin-top: 1rem;">Mayra Anahi Frias</h4>
+          <h4 style="margin-top: 1rem;">Mayra Frias</h4>
           <h4 style="margin-top: 1rem;">FrontEnd Developer</h4>
         </a>
         <a href="https://github.com/MFrias1" target="_blank">
@@ -78,7 +78,7 @@
           <img width="110" src="https://media.licdn.com/dms/image/D4D03AQHjwVw1Rr1sgQ/profile-displayphoto-shrink_200_200/0/1679258772975?e=1701907200&v=beta&t=chN4Ni2iEcsvw7uYi1lRZBabKnFxAlnIWNJzq43LIlk"/>
         </a>
         <a href="https://github.com/gitgonlea" target="_blank" rel="author">
-          <h4 style="margin-top: 1rem;">Jan Moretti José Ignacio</h4>
+          <h4 style="margin-top: 1rem;">José Jan</h4>
           <h4 style="margin-top: 1rem;">Backend Developer & DevOps</h4>
         </a>
         <a href="https://github.com/JoseJan21" target="_blank">
