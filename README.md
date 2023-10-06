@@ -1,4 +1,7 @@
-# Edtech sitio web de educación y conciencia de la importancia del reciclaje.
+<div align="center">
+  <h1>VoteChoice: Edtech sitio web de educación y conciencia de la importancia del reciclaje💻</h1>
+  <img width="150" style="margin-bottom: 1.5rem" src="public/Images/logoPanel.png" />
+</div>
 
 ## *c14-43-m-python*
 ---
