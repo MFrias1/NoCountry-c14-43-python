@@ -44,24 +44,24 @@ function create(){
     // x and y position, and key in preload()
     this.add.image(240, 320,'background'); //BACKGROUND img loaded to scene
 
-    //4 leaves img loaded to scene
+    //4 leaves img loaded to scene by using '.add'
     this.add.image(50,250, 'colores').setScale(0.6); 
     this.add.image(50,300, 'colores').setScale(0.6);
     this.add.image(50,350, 'colores').setScale(0.6);
     this.add.image(50,400, 'colores').setScale(0.6);
     
-    //add physics to the platform
+    //add '.physics' to the platform so the trash can be affected by gravity.
     this.physics.add.image(240,-1,'platform').setGravityY(300)//add gravity so the trash falls down.
-        .setScale(0.5);//reduce platform at half the size.
+        .setScale(0.5);//reduce platform image half the size.
    
-    //1 Leaf loaded to scene, add physics so users can interact with the character using the keyboard.
+    //1 Leaf loaded to scene, add .physics so users can interact with the character using the keyboard.
     this.tacho = this.physics.add.sprite(250, 450, 'tacho');
 
     //access to user´s keyboard
     this.cursors = this.input.keyboard.createCursorKeys();
 }
 
-function update(){
+function update(){ //loop
 
     this.tacho.setVelocity(0);
 
