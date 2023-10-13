@@ -19,16 +19,14 @@ const config = {
     physics:{
         default:'arcade',
         arcade: {
-            gravity:{
-                y:200
-            },
             debug: true
-        }
+        
+        }   
     }
 
 }
 
-let game = new Phaser.Game(config)
+let game = new Phaser.Game(config);
 
 //1st - Load images, audio, videos so they can be used.
 function preload(){
@@ -41,7 +39,7 @@ function preload(){
 }
 
 //2nd - the loaded content is set on the game scene.
-function create(){ //me tira error y no renderiza las imagenes.
+function create(){ 
     
     // x and y position, and key in preload()
     this.add.image(240, 320,'background'); //BACKGROUND img loaded to scene
@@ -51,26 +49,29 @@ function create(){ //me tira error y no renderiza las imagenes.
     this.add.image(50,300, 'colores').setScale(0.6);
     this.add.image(50,350, 'colores').setScale(0.6);
     this.add.image(50,400, 'colores').setScale(0.6);
-
-    //1 Leaf loaded to scene
-    this.tacho=this.add.image(250, 450, 'tacho');
-
+    
     //add physics to the platform
-    this.physics.add.image(240,-1,'platform')
+    this.physics.add.image(240,-1,'platform').setGravityY(300)//add gravity so the trash falls down.
         .setScale(0.5);//reduce platform at half the size.
+   
+    //1 Leaf loaded to scene, add physics so users can interact with the character using the keyboard.
+    this.tacho = this.physics.add.sprite(250, 450, 'tacho');
 
-
-this.cursors = this.input.keyboard.createCursorKeys(); //have access to user keyboard
-
+    //access to user´s keyboard
+    this.cursors = this.input.keyboard.createCursorKeys();
 }
+
 function update(){
 
-    //keyboard user interaction
-    if(this.cursors.left.isDown){
-        this.tacho.setVelocityX(-200)
-    }else if(this.cursors.right.isDown){
-        this.tacho.setVelocityX(200);
-    }else{
-        this.tacho.setVelocityX(0);
+    this.tacho.setVelocity(0);
+
+    if (this.cursors.left.isDown)
+    {
+        this.tacho.setVelocityX(-300);
+
+    }else if (this.cursors.right.isDown)
+    {
+        this.tacho.setVelocityX(300);
     }
+    
 }
