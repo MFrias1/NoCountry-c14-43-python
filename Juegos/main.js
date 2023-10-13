@@ -36,22 +36,38 @@ function preload(){
     this.load.image('background','./PNG/Background/bg_layer1.png');
     //load platform img
     this.load.image('platform', './PNG/Environment/ground_grass.png');
+    this.load.image('colores', './PNG/Environment/grass2.png');
+    this.load.image('tacho','./PNG/Environment/grass1.png')
 }
 
 //2nd - the loaded content is set on the game scene.
 function create(){
+    
     // x and y position, and key in preload()
     this.add.image(240, 320,'background');
 
-    //add physics to the platform
-    this.platform = this.physics.add.image(240,320,'platform')
-        .setScale(0.5); //reduce platform at half the size.
-    //adding collision
-    this.physics.add.collider(this.platform)
+    this.add.image(50,250, 'colores').setScale(0.6);
+    this.add.image(50,300, 'colores').setScale(0.6);
+    this.add.image(50,350, 'colores').setScale(0.6);
+    this.add.image(50,400, 'colores').setScale(0.6);
 
+    this.tacho=this.add.image(250, 450, 'tacho');
+
+    //add physics to the platform
+    this.physics.add.image(240,-1,'platform')
+        .setScale(0.5);//reduce platform at half the size.
+
+
+this.cursors = this.input.keyboard.createCursorKeys(); //have access to user keyboard
 
 }
-
 function update(){
 
+    if(this.cursors.left.isDown){
+        this.tacho.setVelocityX(-200)
+    }else if(this.cursors.right.isDown){
+        this.tacho.setVelocityX(200);
+    }else{
+        this.tacho.setVelocityX(0);
+    }
 }
