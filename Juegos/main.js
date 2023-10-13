@@ -41,16 +41,18 @@ function preload(){
 }
 
 //2nd - the loaded content is set on the game scene.
-function create(){
+function create(){ //me tira error y no renderiza las imagenes.
     
     // x and y position, and key in preload()
-    this.add.image(240, 320,'background');
+    this.add.image(240, 320,'background'); //BACKGROUND img loaded to scene
 
-    this.add.image(50,250, 'colores').setScale(0.6);
+    //4 leaves img loaded to scene
+    this.add.image(50,250, 'colores').setScale(0.6); 
     this.add.image(50,300, 'colores').setScale(0.6);
     this.add.image(50,350, 'colores').setScale(0.6);
     this.add.image(50,400, 'colores').setScale(0.6);
 
+    //1 Leaf loaded to scene
     this.tacho=this.add.image(250, 450, 'tacho');
 
     //add physics to the platform
@@ -63,6 +65,7 @@ this.cursors = this.input.keyboard.createCursorKeys(); //have access to user key
 }
 function update(){
 
+    //keyboard user interaction
     if(this.cursors.left.isDown){
         this.tacho.setVelocityX(-200)
     }else if(this.cursors.right.isDown){
