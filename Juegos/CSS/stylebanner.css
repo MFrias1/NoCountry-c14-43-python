@@ -1,0 +1,26 @@
+*{
+    padding: 0;
+    margin: 0;
+    
+}
+.nav{
+    background-color: aqua;
+}
+.span{
+    background-color: red;
+}
+.nav-link{
+    margin-right: 10px; /* Agrega espacio entre elementos (ajusta el valor según tus necesidades) */
+    text-decoration: none;
+    color: black; /*Color predeterminado para los titulos*/
+}
+.nav-link:hover{
+    box-shadow: 4px 4px 8px rgba(235, 22, 22, 0.7);
+    
+
+}
+.navbar-nav{
+    display: flex;
+    justify-content: center;;
+    
+}
