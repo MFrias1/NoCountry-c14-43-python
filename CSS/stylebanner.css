@@ -5,9 +5,7 @@
 }
 .nav{
     background-color: aqua;
-}
-.span{
-    background-color: red;
+    padding: 20px;
 }
 .nav-link{
     margin-right: 25px; /* Agrega espacio entre elementos (ajusta el valor según tus necesidades) */
@@ -19,18 +17,26 @@
     
 
 }
+.padre-nav{
+    display: flex;
+
+}
 .navbar-nav{
     display: flex;
     justify-content: center;
     margin-top: 15px;
+    background-color: rgb(143, 27, 27);
     
 }
 #bottom-navbar{
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    align-items: flex-end;
     
 
+}
+.color{
+    background-color: black;
+    
 }
 #button{
     cursor: pointer;
