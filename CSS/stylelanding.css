@@ -1,0 +1,96 @@
+*{
+    padding: 0;
+    margin: 0;
+    
+}
+
+#bgColor{
+    background-color: rgb(145, 205, 240);
+}
+
+/*section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+section span{
+    margin: 5px;
+}
+*/
+
+section{
+    
+   padding-bottom:4rem;
+   padding-top: 4rem;
+}
+
+#primerBanner{
+   /* background-image: url("../PNG/Background/bg_layer2.png");*/
+    text-align: center;
+}
+#reci-clando, #comoFunciona{
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: white;
+
+}
+
+#reci-clando{
+    width: 500px;
+    height: 200px;
+    margin-left: 3rem;
+}
+#beneficios{
+    text-align: center;
+}
+
+#comoFunciona{
+    width: 70rem;
+    height: 30rem;
+}
+#howWorks{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#beneficios article{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#beneficios article div{
+    background-color: brown;
+    margin: 1rem;
+    height: 200px;
+    width: 200px;
+}
+
+button{
+    padding: 7px;
+    padding-inline: 15px;
+    background-color: orangered;
+    color: white;
+    border: none;
+    font-weight: bolder;
+    border-radius: 3px;
+
+}
+#comoReciclar{
+    text-align: center;
+    background-color: rgb(89, 170, 170);
+}
+
+#TresR{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: aqua;
+}
+#TresR article{
+    background-color: blue;
+    height: 400px;
+    width: 300px;
+    margin: 10px;
+}

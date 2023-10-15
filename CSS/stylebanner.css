@@ -12,7 +12,7 @@
 .nav-link{
     margin-right: 25px; /* Agrega espacio entre elementos (ajusta el valor según tus necesidades) */
     text-decoration: none;
-    color: black; /*Color predeterminado para los titulos*/
+    color: black; /*Color predeterminado para los titulos,*/
 }
 .nav-link:hover{
     box-shadow: 4px 4px 8px rgba(235, 22, 22, 0.7);
