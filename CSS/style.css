@@ -1,1 +1,60 @@
+*{
+    padding: 0;
+    margin: 0;
+    
+}
+.footer{
+    background-color: rgba(38, 34, 34, 1) ;
+}
 
+.img{
+    width: 40px;
+    height: 40px;
+}
+
+section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+section span{
+    margin: 10px;
+}
+
+
+
+ul{
+    display: flex;
+    list-style: none;
+    background-color: none;
+}
+
+.navbar{
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: none;
+    padding: 2rem; 
+}
+
+li{
+    margin-inline: 20px;
+}
+
+.buttonLogin{
+    background-color: green;
+
+}
+
+.buttonSignUp{
+    background-color: none;
+    border-color: green;
+}
+
+form button {
+    padding: 20px;
+    border-radius: 5px;
+    
+}
