@@ -5,66 +5,77 @@
 }
 
 #bgColor{
-    background-color: rgb(145, 205, 240);
+    background-color: white;
 }
-
-/*section{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-section span{
-    margin: 5px;
-}
-*/
 
 section{
-    
    padding-bottom:4rem;
    padding-top: 4rem;
 }
 
 #primerBanner{
-   /* background-image: url("../PNG/Background/bg_layer2.png");*/
+    background-image: url("../Imagenes/LandingImg/7903543.png");
+    background-size: cover;
+    height: 600px;
     text-align: center;
+}
+#segundoBanner{
+    background-image: url("../Imagenes/LandingImg/5216931.png");
+    background-size:contain;
+    background-repeat: no-repeat;
+    height: 600px;
+    background-position: right;
+    text-align: center;
+}
+#tercerBanner{
+    background-image: url('../Imagenes/LandingImg/8667919.png');
+    background-position: left;
+    background-repeat: no-repeat;
+    height: 700px;
+    background-size: contain;
 }
 #reci-clando, #comoFunciona{
     border: 1px solid black;
     border-radius: 10px;
     padding: 20px;
-    background-color: white;
-
+    background-color: rgba(255, 255, 255, 0.5)
 }
 
 #reci-clando{
     width: 500px;
     height: 200px;
     margin-left: 3rem;
+    margin-top: 0%;
 }
 #beneficios{
     text-align: center;
 }
+.reciclaaclando{
+    margin-bottom: 40rem;
+}
 
 #comoFunciona{
+    margin-top: 25rem;
     width: 70rem;
-    height: 30rem;
+    height: 40rem;
 }
-#howWorks{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-#beneficios article{
+#howWorks, #beneficios2{
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-#beneficios article div{
+#beneficios article{
+    justify-content: center;
+    align-items: center;
+    width: 200px;
     background-color: brown;
     margin: 1rem;
-    height: 200px;
-    width: 200px;
+}
+
+#beneficios article div img{
+    height: 100px;
+    width: 100px;
 }
 
 button{
@@ -79,18 +90,29 @@ button{
 }
 #comoReciclar{
     text-align: center;
-    background-color: rgb(89, 170, 170);
+}
+
+.subtitulos{
+    font-weight: bolder;
+    margin-bottom: 1rem;
 }
 
 #TresR{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: aqua;
 }
 #TresR article{
-    background-color: blue;
-    height: 400px;
+    padding-top: 2rem;
+    height: 300px;
     width: 300px;
     margin: 10px;
+}
+#TresR article div{
+    margin-bottom: 20px;
+    
+}
+#TresR article div img{
+    width: 150px;
+    height: 150px;
 }

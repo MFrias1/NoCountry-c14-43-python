@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSS/stylelanding.css">
+    <link rel="stylesheet" href="CSS/stylefooter.css">
+    <title>Document</title>
+</head>
+<body>
+    <!--Banner-->
+    <div id="bannerSection"> </div>
+    <!--landing-->
+    <div id="landingSection"></div>
+    <!--Footer-->
+    <div id="footerSection"></div>
+    <script>
+        //Aqui muestra el banner creado en html
+        fetch('./LandingPage/banner.html')
+        .then(response => response.text())
+        .then(content => {
+                document.getElementById('bannerSection').innerHTML = content;
+        });
+         //Aqui muestra el landing creado en html
+         fetch('./LandingPage/landing.html')
+        .then(response => response.text())
+        .then(content => {
+                document.getElementById('landingSection').innerHTML = content;
+        });
+         //Aqui muestra el footer creado en html
+         fetch('./LandingPage/piedepagina.html')
+        .then(response => response.text())
+        .then(content => {
+                document.getElementById('footerSection').innerHTML = content;
+        });
+    </script>
+</body>
+</html>
