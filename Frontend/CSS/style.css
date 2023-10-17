@@ -180,3 +180,49 @@ section{
     width: 150px;
     height: 150px;
 }
+
+
+.inicioDeSesion{
+    background-color: aqua;
+    padding: 1rem;
+}
+.recordarme{
+    display: flex;
+    justify-content: space-around;
+}
+.recordarme span{
+    display: flex;
+}
+.form{
+    margin:2rem;
+}
+.section2{
+    display: flex;
+    justify-content: space-around;
+    background-color: blueviolet;
+}
+
+.form form{
+    margin:1rem;
+}
+.form form div{
+    margin: 1rem;
+}
+
+.inicionBoton{
+    margin-bottom: 20px;
+}
+.registrate{
+    display: flex;
+    justify-content: space-around;
+}
+
+/*
+.sesionImg{
+    width: 100px;
+    height: 100px;
+}*/
+
+.bg{
+    background-color: blue;
+}
