@@ -8,6 +8,11 @@ class CreateUser(BaseModel):
     coins : int
     password : str
 
+class CreateUserOut(BaseModel):
+    id:int
+    first_name : str
+    last_name : str
+
     # class config:
     #     json_schema_extra = {
     #         "example": {

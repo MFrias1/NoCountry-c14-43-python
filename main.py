@@ -6,7 +6,7 @@ app = FastAPI()
 app.title = 'Recicla_ando'
 app.version = '0.0.1'
 
-app.include_router(user_router)
+app.include_router(user_router, tags=['user'])
 
 Base.metadata.create_all(bind=engine)
 
