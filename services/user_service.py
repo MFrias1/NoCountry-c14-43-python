@@ -1,5 +1,5 @@
 from models.user_model import User
-from jwt_manager import create_token
+#from jwt_manager import create_token
 
 class UserService():
     def __init__(self,db) -> None:
@@ -17,4 +17,5 @@ class UserService():
     def post_login_user(self, email, password):
         auth = self.db.query(User).filter(User.email == email and User.password==password)
         if auth:
-            token: str = create_token()
+            pass
+            
