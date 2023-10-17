@@ -181,6 +181,10 @@ section{
     height: 150px;
 }
 
+/*
+css de registro.html
+
+*/
 
 .inicioDeSesion{
     background-color: aqua;
@@ -195,34 +199,37 @@ section{
 }
 .form{
     margin:2rem;
+    text-align: center;
 }
+
 .section2{
     display: flex;
     justify-content: space-around;
     background-color: blueviolet;
 }
-
 .form form{
     margin:1rem;
 }
+
 .form form div{
     margin: 1rem;
 }
 
-.inicionBoton{
+
+.inicioBoton{
     margin-bottom: 20px;
 }
+
+
 .registrate{
     display: flex;
     justify-content: space-around;
 }
 
-/*
-.sesionImg{
-    width: 100px;
-    height: 100px;
-}*/
-
 .bg{
+    background-color: blue;
+}
+
+.clasepadre{
     background-color: blue;
 }

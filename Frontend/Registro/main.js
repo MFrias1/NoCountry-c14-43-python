@@ -7,28 +7,29 @@ div.innerHTML=  `
         <div> <img src="../Imagenes/LandingImg/3779577.png"> </div>
         <div class="form">
                 <h2> Inicio de sesión </h2>
-                <form action="">
+                <form class="clasepadre" action="">
                         <div>
                                 <input for="GET-name" type="email" name="name" placeholder="Correo electrónico">
-                        <div>
                         </div>
+                        <div>
                                 <input for="GET-password" type="password" name="password" placeholder="Contraseña">
                         </div>
                         <div class="recordarme">
-                                <span><input type="checkbox" value "Recordarme"/> <p>Recordarme</p></span>
-                                <span> <p><a href="#">Olvidé mi contraseña </a></p> </span>
+                                <span><input type="checkbox" value="Recordarme"/> <p>Recordarme</p></span>
+                                <span><p><a href="#">Olvidé mi contraseña</a></p></span>
                         </div>
-                        <div>
+                        <div class="inicioBoton">
                                 <input type="submit" value="Iniciar Sesión" />
                         </div>
                         <div class="registrate">
-                                <span><p>¿No tienes una cuenta?</p> </span>
-                                <span><a href="#"> Regístrate.</a> </span>
+                                <span><p>¿No tienes una cuenta?</p></span>
+                                <span><a href="#">Regístrate.</a></span>
                         </div>
-                        
                 </form>
         </div>
-`; // .innerHTML lo utilizamos para crear dentro de la variable div etiquetas de HTML 
+`; 
+
+// .innerHTML lo utilizamos para crear dentro de la variable div etiquetas de HTML 
 
 padre.append(div); // agregamos en el archivo HTML todo el contenido de la variable div.innerHTML y se lo asignamos a su etiqueta padre  
 
