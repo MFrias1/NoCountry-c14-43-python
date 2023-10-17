@@ -183,53 +183,70 @@ section{
 
 /*
 css de registro.html
-
+/*
 */
-
+/*Es el que se importa a JavaScript*/
 .inicioDeSesion{
     background-color: aqua;
     padding: 1rem;
 }
+/*Afecta a la division de los span*/
 .recordarme{
     display: flex;
     justify-content: space-around;
 }
+/*checkbox y la etiqueta p, la alinea en una misma linea*/
 .recordarme span{
     display: flex;
 }
-.form{
-    margin:2rem;
-    text-align: center;
-}
-
-.section2{
+/*Section3 organiza en dos columnas el inicio sesión de la imagen*/
+.section3{
     display: flex;
     justify-content: space-around;
+}
+/*Afceta al body del archivo html*/
+.section2{
+   
     background-color: blueviolet;
 }
-.form form{
-    margin:1rem;
+/*Afecta al boton donde el usuario da clic para iniciar sesión*/
+.inicioBoton button{
+    margin: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    width: 300px;
+    background-color: green;
+    color:white;
+    border: none;
+}
+/*Afecta a los inputs del form (correro y contraseña)*/
+.widthInput{
+    border-radius: 5px;
+    padding: 15px;
+    width: 273px;
+    margin: 15px;
+
 }
 
-.form form div{
-    margin: 1rem;
-}
-
-
-.inicioBoton{
-    margin-bottom: 20px;
-}
-
-
+/*Afecta la seccion de No tienes una cuenta? Registrate*/
 .registrate{
     display: flex;
     justify-content: space-around;
 }
-
-.bg{
-    background-color: blue;
+/*Clase padre que afecta el centrado de inicio de sesion (afecta todo el formulario y boton)*/
+.mainBody{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+/*Afecta al logo del inicio de sesion*/
+.loginLogo{
+    margin: 50px;
+    text-align: center;
+    background-color: black;
 }
 
-.clasepadre{
-    background-color: blue;
-}
+
+
+  

@@ -4,28 +4,31 @@ let padre= document.getElementById("padre");
 let div = document.createElement("div"); //estamos creando un elemento div 
 div.className = "inicioDeSesion"; //traigo una clase de CSS a javaScript
 div.innerHTML=  ` 
-        <div> <img src="../Imagenes/LandingImg/3779577.png"> </div>
-        <div class="form">
+        <div class="loginLogo"> <img src="../Imagenes/LandingImg/3779577.png"> </div>
+        <div class="mainBody">
                 <h2> Inicio de sesión </h2>
                 <form class="clasepadre" action="">
-                        <div>
-                                <input for="GET-name" type="email" name="name" placeholder="Correo electrónico">
-                        </div>
-                        <div>
-                                <input for="GET-password" type="password" name="password" placeholder="Contraseña">
-                        </div>
-                        <div class="recordarme">
-                                <span><input type="checkbox" value="Recordarme"/> <p>Recordarme</p></span>
-                                <span><p><a href="#">Olvidé mi contraseña</a></p></span>
-                        </div>
-                        <div class="inicioBoton">
-                                <input type="submit" value="Iniciar Sesión" />
-                        </div>
-                        <div class="registrate">
-                                <span><p>¿No tienes una cuenta?</p></span>
-                                <span><a href="#">Regístrate.</a></span>
+                        <div >
+                                <div>
+                                        <input class="widthInput" for="GET-name" type="email" name="name" placeholder="Correo electrónico">
+                                </div>
+                                <div>
+                                        <input class="widthInput" for="GET-password" type="password" name="password" placeholder="Contraseña">
+                                </div>
+                                <div class="recordarme">
+                                        <span><input type="checkbox" value="Recordarme"/> <p>Recordarme</p></span>
+                                        <span><p><a href="#">Olvidé mi contraseña</a></p></span>
+                                </div>
+                               
                         </div>
                 </form>
+                <div class="inicioBoton">
+                        <button type="submit" value="Iniciar Sesión" >Iniciar sesión</button>
+                </div>
+                <div class="registrate">
+                        <span><p>¿No tienes una cuenta?</p></span>
+                        <span><a href="#">Regístrate.</a></span>
+                </div>
         </div>
 `; 
 
@@ -33,15 +36,6 @@ div.innerHTML=  `
 
 padre.append(div); // agregamos en el archivo HTML todo el contenido de la variable div.innerHTML y se lo asignamos a su etiqueta padre  
 
-let divButton = document.createElement("div");
-
-divButton.innerHTML= `
-
-        
-
-`;
-
-padre.append(divButton); //que agregue el divbutton en HTML
 
 
 
