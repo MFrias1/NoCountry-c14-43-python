@@ -1,0 +1,252 @@
+*{
+    padding: 0;
+    margin: 0;
+    
+}
+.footer{
+    background-color: rgba(38, 34, 34, 1) ;
+}
+
+.img{
+    width: 40px;
+    height: 40px;
+}
+
+footer section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+footer section span {
+    margin: 10px;
+}
+
+
+
+ul{
+    display: flex;
+    list-style: none;
+    background-color: none;
+}
+
+.navbar{
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: none;
+    padding: 2rem; 
+}
+
+li{
+    margin-inline: 20px;
+}
+
+.buttonLogin{
+    background-color: green;
+
+}
+
+.buttonSignUp{
+    background-color: none;
+    border-color: green;
+}
+
+form button {
+    padding: 20px;
+    border-radius: 5px;
+    
+}
+
+a{
+    text-decoration: none;
+    color:black;
+}
+
+/* empeiza estilo de landing page
+
+*/
+
+#bgColor{
+    background-color: white;
+}
+
+section{
+   padding-bottom:4rem;
+   padding-top: 4rem;
+}
+
+#primerBanner{
+    background-image: url("../Imagenes/LandingImg/7903543.png");
+    background-size: cover;
+    height: 600px;
+    text-align: center;
+}
+#segundoBanner{
+    background-image: url("../Imagenes/LandingImg/5216931.png");
+    background-size:contain;
+    background-repeat: no-repeat;
+    height: 600px;
+    background-position: right;
+    text-align: center;
+}
+#tercerBanner{
+    background-image: url('../Imagenes/LandingImg/8667919.png');
+    background-position: left;
+    background-repeat: no-repeat;
+    height: 700px;
+    background-size: contain;
+}
+#reci-clando, #comoFunciona{
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.5)
+}
+
+#reci-clando{
+    width: 500px;
+    height: 200px;
+    margin-left: 3rem;
+    margin-top: 0%;
+}
+#beneficios{
+    text-align: center;
+}
+.reciclaaclando{
+    margin-bottom: 40rem;
+}
+
+#comoFunciona{
+    margin-top: 25rem;
+    width: 70rem;
+    height: 40rem;
+}
+#howWorks, #beneficios2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#beneficios article{
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    background-color: brown;
+    margin: 1rem;
+}
+
+#beneficios article div img{
+    height: 100px;
+    width: 100px;
+}
+
+.buttonLanding{
+    padding: 7px;
+    padding-inline: 15px;
+    background-color: orangered;
+    color: white;
+    border: none;
+    font-weight: bolder;
+    border-radius: 3px;
+
+}
+#comoReciclar{
+    text-align: center;
+}
+
+.subtitulos{
+    font-weight: bolder;
+    margin-bottom: 1rem;
+}
+
+#TresR{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#TresR article{
+    padding-top: 2rem;
+    height: 300px;
+    width: 300px;
+    margin: 10px;
+}
+#TresR article div{
+    margin-bottom: 20px;
+    
+}
+#TresR article div img{
+    width: 150px;
+    height: 150px;
+}
+
+/*
+css de registro.html
+/*
+*/
+/*Es el que se importa a JavaScript*/
+.inicioDeSesion{
+    background-color: aqua;
+    padding: 1rem;
+}
+/*Afecta a la division de los span*/
+.recordarme{
+    display: flex;
+    justify-content: space-around;
+}
+/*checkbox y la etiqueta p, la alinea en una misma linea*/
+.recordarme span{
+    display: flex;
+}
+/*Section3 organiza en dos columnas el inicio sesión de la imagen*/
+.section3{
+    display: flex;
+    justify-content: space-around;
+}
+/*Afceta al body del archivo html*/
+.section2{
+   
+    background-color: blueviolet;
+}
+/*Afecta al boton donde el usuario da clic para iniciar sesión*/
+.inicioBoton button{
+    margin: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    width: 300px;
+    background-color: green;
+    color:white;
+    border: none;
+}
+/*Afecta a los inputs del form (correro y contraseña)*/
+.widthInput{
+    border-radius: 5px;
+    padding: 15px;
+    width: 273px;
+    margin: 15px;
+
+}
+
+/*Afecta la seccion de No tienes una cuenta? Registrate*/
+.registrate{
+    display: flex;
+    justify-content: space-around;
+}
+/*Clase padre que afecta el centrado de inicio de sesion (afecta todo el formulario y boton)*/
+.mainBody{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+/*Afecta al logo del inicio de sesion*/
+.loginLogo{
+    margin: 50px;
+    text-align: center;
+    background-color: black;
+}
+
+
+
+  
