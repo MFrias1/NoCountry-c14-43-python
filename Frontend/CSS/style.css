@@ -132,14 +132,15 @@ section{
 #beneficios article{
     justify-content: center;
     align-items: center;
-    width: 200px;
+    width: 150px;
+    height: 300px;
     background-color: brown;
     margin: 1rem;
 }
 
 #beneficios article div img{
-    height: 100px;
-    width: 100px;
+    height: 150px;
+    width: 150px;
 }
 
 .buttonLanding{
