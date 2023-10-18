@@ -45,19 +45,24 @@ li{
 
 .buttonLogin{
     background-color: green;
-
+    padding: 20px;
+    border-radius: 7px;
+    color: white;
 }
 
 .buttonSignUp{
     background-color: none;
-    border-color: green;
+    border: green solid 2px;
+    padding: 20px;
+    border-radius: 7px;
+    color:black;
 }
 
-form button {
-    padding: 20px;
-    border-radius: 5px;
-    
+/*botones banner*/
+form{
+    display: flex;
 }
+
 
 a{
     text-decoration: none;
@@ -188,7 +193,7 @@ css de registro.html
 */
 /*Es el que se importa a JavaScript*/
 .inicioDeSesion{
-    background-color: aqua;
+    background-color: white;
     padding: 1rem;
 }
 /*Afecta a la division de los span*/
@@ -207,8 +212,7 @@ css de registro.html
 }
 /*Afceta al body del archivo html*/
 .section2{
-   
-    background-color: blueviolet;
+    background-color: white;
 }
 /*Afecta al boton donde el usuario da clic para iniciar sesión*/
 .inicioBoton button{
