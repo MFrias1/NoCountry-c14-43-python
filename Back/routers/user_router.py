@@ -22,14 +22,24 @@ def create_user(user: CreateUser) -> CreateUserOut:
     }
     return JSONResponse(status_code=201, content=content)
 
+@user_router.post('/login', status_code=200, response_model= dict)
+def login(user: LoginUser) -> dict:
+    db = Session()
+    data = UserService(db).post_login_user(user.email, user.password)
+    if not data:
+        return JSONResponse(status_code=418, content={"message": "El servidor se rehusa a preparar café porque es una tetera"})
+    return JSONResponse(status_code=200, content={"message":"Ha iniciado sesión correctamente."})
+    
 
-@user_router.get('/login', status_code=201)
-def user(token: str = Depends(oauth2_scheme)):
-    return 'hola'
 
-@user_router.post('/token', status_code=201)
-def login(form_data: OAuth2PasswordRequestForm = Depends()):
-    print(form_data.username, form_data.password)
-    return 'ok'
+
+# @user_router.get('/login', status_code=201)
+# def user(token: str = Depends(oauth2_scheme)):
+#     return 'hola'
+
+# @user_router.post('/token', status_code=201)
+# def login(form_data: OAuth2PasswordRequestForm = Depends()):
+#     print(form_data.username, form_data.password)
+#     return 'ok'
 
 # newUserDict = jsonable_encoder(CreateUserOut(**jsonable_encoder(newUser)))
