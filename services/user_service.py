@@ -1,4 +1,5 @@
 from models.user_model import User
+from middlewares.authentications import hash_password
 #from jwt_manager import create_token
 
 class UserService():
@@ -7,6 +8,7 @@ class UserService():
 
     def post_register_user(self, user) -> dict:
         new_user = User(**user.model_dump())
+        new_user.password = hash_password(new_user.password)
         self.db.add(new_user)
         self.db.commit() 
         self.db.refresh(new_user) 
