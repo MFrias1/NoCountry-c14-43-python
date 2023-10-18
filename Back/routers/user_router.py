@@ -31,3 +31,5 @@ def user(token: str = Depends(oauth2_scheme)):
 def login(form_data: OAuth2PasswordRequestForm = Depends()):
     print(form_data.username, form_data.password)
     return 'ok'
+
+# newUserDict = jsonable_encoder(CreateUserOut(**jsonable_encoder(newUser)))
