@@ -1,3 +1,4 @@
+from sqlalchemy import and_
 from models.user_model import User
 from middlewares.authentications import hash_password
 #from jwt_manager import create_token
@@ -17,7 +18,7 @@ class UserService():
         return data
     
     def post_login_user(self, email, password):
-        auth = self.db.query(User).filter(User.email == email and User.password==password)
-        if auth:
-            pass
+        password_hash = hash_password(password)
+        result = self.db.query(User).filter(and_(User.email == email, User.password == password_hash)).first()
+        return result
             

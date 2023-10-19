@@ -29,6 +29,8 @@ def login(user: LoginUser) -> dict:
     if not data:
         return JSONResponse(status_code=418, content={"message": "El servidor se rehusa a preparar café porque es una tetera"})
     return JSONResponse(status_code=200, content={"message":"Ha iniciado sesión correctamente."})
+
+
     
 
 
