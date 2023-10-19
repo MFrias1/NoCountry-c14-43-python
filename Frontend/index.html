@@ -3,57 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./CSS/style.css">
-    <script src="./js/axios.min.js"></script>
-    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <!-- <script src="./assets/js/axios.min.js"></script> -->
+    <link rel="shortcut icon" href="./assets/img/icon/hoja.svg" type="image/x-icon">
+    <title>Recicla-ando Bienvenidos</title>
 </head>
 <body>
-    <nav>
-        <div class="navbar">
-          <a href="#">LOGO</a>
-          <div>
-            <ul>
-              <li>
-                <a href="#">Iniciativa</a>
-              </li>
-              <li>
-                <a href="#">Beneficios</a>
-              </li>
-              <li>
-                <a href="#">Cómo reciclar</a>
-              </li>
-              <li>
-                <a href="#">Blog</a>
-              </li>
-              <li>
-                <a href="#">Contacto</a>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <form>
-                <div>
-                    <a id="buttonLogin" class="buttonLogin"  href="./Registro/iniciodesesion1.html">Ingresar</a>><!--inicio de sesión-->
-                </div>
-                <div>
-                    <a id="buttonSignUp" class="buttonSignUp" href="./Registro/registro.html">Registrarse</a><!--Registrarse>-->
-                </div>
-            </form>
-          </div>
-        </div>
-      </nav>
-      <!--fin de bannner-->
-      <header></header>
-      <main id="bgColor">
-          <section id="primerBanner">
+    <header class="header_index">
+        <nav>
+            <div class="navbar">
+              <a class="logo_navbar" href="#"><img src="./assets/img/icon/logo.png" alt=""></a>
               <div>
-                  <h1>LOGO</h1>
+                <ul>
+                  <li><a href="#">Iniciativa</a></li>
+                  <li><a href="#">Beneficios</a></li>
+                  <li><a href="#">¿Cómo reciclar?</a></li>
+                  <li><a href="#">Blog</a></li>
+                  <li><a href="#">Contacto</a></li>
+                </ul>
               </div>
-          </section>
+              <div class="banner_button">
+                <a class="banner_button_login"  href="./iniciodesesion.html">Ingresar</a><!--inicio de sesión-->
+                <a class="banner_button_signUp" href="./Registro.html">Registrarse</a><!--Registrarse>-->    
+              </div>
+            </div>
+        </nav>
+        <section class="banner_principal">
+            <h1><span>Recicla-ando</span> se <span>cuida</span> mejor al <span>planeta</span> y nuestro <span>futuro</span>.</h1>
+            <img src="./assets/img/landingImg/banner_principal.png" alt="">
+        </section>
+    </header>
+    <main class="main_index">
           <section class="reciclaaclando">
               <div id="segundoBanner">
                   <div id="reci-clando">
-                      <p class="subtitulos">Recicla-Ando</p>
+                      <p class="subtitulos">Recicla-ando</p>
                       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam voluptatum nobis, error itaque, assumenda amet cumque qui repellat ratione molestias voluptatem fuga doloremque, laborum possimus nemo earum. 
                       Eaque tempore ipsum, deserunt voluptatum corporis suscipit modi<br>
                       perspiciatis commodi quam obcaecati distinctio iusto doloribus ex id e<br>
@@ -88,7 +72,7 @@
                   </article>
                   <article>
                       <div>
-                          <img src="../Imagenes/LandingImg/3779577.png" alt="">
+                          <img src="./assets/img/landingImg/3779577.png" alt="">
                       </div>
                       <div><p class="subtitulos">Lorem ipsum dolor sit amet . Dolore, voluptate?</p></div>
                   </article>
@@ -204,6 +188,6 @@
 
     
     
-      <script src="./Registro/main.js"></script>  
+      <script src="./Registro/iniciodesesion.js"></script>  
 </body>
 </html>
