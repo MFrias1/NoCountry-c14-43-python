@@ -2,7 +2,6 @@ let sectionLogin = document.getElementById("sectionLogin"); //declaración de va
 let padre = document.getElementById("padre");
 let buttonLogin = document.getElementById("buttonLogin");
 let buttonSignUp = document.getElementById("buttonSignUp");
-let registro = document.querySelector("a[href='./Frontend/Registro/Registro.html']");
 
 
 // agregamos en el archivo HTML todo el contenido de la variable div.innerHTML y se lo asignamos a su etiqueta padre  
@@ -17,10 +16,10 @@ div.innerHTML = `
                                 <form class="clasepadre" action="">
                                         <div>
                                                 <div>
-                                                        <input class="widthInput" for="GET-name" type="email" name="name" placeholder="Correo electrónico">
+                                                        <input class="widthInput" for="GET-name" type="email" name="name" placeholder="Correo electrónico" required>
                                                 </div>
                                                 <div>
-                                                        <input class="widthInput" for="GET-password" type="password" name="password" placeholder="Contraseña">
+                                                        <input class="widthInput" for="GET-password" type="password" name="password" placeholder="Contraseña" required>
                                                 </div>
                                                 <div class="recordarme">
                                                         <span><input type="checkbox" value="Recordarme"/> <p>Recordarme</p></span>

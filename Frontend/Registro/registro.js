@@ -14,37 +14,40 @@ div1.innerHTML=  `
         <div class="loginLogo"> <img src="../Imagenes/LandingImg/3779577.png"> </div>
         <div class="mainBody">
                 <h2> Crear una cuenta</h2>
-                <form class="clasepadre" action="alert('hola mundo')">
+                <form class="clasepadre" action="">
                         <div >
                                 <div>
-                                        <input class="widthInput" for="GET-name" type="text" name="name" placeholder="nombre inicial">
+                                        <input class="widthInput" for="GET-name" type="text" name="name" placeholder="nombre inicial" required>
                                 </div>
 
                                 <div>
-                                        <input class="widthInput" for="GET-name" type="text" name="name" placeholder="apellido">
+                                        <input class="widthInput" for="GET-name" type="text" name="name" placeholder="apellido" required>
                                 </div>
 
                                 <div>
-                                        <input class="widthInput" for="GET-name" type="text" name="name" placeholder="país">
+                                        <input class="widthInput" for="GET-name" type="text" name="name" placeholder="país" required>
                                 </div>
 
                                 <div>
-                                        <input class="widthInput" for="GET-name" type="email" name="name" placeholder="Correo electrónico">
+                                        <input class="widthInput" for="GET-name" type="email" name="name" placeholder="Correo electrónico" required>
                                 </div>
                                 <div>
-                                        <input class="widthInput" for="GET-password" type="password" name="password" placeholder="Contraseña">
+                                        <input class="widthInput" for="GET-password" type="password" name="password" placeholder="Contraseña" required>
                                 </div>
                                 <div>
-                                        <input class="widthInput" for="GET-name" type="password" name="name" placeholder="confirmar contraseña">
+                                        <input class="widthInput" for="GET-name" type="password" name="name" placeholder="confirmar contraseña" required>
                                 </div>
                                 
                                
                         </div>
+
+                        <div class="inicioBoton">
+                              <button type="submit" value="Iniciar Sesión" >Registrarme</button>
+                        </div>
+
                 </form>
-                <div class="inicioBoton">
-                        <button type="submit" value="Iniciar Sesión" >Registrarme</button>
-                </div>
-                <div class="registrate">
+
+                                <div class="registrate">
                         <span><p>¿Ya tienes una cuenta?</p></span>
                         <span><a href="iniciodesesion1.html">Iniciar sesión</a></span>
                 </div>
