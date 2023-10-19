@@ -1,15 +1,88 @@
-*{
-    padding: 0;
+:root {
+    --primary_color : #22c55e;
+    --secondary_color : #FD8400;
+}
+* {  
+    box-sizing: border-box;
     margin: 0;
-    
+    padding: 0;
+}
+a{
+    text-decoration: none;
+    color:black;
+}
+.header_index{
+    height: 100vh;
+}
+.navbar{
+    align-items: center;
+    background-color: none;
+    display:flex;
+    justify-content: space-around;
+    padding: 2rem; 
+}
+.logo_navbar img {
+    height: 50px;
+    width: 150px;
+}
+.navbar ul{
+    display: flex;
+    list-style: none;
+    background-color: none;
+}
+.navbar li{
+    font-size: 20px;
+    margin-inline: 20px;
+}
+.banner_button {
+    display: flex;
+}
+.banner_button a {
+    border-radius: 54px;
+    text-align: center;
+    padding: 10px;
+    width: 110px;
+    -webkit-border-radius: 54px;
+    -moz-border-radius: 54px;
+    -ms-border-radius: 54px;
+    -o-border-radius: 54px;
+}
+.banner_button_login {
+    background-color: var(--primary_color);
+    color: white;
+    margin-right: 12px;
+}
+
+.banner_button_signUp{
+    background-color: white;
+    border: var(--primary_color) solid 2px;
+    border-radius: 7px;
+    color:black;
+}
+.banner_button a:hover {
+    background-color: var(--secondary_color);
+    border: none;
+    color: white; 
+} 
+.banner_principal{
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+    height: 80%;
+}
+.banner_principal h1 {
+    font-size: 58px;
+    width: 40%;
+}
+.banner_principal h1 span {
+    color: var(--secondary_color);
+}
+.banner_principal img {
+    height: 100%;
+    width: 50%;
 }
 .footer{
     background-color: rgba(38, 34, 34, 1) ;
-}
-
-.img{
-    width: 40px;
-    height: 40px;
 }
 
 footer section{
@@ -24,63 +97,20 @@ footer section span {
 }
 
 
+/* ! Seguir ordenando */
 
-ul{
-    display: flex;
-    list-style: none;
-    background-color: none;
-}
-
-.navbar{
-    display:flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: none;
-    padding: 2rem; 
-}
-
-li{
-    margin-inline: 20px;
-}
-
-.buttonLogin{
-    background-color: green;
-    padding: 20px;
-    border-radius: 7px;
-    color: white;
-}
-
-.buttonSignUp{
-    background-color: none;
-    border: green solid 2px;
-    padding: 20px;
-    border-radius: 7px;
-    color:black;
-}
 
 /*botones banner*/
-.botonesDeBanner{
-    display: flex;
-}
 
 
-a{
-    text-decoration: none;
-    color:black;
-}
+
+
 
 /* empeiza estilo de landing page
 
 */
 
-#bgColor{
-    background-color: white;
-}
 
-section{
-   padding-bottom:4rem;
-   padding-top: 4rem;
-}
 
 #primerBanner{
     background-image: url("../Imagenes/LandingImg/7903543.png");
@@ -88,14 +118,7 @@ section{
     height: 600px;
     text-align: center;
 }
-#segundoBanner{
-    background-image: url("../Imagenes/LandingImg/5216931.png");
-    background-size:contain;
-    background-repeat: no-repeat;
-    height: 600px;
-    background-position: right;
-    text-align: center;
-}
+
 #tercerBanner{
     background-image: url('../Imagenes/LandingImg/8667919.png');
     background-position: left;
