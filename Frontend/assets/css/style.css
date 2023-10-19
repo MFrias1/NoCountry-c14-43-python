@@ -110,8 +110,6 @@ footer section span {
 
 */
 
-
-
 #primerBanner{
     background-image: url("../Imagenes/LandingImg/7903543.png");
     background-size: cover;
@@ -123,10 +121,11 @@ footer section span {
     background-image: url('../Imagenes/LandingImg/8667919.png');
     background-position: left;
     background-repeat: no-repeat;
-    height: 700px;
+    height: 600px;
     background-size: contain;
+    background-color: rgb(14, 58, 58);
 }
-#reci-clando, #comoFunciona{
+#comoFunciona{
     border: 1px solid black;
     border-radius: 10px;
     padding: 20px;
@@ -135,40 +134,59 @@ footer section span {
 
 #reci-clando{
     width: 500px;
-    height: 200px;
+    height: 290px;
     margin-left: 3rem;
     margin-top: 0%;
+    text-align: justify;
+    border: solid black 1px;
+    border-radius: 5px;
+    padding: 2rem;
 }
 #beneficios{
     text-align: center;
 }
-.reciclaaclando{
-    margin-bottom: 40rem;
-}
-
-#comoFunciona{
-    margin-top: 25rem;
-    width: 70rem;
-    height: 40rem;
-}
-#howWorks, #beneficios2{
+.section_comoFunciona{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+#comoFunciona{
+    margin-top: 5rem;
+    width: 70rem;
+    height: 25rem;
+}
+#comoFunciona ul{
+    margin-inline: 50px;
+    margin-bottom: 5px;
+}
+#beneficios2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#howWorks{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#beneficios{
+    padding: 3rem;
 }
 
 #beneficios article{
     justify-content: center;
     align-items: center;
     width: 150px;
-    height: 300px;
-    background-color: brown;
-    margin: 1rem;
+    height: 195px;
+    margin: 2rem;
 }
 
 #beneficios article div img{
     height: 150px;
     width: 150px;
+    padding: 3rem;
 }
 
 .buttonLanding{
@@ -188,6 +206,7 @@ footer section span {
 .subtitulos{
     font-weight: bolder;
     margin-bottom: 1rem;
+    text-align: center;
 }
 
 #TresR{
