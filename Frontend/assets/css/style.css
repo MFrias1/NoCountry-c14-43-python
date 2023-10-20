@@ -8,6 +8,7 @@
     padding: 0;
     font-family: 'Roboto', sans-serif;
 }
+
 a{
     text-decoration: none;
     color:black;
@@ -17,7 +18,7 @@ a{
 }
 .navbar{
     align-items: center;
-    background-color: none;
+    background-color: blue;
     display:flex;
     justify-content: space-around;
     padding: 2rem; 
@@ -360,19 +361,34 @@ div.formContacto_title{
 }
 /*Clase padre que afecta el centrado de inicio de sesion (afecta todo el formulario y boton)*/
 .mainBody{
-    display: flex;
+    display:flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    align-items:baseline;
+    justify-content:flex-start;
     background-color: none;
+    padding: 50px;
 }
+/*afecta al título inicio de sesión*/
+.tituloiniciodesesion{
+    text-align: center;
+}
+
 /*Afecta al logo del inicio de sesion*/
 .loginLogo{
     margin: 50px;
     text-align: center;
-    background-color: none;
 }
 
+.presentacioninicio{
+    margin-right:  10px;
+}
 
+.formularioeimagen{
+    display:flex;
+}
 
-  
+.main_login{
+    display: flex;
+    justify-content:center
+    
+}
