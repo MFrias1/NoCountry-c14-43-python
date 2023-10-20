@@ -1,14 +1,12 @@
 from fastapi import APIRouter
 from fastapi.responses import JSONResponse
-from fastapi.encoders import jsonable_encoder
 from config.database import Session
 from models.user_model import User
-from schemas.user_schema import CreateUser, CreateUserOut, LoginUser, UserGetAll
+from schemas.user_schema import CreateUser, CreateUserOut, LoginUser
 from services.user_service import UserService
 import json
 from fastapi import FastAPI, Depends
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
-from typing import List
 
 
 user_router = APIRouter()
@@ -33,11 +31,6 @@ def login(user: LoginUser) -> dict:
     return JSONResponse(status_code=200, content={"message":"Ha iniciado sesión correctamente."})
 
 
-@user_router.get("/users",response_model=List[UserGetAll],status_code=200)
-def list_users() -> List[UserGetAll]:
-    db = Session()
-    users = UserService(db).get_user_all()
-    return JSONResponse(status_code=200, content=jsonable_encoder(users))
     
 
 
