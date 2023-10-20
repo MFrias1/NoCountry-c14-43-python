@@ -18,4 +18,13 @@ class LoginUser(BaseModel):
     email : str
     password : str
 
+class UserGetAll(BaseModel):
+    first_name : str
+    last_name : str
+    email : str
+    country : str
+    coins : int
+    password : str
+
+
 #todo #recocha
