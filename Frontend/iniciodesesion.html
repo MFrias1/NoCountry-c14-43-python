@@ -1,57 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="./assets/css/style.css">
         <!-- <script src="./assets/js/axios.min.js"></script> -->
-        <script src="./assets/js/iniciodesesion.js"></script>
         <link rel="shortcut icon" href="./assets/img/icon/hoja.svg" type="image/x-icon">
         <title>Recicla-ando Login</title>
     </head>
 <body>
     <header>
-        <nav>
-            <div class="navbar">
-              <a class="logo_navbar" href="./index.html"><img src="./assets/img/icon/logo.png" alt=""></a>
-              <div>
-                <ul>
-                  <li><a href="#">Iniciativa</a></li>
-                  <li><a href="#">Beneficios</a></li>
-                  <li><a href="#">¿Cómo reciclar?</a></li>
-                  <li><a href="#">Blog</a></li>
-                  <li><a href="#">Contacto</a></li>
-                </ul>
-            </div>
-        </nav>
+    
     </header>
     <main class="main_login">
-        <div class="loginLogo"> <img src="./assets/img/landingImg/3779577.png"> </div>
-        <div class="mainBody">
-        <h2> Inicio de sesión </h2>
-        <form class="clasepadre" action="">
-            <div>
-                <div>
-                    <input class="widthInput" for="GET-name" type="email" name="name" placeholder="Correo electrónico" required>
+        <section class="formularioeimagen">
+            <div class="contenedor">
+                 <div class="loginLogo"> <img src="./assets/img/icon/logo.png"> </div>
+                <div class="mainBody">    
+                    <div class ="tituloiniciodesesion">
+                        <div>
+                            <h2> Inicio de sesión </h2>
+                        </div>
+                        <div>
+                            <div class="clasepadre" >                
+                                <div>
+                                    <input class="widthInput" for="GET-name" type="email" name="name" placeholder="Correo electrónico" required>
+                                </div>
+                                <div>
+                                    <input class="widthInput" for="GET-password" type="password" name="password" placeholder="Contraseña" required>
+                                </div>
+                                <div class="recordarme">
+                                    <span><input type="checkbox" value="Recordarme"/> <p>Recordarme</p></span>
+                                    <span><p><a href="#">Olvidé mi contraseña</a></p></span>
+                                </div>
+                                <div class="inicioBoton">
+                                    <button  onclick="Post(event)">Iniciar sesión</button>
+                                </div>   
+                            </div>
+                               
+                        </div>
+                        <div>
+                            <div class="registrate">
+                                <span><p>¿No tienes una cuenta?</p></span>
+                                <span><a href="./registro.html">Regístrate.</a></span>
+                            </div>    
+                        </div>
+                    </div>    
                 </div>
-                    <div>
-                        <input class="widthInput" for="GET-password" type="password" name="password" placeholder="Contraseña" required>
-                    </div>
-                    <div class="recordarme">
-                        <span><input type="checkbox" value="Recordarme"/> <p>Recordarme</p></span>
-                        <span><p><a href="#">Olvidé mi contraseña</a></p></span>
-                    </div>
+            </div>       
+                <div class="presentacioninicio">
+                    <img src=".\assets\img\landingImg\iniciodesesion5963960 1.png" alt="presentacioniniciodesesion">
                 </div>
-            </div>
-            <div class="inicioBoton">
-                <button type="submit" onclick="Post()" value="POST" >Iniciar sesión</button>
-             </div>
-        </form>                       
-        <div class="registrate">
-            <span><p>¿No tienes una cuenta?</p></span>
-            <span><a href="./registro.html">Regístrate.</a></span>
-        </div>
-
+            </div>    
+        </section>                          
     </main>
 </body>
 </html>

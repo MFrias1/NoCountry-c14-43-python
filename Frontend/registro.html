@@ -29,31 +29,31 @@
         <div class="loginLogo"> <img src="./assets/img/landingImg/3779577.png"> </div>
         <div class="mainBody">
         <h2> Registrarse</h2>
-        <form id="register_from" class="clasepadre" action="">
+        <div id="register_from" class="clasepadre" >
             <div>
                 <div>
-                    <input class="widthInput" for="GET-name" type="text" name="name" placeholder="Nombre" required>
+                    <input class="widthInput" for="GET-name" type="text" name="nombre" placeholder="Nombre" required>
                 </div>
                 <div>
-                    <input class="widthInput" for="GET-name" type="text" name="name" placeholder="Apellido" required>
+                    <input class="widthInput" for="GET-name" type="text" name="apellido" placeholder="Apellido" required>
                 </div>
                 <div>
-                    <input class="widthInput" for="GET-name" type="text" name="name" placeholder="País" required>
+                    <input class="widthInput" for="GET-name" type="text" name="pais" placeholder="País" required>
                 </div>
                 <div>
-                    <input class="widthInput" for="GET-name" type="email" name="name" placeholder="Correo electrónico" required>
+                    <input class="widthInput" for="GET-name" type="email" name="correo" placeholder="Correo electrónico" required>
                 </div>
                 <div>
-                    <input class="widthInput" for="GET-password" type="password" name="password" placeholder="Contraseña" required>
+                    <input class="widthInput" for="GET-password" type="password" name="contrasenia" placeholder="Contraseña" required>
                 </div>
                 <div>
-                    <input class="widthInput" for="GET-name" type="password" name="name" placeholder="Confirmar contraseña" required>
+                    <input class="widthInput" for="GET-name" type="password" name="confirmar-contrasenia" placeholder="Confirmar contraseña" required>
                 </div>
             </div>
             <div class="inicioBoton">
-                <button type="submit" onclick="Post()" value="POST" >Registrarse</button>
+                <button  onclick="Post(event)" >Registrarse</button>
             </div>
-        </form>                       
+        </div>                       
         <div class="registrate">
             <span><p>¿Ya tienes una cuenta?</p></span>
             <span><a href="./iniciodesesion.html">Iniciar sesión</a></span>
