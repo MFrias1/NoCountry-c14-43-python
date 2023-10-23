@@ -4,7 +4,10 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="./assets/css/style.css">
-        <!-- <script src="./assets/js/axios.min.js"></script> -->
+        <link rel="stylesheet" href="./assets/css/formulario.css">
+        <script src="./assets/js/axios.min.js"></script> 
+        <!--<script src="./assets/js/registro.js"  ></script>-->
+        <script src="./assets/js/validaciones.js"  ></script>
         <link rel="shortcut icon" href="./assets/img/icon/hoja.svg" type="image/x-icon">
         <title>Recicla-ando Login</title>
     </head>
@@ -28,25 +31,37 @@
         <div class="loginLogo"> <img src="./assets/img/landingImg/3779577.png"> </div>
         <div class="mainBody">
         <h2> Registrarse</h2>
-        <form id="register_from" class="clasepadre" action="">
+        <form id="register_form" class="clasepadre" >
             <div>
                 <div>
-                    <input class="widthInput" for="GET-name" type="text" name="name" placeholder="Nombre" required>
+                    <input class="widthInput" class= 'form-field' for="GET-name" type="text" name="nombre" placeholder="Nombre" required>
+                    <span id="nombre-error" class="error-message"></span>
+                    <span id="nombre-icon" class="valid-icon"></span>
                 </div>
                 <div>
-                    <input class="widthInput" for="GET-name" type="text" name="name" placeholder="Apellido" required>
+                    <input class="widthInput" class= 'form-field' for="GET-name" type="text" name="apellido" placeholder="Apellido" required>
+                    <span id="apellido-error" class="error-message"></span>
+                    <span id="apellido-icon" class="valid-icon"></span>
                 </div>
                 <div>
-                    <input class="widthInput" for="GET-name" type="text" name="name" placeholder="País" required>
+                    <input class="widthInput" class= 'form-field'for="GET-name" type="text" name="pais" placeholder="País" required>
+                    <span id="pais-error" class="error-message"></span>
+                    <span id="pais-icon" class="valid-icon"></span>
                 </div>
                 <div>
-                    <input class="widthInput" for="GET-name" type="email" name="name" placeholder="Correo electrónico" required>
+                    <input class="widthInput"class= 'form-field' for="GET-name" type="email" name="correo" placeholder="Correo electrónico" required>
+                    <span id="correo-error" class="error-message"></span>
+                    <span id="correo-icon" class="valid-icon"></span>
                 </div>
                 <div>
-                    <input class="widthInput" for="GET-password" type="password" name="password" placeholder="Contraseña" required>
+                    <input class="widthInput" class= 'form-field'for="GET-password" type="password" name="contrasenia" placeholder="Contraseña" required>
+                    <span id="contrasenia-error" class="error-message"></span>
+                    <span id="contrasenia-icon" class="valid-icon"></span>
                 </div>
                 <div>
-                    <input class="widthInput" for="GET-name" type="password" name="name" placeholder="Confirmar contraseña" required>
+                    <input class="widthInput" for="GET-name" type="password" name="confirmar-contrasenia" placeholder="Confirmar contraseña" required>
+                    <span id="contrasenia-error" class="error-message"></span>
+                    <span id="contrasenia-icon" class="valid-icon"></span>
                 </div>
             </div>
             <div class="inicioBoton">
