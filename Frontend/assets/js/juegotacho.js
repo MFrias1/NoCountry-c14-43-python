@@ -58,13 +58,74 @@ function create(){
     this.add.image(240, 320,'background'); //BACKGROUND img loaded to scene
 
     //colors img loaded to scene by using '.add'
-    this.add.image(300,550, 'puntoverde').setScale(0.5); 
-    this.add.image(350,550, 'puntoverde').setScale(0.5);
-    this.add.image(400,550, 'puntonegro').setScale(0.5);
-    this.add.image(450,550, 'puntonegro2').setScale(0.5);
-    this.add.image(500,550, 'puntoazul').setScale(0.5);
-    this.add.image(5500,550, 'puntorojo').setScale(0.5);
+    const green2= this.add.image(300,550, 'puntoverde').setScale(0.5); 
+    const green= this.add.image(350,550, 'puntoverde').setScale(0.5);
+    const black= this.add.image(400,550, 'puntonegro').setScale(0.5);
+    const black2= this.add.image(450,550, 'puntonegro2').setScale(0.5);
+    const blue= this.add.image(500,550, 'puntoazul').setScale(0.5);
+    const red= this.add.image(550,550, 'puntorojo').setScale(0.5);
+
     
+    //1 trashbin loaded to scene, add .physics so users can interact with the character using the keyboard.
+    red.setInteractive({ useHandCursor:true }); //cambia el cursor al estar encima del color
+    red.on("pointerup", ()=>{ //evento
+        // Verifica si ya existe un basurero en la escena y lo destruye.
+        if (this.basetacho && this.tacho) {
+            this.basetacho.destroy();
+            this.tacho.destroy();
+        }
+        //crea un nuevo basurero correspondiente al color seleccionado.
+        this.basetacho = this.physics.add.sprite(240, 490, 'basetacho').setImmovable();
+        this.tacho = this.physics.add.sprite(250, 450, 'tachorojo').setScale(0.5);
+        
+    })
+    green.setInteractive({ useHandCursor:true });
+    green.on("pointerup", ()=>{
+        // Verifica si ya existe un basurero en la escena y, en ese caso, destrúyelo.
+        if (this.basetacho && this.tacho) {
+            this.basetacho.destroy();
+            this.tacho.destroy();
+        }
+        this.basetacho = this.physics.add.sprite(240, 490, 'basetacho').setImmovable();
+        this.tacho = this.physics.add.sprite(250, 450, 'tachoverde').setScale(0.5);
+    })
+    black.setInteractive({ useHandCursor:true });
+    black.on("pointerup", ()=>{
+        if (this.basetacho && this.tacho) {
+            this.basetacho.destroy();
+            this.tacho.destroy();
+        }
+        this.basetacho = this.physics.add.sprite(240, 490, 'basetacho').setImmovable();
+        this.tacho = this.physics.add.sprite(250, 450, 'tachoamarillo').setScale(0.5);
+    })
+    blue.setInteractive({ useHandCursor:true });
+    blue.on("pointerup", ()=>{
+        if (this.basetacho && this.tacho) {
+            this.basetacho.destroy();
+            this.tacho.destroy();
+        }
+        this.basetacho = this.physics.add.sprite(240, 490, 'basetacho').setImmovable();
+        this.tacho = this.physics.add.sprite(250, 450, 'tachoazul').setScale(0.5);
+    })
+    black2.setInteractive({ useHandCursor:true });
+    black2.on("pointerup", ()=>{
+        if (this.basetacho && this.tacho) {
+            this.basetacho.destroy();
+            this.tacho.destroy();
+        }
+        this.basetacho = this.physics.add.sprite(240, 490, 'basetacho').setImmovable();
+        this.tacho = this.physics.add.sprite(250, 450, 'tachoamarillo').setScale(0.5);
+    })
+    green2.setInteractive({ useHandCursor:true });
+    green2.on("pointerup", ()=>{
+        if (this.basetacho && this.tacho) {
+            this.basetacho.destroy();
+            this.tacho.destroy();
+        }
+        this.basetacho = this.physics.add.sprite(240, 490, 'basetacho').setImmovable();
+        this.tacho = this.physics.add.sprite(250, 450, 'tachonaranja').setScale(0.5);
+    })
+
     //add '.physics' to the platform so the trash can be affected by gravity.
     this.platform= this.physics.add.image(240,-1,'platform').setGravityY(300)//add gravity so the trash falls down.
         .setScale(0.5);//reduce platform image half the size.
@@ -75,11 +136,10 @@ function create(){
         fontSize:"24",
         fill: "black",
     });
-
+    /*
     this.gameoverimg = this.add.image(240, 320, 'gameover');
-    this.gameoverimg.visible=false;
-   
-    //1 Leaf loaded to scene, add .physics so users can interact with the character using the keyboard.
+    this.gameoverimg.visible=false;*/
+
     this.basetacho = this.physics.add.sprite(240, 490, 'basetacho').setImmovable();
     this.tacho = this.physics.add.sprite(250, 450, 'tachoverde').setScale(0.5);
 
@@ -109,4 +169,5 @@ function update(){ //loop
         this.tacho.setVelocityX(300) && this.basetacho.setVelocityX(300);
     };
     
+
 }
