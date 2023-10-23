@@ -1,9 +1,6 @@
 from sqlalchemy import and_
 from models.user_model import User
 from middlewares.authentications import hash_password
-from config.database import Session
-
-
 #from jwt_manager import create_token
 
 class UserService():
@@ -25,6 +22,3 @@ class UserService():
         result = self.db.query(User).filter(and_(User.email == email, User.password == password_hash)).first()
         return result
             
-    def get_user_all(self):
-        result = self.db.query(User).all()
-        return result

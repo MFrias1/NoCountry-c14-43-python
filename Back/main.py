@@ -14,17 +14,6 @@ app.include_router(movement_router, tags=['movement'])
 
 Base.metadata.create_all(bind=engine)
 
-# Origins admited
-origins = ["*"]
-# Add Middleware CORS (Cross-Origin Resource Sharing )
-app.add_middleware(
-CORSMiddleware,
-allow_origins=origins,
-allow_credentials=True,
-allow_methods=["*"],
-allow_headers=["*"],
-)
-
 @app.get('/', tags=['home'])
 def message():
     return HTMLResponse('<h1> Hola soy un aguacate </h1>')
