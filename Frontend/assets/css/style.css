@@ -18,7 +18,7 @@ a{
 }
 .navbar{
     align-items: center;
-    background-color: blue;
+    background-color: white;
     display:flex;
     justify-content: space-around;
     padding: 2rem; 
@@ -47,11 +47,16 @@ a{
 .banner_button {
     display: flex;
 }
+.banner_button_img{
+    width: 19%;
+    height: 19%;
+}
 .banner_button a {
     border-radius: 5px;
     text-align: center;
     padding: 10px;
-    width: 110px;
+    width: 117px;
+    height: 45px;
 }
 .banner_button_login {
     background-color: var(--primary_color);

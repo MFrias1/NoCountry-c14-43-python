@@ -1,0 +1,60 @@
+*{
+    font-family: 'Roboto', sans-serif;
+}
+.imagenPrincipalDeBlog{
+    background-image: url("../img/landingImg/blog4693140\ 1.png");
+    width: 100%;
+    height: 1200px;
+    background-size:100%;
+    background-repeat: no-repeat;
+    margin-bottom: 2rem;
+}
+
+.carruseles{
+    text-align: center;
+    margin:2rem;
+}
+
+.imagesDelBlog{
+    width: 100px;
+    height:100px;
+}
+
+.logo{
+    text-align: center ;
+}
+
+.anchoCarrusel{
+    width:500px;
+    height:700px;
+    background-size: cover;
+}
+
+.carruselImagenes{
+    margin-bottom: 3rem;
+    margin-inline: 3rem;
+}
+
+.carruselVideos{
+    margin-inline: 3rem;
+}
+
+.Artículos{
+    text-align: justify;
+
+}
+
+.titulosDeLosArticulos{
+    text-align: center;
+    align-items: center;
+}
+
+.titulosDeLosVideos{
+    text-align: center;
+
+}
+
+.videosDeYoutube{
+    width:750px;
+    height:500px;
+}
