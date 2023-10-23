@@ -18,6 +18,8 @@ oauth2_scheme = OAuth2PasswordBearer('/token')
 def create_user(user: CreateUser) -> CreateUserOut:
     db =  Session()
     data = UserService(db).post_register_user(user)
+    if not data:
+        return JSONResponse(status_code=201, content={'message':'Usuario teregistrado'})
     content = {
         'message':'Registro exitoso',
         'data' : data
