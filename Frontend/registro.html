@@ -11,9 +11,9 @@
         <link rel="shortcut icon" href="./assets/img/icon/hoja.svg" type="image/x-icon">
         <title>Recicla-ando Login</title>
     </head>
-<body>
+<body class="contenedor1">
     <header>
-        <nav>
+        <!-- <nav>
             <div class="navbar">
               <a class="logo_navbar" href="./index.html"><img src="./assets/img/icon/logo.png" alt=""></a>
               <div>
@@ -25,14 +25,16 @@
                   <li><a href="#">Contacto</a></li>
                 </ul>
             </div>
-        </nav>
+        </nav> -->
     </header>
-    <main class="main_login">
-        <div class="loginLogo"> <img src="./assets/img/landingImg/3779577.png"> </div>
+    <main class="main_login" >
+        <!-- <div class="loginLogo"> <img src="./assets/img/icon/logo.png"> </div> -->
         <div class="mainBody">
-        <h2> Registrarse</h2>
-        <form id="register_form" class="clasepadre" >
+        
+        <form id="register_form" class="contenedor-2" >
             <div>
+                <div class="loginLogo"> <img src="./assets/img/icon/logo.png"></div>
+                <div><h2> Crear una cuenta</h2></div>
                 <div>
                     <input class="widthInput" class= 'form-field' for="GET-name" type="text" name="nombre" placeholder="Nombre" required>
                     <span id="nombre-error" class="error-message"></span>
@@ -65,13 +67,14 @@
                 </div>
             </div>
             <div class="inicioBoton">
-                <button  onclick="Post(event)">Registrarse</button>
+                <button  onclick="Post(event)">REGISTRARME</button>
             </div>
+            <div class="registrate">
+                <span><p>¿Ya tienes una cuenta?</p></span>
+                <span><a href="./iniciodesesion.html" >Iniciar sesión</a></span>
+            </div> 
         </form>                       
-        <div class="registrate">
-            <span><p>¿Ya tienes una cuenta?</p></span>
-            <span><a href="./iniciodesesion.html">Iniciar sesión</a></span>
-         </div>  
+        
     </main>
 </body>
 </html>
