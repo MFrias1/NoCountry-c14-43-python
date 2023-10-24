@@ -59,7 +59,7 @@ function preload(){
 function create(){ 
 
     // x and y position, and key in preload().//BACKGROUND img loaded to scene
-    this.add.image(240, 320,'background'); 
+    this.add.image(280, 320,'background'); 
     //monedas de recompensa
     let monedas=0;
     let monedasText;
@@ -76,20 +76,20 @@ function create(){
     // Itera sobre los elementos del grupo y configura cada basura
     basuras.children.iterate(function(basura) {
         basura.setScale(0.5); // Escala la basura
-        const randomX = Phaser.Math.Between(100, 800); // Posición aleatoria en el eje X
+        const randomX = Phaser.Math.Between(300, 1200); // Posición aleatoria en el eje X
         basura.x = randomX; // Configura la posición X de la basura
         // Proporciona una velocidad inicial en el eje Y para hacer que caiga
-        const randomSpeedY = Phaser.Math.Between(300, 500); // Velocidad vertical aleatoria
+        const randomSpeedY = Phaser.Math.Between(300, 1200); // Velocidad vertical aleatoria
         basura.setVelocity(0, randomSpeedY);
     });
 
     //colors img loaded to scene by using '.add'
-    const black= this.add.image(300,550, 'puntonegro').setScale(0.5);
-    const brown= this.add.image(350,550, 'puntomarron').setScale(0.5); 
-    const green= this.add.image(400,550, 'puntoverde').setScale(0.5);
-    const yellow= this.add.image(450,550, 'puntoamarillo').setScale(0.5);
-    const blue= this.add.image(500,550, 'puntoazul').setScale(0.5);
-    const red= this.add.image(550,550, 'puntorojo').setScale(0.5);
+    const black= this.add.image(500,550, 'puntonegro').setScale(0.5);
+    const brown= this.add.image(550,550, 'puntomarron').setScale(0.5); 
+    const green= this.add.image(600,550, 'puntoverde').setScale(0.5);
+    const yellow= this.add.image(650,550, 'puntoamarillo').setScale(0.5);
+    const blue= this.add.image(700,550, 'puntoazul').setScale(0.5);
+    const red= this.add.image(750,550, 'puntorojo').setScale(0.5);
     /*
     this.start = this.add.image(240, 320, 'start');
     this.start.visible=true;
