@@ -79,7 +79,7 @@ function create(){
             this.tacho.destroy();
         }
         //crea un nuevo basurero correspondiente al color seleccionado.
-        this.basetacho = this.physics.add.sprite(240, 490, 'basetacho').setImmovable();
+        this.basetacho = this.physics.add.sprite(250, 490, 'basetacho').setImmovable();
         this.tacho = this.physics.add.sprite(250, 450, 'tachorojo').setScale(0.5);
         
     })
@@ -90,7 +90,7 @@ function create(){
             this.basetacho.destroy();
             this.tacho.destroy();
         }
-        this.basetacho = this.physics.add.sprite(240, 490, 'basetacho').setImmovable();
+        this.basetacho = this.physics.add.sprite(250, 490, 'basetacho').setImmovable();
         this.tacho = this.physics.add.sprite(250, 450, 'tachoverde').setScale(0.5);
     })
     black.setInteractive({ useHandCursor:true });
@@ -99,7 +99,7 @@ function create(){
             this.basetacho.destroy();
             this.tacho.destroy();
         }
-        this.basetacho = this.physics.add.sprite(240, 490, 'basetacho').setImmovable();
+        this.basetacho = this.physics.add.sprite(250, 490, 'basetacho').setImmovable();
         this.tacho = this.physics.add.sprite(250, 450, 'tachonegro').setScale(0.5);
     })
     blue.setInteractive({ useHandCursor:true });
@@ -108,7 +108,7 @@ function create(){
             this.basetacho.destroy();
             this.tacho.destroy();
         }
-        this.basetacho = this.physics.add.sprite(240, 490, 'basetacho').setImmovable();
+        this.basetacho = this.physics.add.sprite(250, 490, 'basetacho').setImmovable();
         this.tacho = this.physics.add.sprite(250, 450, 'tachoazul').setScale(0.5);
     })
     brown.setInteractive({ useHandCursor:true });
@@ -117,7 +117,7 @@ function create(){
             this.basetacho.destroy();
             this.tacho.destroy();
         }
-        this.basetacho = this.physics.add.sprite(240, 490, 'basetacho').setImmovable();
+        this.basetacho = this.physics.add.sprite(250, 490, 'basetacho').setImmovable();
         this.tacho = this.physics.add.sprite(250, 450, 'tachomarron').setScale(0.5);
     })
     yellow.setInteractive({ useHandCursor:true });
@@ -126,7 +126,7 @@ function create(){
             this.basetacho.destroy();
             this.tacho.destroy();
         }
-        this.basetacho = this.physics.add.sprite(240, 490, 'basetacho').setImmovable();
+        this.basetacho = this.physics.add.sprite(250, 490, 'basetacho').setImmovable();
         this.tacho = this.physics.add.sprite(250, 450, 'tachoamarillo').setScale(0.5);
     })
 
@@ -142,7 +142,7 @@ function create(){
     for (let i = 0; i < 5; i++) {
         const randomX = Phaser.Math.Between(100, 800); // Posición aleatoria en el eje X
         this.platform= this.physics.add.image(randomX,-1,'platform').setGravityY(300).setScale(0.5);// Ajusta el nombre del objeto que desees usar
-        const randomSpeedY = Phaser.Math.Between(100, 300); // Velocidad vertical aleatoria
+        const randomSpeedY = Phaser.Math.Between(90, 300); // Velocidad vertical aleatoria
         this.platform.setVelocity(0, randomSpeedY);
     }
 
@@ -156,7 +156,6 @@ function create(){
 
     //access to user´s keyboard
     this.cursors = this.input.keyboard.createCursorKeys();
-
     this.physics.add.collider(this.platform, this.basetacho);
 }
 
