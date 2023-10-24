@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from fastapi.responses import HTMLResponse
 from config.database import engine, Base
 from routers.user_router import user_router
+from routers.blog_router import blog_router
 from routers.movement_router import movement_router
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -11,6 +12,7 @@ app.version = '0.0.1'
 
 app.include_router(user_router, tags=['user'])
 app.include_router(movement_router, tags=['movement'])
+app.include_router(blog_router, tags=['blog'])
 
 Base.metadata.create_all(bind=engine)
 
