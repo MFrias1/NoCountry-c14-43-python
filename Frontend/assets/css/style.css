@@ -16,7 +16,7 @@ a{
 .header_index{
     height: 100vh;
 }
-.navbar{
+.navbar, .navbarLogIn{
     align-items: center;
     background-color: white;
     display:flex;
@@ -44,14 +44,14 @@ a{
 .navbar_enlaces div{
     margin-inline: 10px;
 }
-.banner_button {
+.banner_button{
     display: flex;
 }
 .banner_button_img{
     width: 19%;
     height: 19%;
 }
-.banner_button a {
+.banner_button a, .navbarLogIn_banner_button,.banner_button_monedero{
     border-radius: 5px;
     text-align: center;
     padding: 10px;
