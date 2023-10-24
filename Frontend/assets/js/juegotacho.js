@@ -1,8 +1,8 @@
 //Declaro e inicializo la variable
 const config = {
     //height and width of the game
-    width: 900,
-    height: 600,
+    width: 1000,
+    height: 625,
     //let Phaser decide to use Canvas or WebGl to render the game depending on the browser and the device.
     type: Phaser.AUTO,
 
@@ -78,9 +78,8 @@ function create(){
         basura.setScale(0.5); // Escala la basura
         const randomX = Phaser.Math.Between(100, 800); // Posición aleatoria en el eje X
         basura.x = randomX; // Configura la posición X de la basura
-    
         // Proporciona una velocidad inicial en el eje Y para hacer que caiga
-        const randomSpeedY = Phaser.Math.Between(100, 300); // Velocidad vertical aleatoria
+        const randomSpeedY = Phaser.Math.Between(300, 500); // Velocidad vertical aleatoria
         basura.setVelocity(0, randomSpeedY);
     });
 
@@ -170,12 +169,6 @@ function create(){
         monedasText.setText('Total Monedas: ' + monedas);
     });
 
-    this.physics.add.collider(basuras, this.basetacho, (basura) => {
-        // Establece la basura en la variable de colisión
-        colisionBasura = basura; 
-    });
-
-    //this.physics.gravity.y = 400;
     //this.physics.add.collider(basura, this.basetacho);
     //access to user´s keyboard
     this.cursors = this.input.keyboard.createCursorKeys();
