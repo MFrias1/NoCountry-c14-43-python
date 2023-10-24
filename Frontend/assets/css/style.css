@@ -349,6 +349,7 @@ div.formContacto_title{
     background-color: green;
     color:white;
     border: none;
+    cursor: pointer;
 }
 /*Afecta a los inputs del form (correro y contraseña)*/
 .widthInput{
@@ -394,6 +395,7 @@ div.formContacto_title{
 
 .main_login{
     display: flex;
-    justify-content:center
+    justify-content:flex-start;
+    margin-left: 10px ;
     
 }

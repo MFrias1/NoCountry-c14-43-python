@@ -19,4 +19,4 @@ Base = declarative_base()
 
 
 
-print(database_url)
+#print(database_url)
