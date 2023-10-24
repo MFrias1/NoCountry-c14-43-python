@@ -13,26 +13,29 @@ async function Post(event) {
 
  // Realizar una solicitud POST al servidor utilizando la Fetch API
  console.log('estoyadentro');
- await fetch('https://nocountry-api.onrender.com/login', {
-   method: 'POST',
-   headers: {
-     'Content-Type': 'application/json',
-   },
-   body: JSON.stringify(userData),
- })
-   .then(response => response.json())
-   .then(data => {
-     // Manejar la respuesta del servidor
-     console.log(data);
-     if (data.success) {
-       // Registro exitoso, puedes redirigir al usuario a una página de inicio de sesión
-       //window.location.href = 'iniciodesesion.html';
-     } else {
-       // Mostrar un mensaje de error en caso de fallo en el registro
-       alert('Error en el registro: ' + data.message);
-     }
-   })
-   .catch(error => {
-     console.error('Error de red:', error);
-   });
+// ...
+
+await fetch('https://nocountry-api.onrender.com/login', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify(userData),
+})
+  .then(response => {
+    if (response.ok) {
+      // Inicio de sesión exitoso, redirige al usuario a la página de inicio
+      alert('Inicio de sesión exitoso');
+      window.location.href = 'Login.html'; // Cambia '/ruta-de-la-pagina' por la URL a la que quieres redirigir al usuario.
+    } else {
+      // Mostrar un mensaje de error en caso de fallo en el inicio de sesión
+      alert('Error en el inicio de sesión');
+    }
+  })
+  .catch(error => {
+    console.error('Error de red:', error);
+  });
+
+// ...
+
 }
