@@ -10,6 +10,6 @@ class User(Base):
     last_name = Column(String, nullable=False)
     email = Column(String,unique=True, nullable=False)
     country = Column(String, nullable=False)
-    coins = Column(Integer)
+    coins = Column(Integer, default=0)
     password = Column(String, nullable=False)
 
