@@ -349,3 +349,13 @@ function update(){ //loop
     };
 };
 
+
+
+
+    // Creamos y configuramos los objetos que caen.
+    /*const randomX = Phaser.Math.Between(100, 800); // Posición aleatoria en el eje X
+    //add '.physics' to the platform so the trash can be affected by gravity.
+    this.platform= this.physics.add.sprite(randomX,-1,'platform').setGravityY(300).setScale(0.3);// Ajusta el nombre del objeto que desees usar
+    this.basura= this.physics.add.sprite(randomX,-1,'basura').setGravityY(300).setScale(0.5);
+    const randomSpeedY = Phaser.Math.Between(90, 300); // Velocidad vertical aleatoria
+    this.platform.setVelocity(0, randomSpeedY);*/

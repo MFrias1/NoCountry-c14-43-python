@@ -60,28 +60,31 @@ function create(){
 
     // x and y position, and key in preload().//BACKGROUND img loaded to scene
     this.add.image(240, 320,'background'); 
-
-    // Creamos y configuramos los objetos que caen.
-    const randomX = Phaser.Math.Between(100, 800); // Posición aleatoria en el eje X
-    //add '.physics' to the platform so the trash can be affected by gravity.
-    this.platform= this.physics.add.sprite(randomX,-1,'platform').setGravityY(300).setScale(0.3);// Ajusta el nombre del objeto que desees usar
-    this.basura= this.physics.add.sprite(randomX,-1,'basura').setGravityY(300).setScale(0.5);
-    const randomSpeedY = Phaser.Math.Between(90, 300); // Velocidad vertical aleatoria
-    this.platform.setVelocity(0, randomSpeedY);
     
+    
+    let monedas=0;
     let monedasText;
     monedasText = this.add.text(16, 16, 'TotalMonedas:0', {
         fontSize:'22px',
         fill:'#000'
     })
-
-    //1 trashbin loaded to scene, add .physics so users can interact with the character using the keyboard.
-    this.basetacho = this.physics.add.sprite(290, 490, 'basetacho').setImmovable();
-    this.tacho = this.physics.add.sprite(290, 450, 'tachoverde').setScale(0.5);
-
-    this.physics.add.collider(this.platform, this.basetacho);
-    this.physics.add.collider(this.basura, this.basetacho);
     
+    const basuras = this.physics.add.group({
+        key: 'basura',
+        repeat: 11,
+    });
+    
+    // Itera sobre los elementos del grupo y configura cada basura
+    basuras.children.iterate(function(basura) {
+        basura.setScale(0.5); // Escala la basura
+        const randomX = Phaser.Math.Between(100, 800); // Posición aleatoria en el eje X
+        basura.x = randomX; // Configura la posición X de la basura
+    
+        // Proporciona una velocidad inicial en el eje Y para hacer que caiga
+        const randomSpeedY = Phaser.Math.Between(100, 300); // Velocidad vertical aleatoria
+        basura.setVelocity(0, randomSpeedY);
+    });
+
     //colors img loaded to scene by using '.add'
     const black= this.add.image(300,550, 'puntonegro').setScale(0.5);
     const brown= this.add.image(350,550, 'puntomarron').setScale(0.5); 
@@ -154,18 +157,25 @@ function create(){
         }
         this.basetacho = this.physics.add.sprite(250, 490, 'basetacho').setImmovable();
         this.tacho = this.physics.add.sprite(250, 450, 'tachoamarillo').setScale(0.5);
-    })
+    });
 
+    this.basetacho = this.physics.add.sprite(250, 490, 'basetacho').setImmovable();
+    this.tacho = this.physics.add.sprite(250, 450, 'tachoamarillo').setScale(0.5);
+
+    this.physics.add.collider(basuras, this.basetacho, ()=> {
+        // La función de colisión se ejecutará cuando ocurra una colisión
+        // con cada colision incrementa monedas
+        monedas++;
+        monedasText.setText('Total Monedas: ' + monedas);
+    });
+
+    //this.physics.gravity.y = 400;
+    //this.physics.add.collider(basura, this.basetacho);
     //access to user´s keyboard
     this.cursors = this.input.keyboard.createCursorKeys();
 };
 
 function update(){ //loop
-    /*
-    if(this.cursors.enter.isDown){
-        this.start.visible=false;
-    }*/
-
     this.tacho.setVelocity(0) && this.basetacho.setVelocity(0);
     if (this.cursors.left.isDown)
     {
@@ -176,7 +186,3 @@ function update(){ //loop
         this.tacho.setVelocityX(300) && this.basetacho.setVelocityX(300);
     };
 };
-
-/*
-
-*/ 
