@@ -1,7 +1,7 @@
 //Declaro e inicializo la variable
 const config = {
     //height and width of the game
-    width: 1000,
+    width: 1300,
     height: 625,
     //let Phaser decide to use Canvas or WebGl to render the game depending on the browser and the device.
     type: Phaser.AUTO,
