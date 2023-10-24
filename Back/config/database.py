@@ -9,7 +9,7 @@ from sqlalchemy.ext.declarative import declarative_base
 cnx_railway = "postgresql://postgres:jNCGUvEUz9ODFHsNYzkL@containers-us-west-203.railway.app:7565/railway"
 cnx_localhost = "postgresql://postgres:root@localhost:5432/recicla_ando" 
 cnx_render = "postgresql://postgress:DXGBUR6oLx5WuQAR8ox6zFC6ZVtns36X@dpg-ckonvb7kc2qc73eprmu0-a/recicla_ando" 
-database_url = cnx_localhost
+database_url = cnx_railway
 
 
 engine = create_engine(database_url, echo=True)
