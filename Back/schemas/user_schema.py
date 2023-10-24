@@ -37,9 +37,9 @@ class UserForId(BaseModel):
 class UpdateInfoUser(BaseModel):
     first_name : str
     last_name : str
-    email : str
     country : str
   
-
+class ChangeUserPassword(BaseModel):
+    password : str
 
 #todo #recocha
