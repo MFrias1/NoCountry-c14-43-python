@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const correoCampo = document.querySelector("[name=correo]");
   const contraseniaCampo = document.querySelector("[name=contrasenia]");
   const confirmarContraseniaCampo = document.querySelector("[name=confirmar-contrasenia]");
-  const form = document.querySelector('#register_form');
+  const form = document.querySelector('#formulario');
 
   if (nombreCampo) {
     validateField(nombreCampo, nameRegex, "Por favor, ingresa un nombre válido.");
@@ -107,8 +107,13 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   
     if (!hasErrors) {
-      // Si no hay errores, puedes continuar con el envío del formulario
-      // Aquí puedes agregar la lógica para enviar los datos al servidor
+      // Limpia los campos del formulario
+      nombreCampo.value = '';
+      apellidoCampo.value = '';
+      paisCampo.value = '';
+      correoCampo.value = '';
+      contraseniaCampo.value = '';
+      confirmarContraseniaCampo.value = '';
     }
   });
   
