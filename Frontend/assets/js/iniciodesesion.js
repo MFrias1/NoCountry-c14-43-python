@@ -1,4 +1,4 @@
-async function Post(event) {
+async function postInicioSesion(event) {
   event.preventDefault();
  // Obtener los datos del formulario
  const email = document.querySelector('input[name="name"]').value;
@@ -23,6 +23,7 @@ await fetch('https://nocountry-api.onrender.com/login', {
   body: JSON.stringify(userData),
 })
   .then(response => {
+    console.log(response);
     if (response.ok) {
       // Inicio de sesión exitoso, redirige al usuario a la página de inicio
       alert('Inicio de sesión exitoso');

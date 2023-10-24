@@ -1,4 +1,4 @@
-async function Post(event) {
+async function postRegistro(event) {
   event.preventDefault();
  // Obtener los datos del formulario
  const nombre = document.querySelector('input[name="nombre"]').value;
