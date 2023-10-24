@@ -60,15 +60,14 @@ function create(){
 
     // x and y position, and key in preload().//BACKGROUND img loaded to scene
     this.add.image(240, 320,'background'); 
-    
-    
+    //monedas de recompensa
     let monedas=0;
     let monedasText;
     monedasText = this.add.text(16, 16, 'TotalMonedas:0', {
         fontSize:'22px',
         fill:'#000'
     })
-    
+    //grupo dinamico con basura
     const basuras = this.physics.add.group({
         key: 'basura',
         repeat: 11,
@@ -162,11 +161,18 @@ function create(){
     this.basetacho = this.physics.add.sprite(250, 490, 'basetacho').setImmovable();
     this.tacho = this.physics.add.sprite(250, 450, 'tachoamarillo').setScale(0.5);
 
-    this.physics.add.collider(basuras, this.basetacho, ()=> {
-        // La función de colisión se ejecutará cuando ocurra una colisión
+    // La función de colisión se ejecutará cuando ocurra una colisión
+    this.physics.add.collider(basuras, this.basetacho, (basura)=> {
+        // Desactiva la gravedad de la basura
+        basura.setGravityY(0);
         // con cada colision incrementa monedas
         monedas++;
         monedasText.setText('Total Monedas: ' + monedas);
+    });
+
+    this.physics.add.collider(basuras, this.basetacho, (basura) => {
+        // Establece la basura en la variable de colisión
+        colisionBasura = basura; 
     });
 
     //this.physics.gravity.y = 400;
