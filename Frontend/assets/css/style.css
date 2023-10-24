@@ -36,7 +36,7 @@ a{
     font-size: 20px;
     margin-inline: 10px;
 }
-.navbar_enlaces{
+.navbar_enlaces, .navbar_enlaces_logIn{
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -58,13 +58,13 @@ a{
     width: 117px;
     height: 45px;
 }
-.banner_button_login {
+.banner_button_login, .navbarLogIn_banner_button{
     background-color: var(--primary_color);
     color: white;
     margin-right: 12px;
 }
 
-.banner_button_signUp{
+.banner_button_signUp, .banner_button_monedero{
     background-color: white;
     border: var(--primary_color) solid 2px;
     border-radius: 7px;
