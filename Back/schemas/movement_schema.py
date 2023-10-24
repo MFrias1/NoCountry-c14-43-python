@@ -1,10 +1,9 @@
 from pydantic import BaseModel
 from datetime import datetime
-
-class MovementGetAll(BaseModel):
-    movement_id: int
+    
+class MovementCreate(BaseModel):
     user_id: int
     name: str
     description: str
     coins: int
-    date: str
+    date: datetime
