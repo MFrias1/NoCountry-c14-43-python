@@ -1,0 +1,57 @@
+[ 
+    {
+        "categoria": "Arte y literatura",
+        "pregunta": "¿Qué se evita al reciclar vidrio, en lugar de producir vidrio nuevo a partir de materias primas?",
+        "respuesta": "Reducción de la demanda de recursos naturales",
+        "incorrecta1": "Incremento de la emision de gases de efecto invernadero",
+        "incorrecta2": "Aumento de la cantidad de vidrio disponible en vertederos",
+        "incorrecta3": "Aumento de la calidad del vidrio",
+        "imagen": "",
+        "objectFit": "cover"
+    },
+    {
+        "categoria": "Arte y literatura",
+        "pregunta": "¿Qué es la regla de las tres R en el contexto del reciclaje?",
+        "respuesta": "Reducir, Reutilizar, Reciclar",
+        "incorrecta1": "Recicar, Residuos, Recoger",
+        "incorrecta2": "Repetir, Renovar, Recopilar",
+        "incorrecta3": "Reducir, Reutilizar, Recoger",
+        "imagen": "",
+        "objectFit": "cover"
+    },
+    {
+        "categoria": "Arte y literatura",
+        "pregunta": "¿Qué es el compostaje?",
+        "respuesta": "La descomposición de materiales orgánicos para crear abono",
+        "incorrecta1": "Un proceso de reciclaje de metales",
+        "incorrecta2": "La reutilización de productos electrónicos",
+        "incorrecta3": "El reciclaje de productos de papel",
+        "imagen": "",
+        "objectFit": "cover"
+    },
+    {
+        "categoria": "Arte y literatura",
+        "pregunta": "¿Cuál es el primer paso en el proceso de reciclaje de papel?",
+        "respuesta": "Limpieza",
+        "incorrecta1": "Trituración",
+        "incorrecta2": "Compactación",
+        "incorrecta3": "Extracción de tintas",
+        "imagen": "",
+        "objectFit": "cover"
+    },
+    {
+        "categoria": "Arte y literatura",
+        "pregunta": "Cuál de los siguientes materiales se puede reciclar indefinidamente sin perder calidad?",
+        "respuesta": "Vidrio",
+        "incorrecta1": "Plástico",
+        "incorrecta2": "Papel",
+        "incorrecta3": "Metal",
+        "imagen": "",
+        "objectFit": "cover"
+    }
+
+
+
+
+
+]
