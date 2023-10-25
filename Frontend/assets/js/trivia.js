@@ -1,6 +1,7 @@
 let preguntas_aleatorias = true;
 let mostrar_pantalla_juego_términado = true;
 let reiniciar_puntos_al_reiniciar_el_juego = true;
+let temporizador;
 
 window.onload = function () {
   base_preguntas = readText("./assets/js/base-preguntas.json");
@@ -22,6 +23,11 @@ let preguntas_hechas = 0;
 let preguntas_correctas = 0;
 
 function escogerPreguntaAleatoria() {
+  // Restablece el temporizador si ya estaba en funcionamiento
+  if (temporizador) {
+    clearTimeout(temporizador);
+  }
+
   let n;
   if (preguntas_aleatorias) {
     n = Math.floor(Math.random() * interprete_bp.length);
@@ -35,7 +41,7 @@ function escogerPreguntaAleatoria() {
       n = 0;
     }
     if (npreguntas.length == interprete_bp.length) {
-      //Aquí es donde el juego se reinicia
+      // Aquí es donde el juego se reinicia
       if (mostrar_pantalla_juego_términado) {
         swal.fire({
           title: "Juego finalizado",
@@ -45,8 +51,8 @@ function escogerPreguntaAleatoria() {
         });
       }
       if (reiniciar_puntos_al_reiniciar_el_juego) {
-        preguntas_correctas = 0
-        preguntas_hechas = 0
+        preguntas_correctas = 0;
+        preguntas_hechas = 0;
       }
       npreguntas = [];
     }
@@ -55,6 +61,13 @@ function escogerPreguntaAleatoria() {
   preguntas_hechas++;
 
   escogerPregunta(n);
+
+  // Iniciar el temporizador de 10 segundos
+  temporizador = setTimeout(() => {
+    // Aquí puedes manejar lo que sucede cuando se agota el tiempo (cambiar de pregunta, etc.)
+    // Por ejemplo, puedes llamar a la función reiniciar para pasar a la siguiente pregunta.
+    reiniciar();
+  }, 10000); // 10 segundos en milisegundos
 }
 
 function escogerPregunta(n) {
