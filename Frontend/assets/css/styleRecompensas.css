@@ -53,6 +53,10 @@
 .logIn_recompensas{
     text-align: center;
 }
+.logIn_recompensas div{
+    margin-top: 2rem;
+    font-weight: bold;
+}
 
 .articlesLogInRecompensas{
     display: flex;
@@ -79,4 +83,14 @@
     margin-top: 20px;
     text-align: center;
     width: 90%;
+}
+.buttonArticles{
+    padding: 7px;
+    padding-inline: 15px;
+    background-color: orangered;
+    color: white;
+    border: none;
+    font-weight: bolder;
+    border-radius: 3px;
+
 }
