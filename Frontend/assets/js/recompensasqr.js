@@ -137,19 +137,37 @@ recompensasLogInBotonApple.addEventListener('click', () => {
 recompensasLogInBotonPizza.addEventListener('click', () => {
     const contenido = {
         title: "Pizza familiar Domino's",
-        text: '¡Perfecto aquí tienes tu premio. Para canjearlo, simplemente presenta este código en el establecimiento correspondiente.',
-        
+        text: '¡Perfecto aquí tienes tu premio. Para canjearlo, simplemente presenta este código en el establecimiento correspondiente.',  
     };
+    // Generar un código QR
+    const qr = qrcode(0, 'L');
+    qr.addData('Texto o URL para el código QR'); // Puedes personalizar el contenido del código QR aquí
+    qr.make();
+
+    // Obtener la imagen del código QR como un elemento <img>
+    const qrImage = new Image();
+    qrImage.src = qr.createDataURL(10, 0);
+
+    // Crear el contenido HTML que incluye el título, el texto y la imagen del código QR
+    const contenidoHTML = `
+        <div>
+            <h2>${contenido.title}</h2>
+            <p>${contenido.text}</p>
+            <div>
+                <img src="${qrImage.src}" alt="Código QR">
+            </div>
+        </div>
+    `;
 
     Swal.fire({
         title: contenido.title,
-        text: contenido.text,
+        html: contenidoHTML,
         showCancelButton: true,
         confirmButtonText: 'Descargar',
         showLoaderOnConfirm: true,
         preConfirm: () => {
             return new Promise((resolve) => {
-                descargarContenido(contenido);
+                descargarContenido(contenidoHTML);
                 resolve();
             })
         },
@@ -164,10 +182,9 @@ recompensasLogInBotonLatam.addEventListener('click', () => {
     descargarContenido('-10% en vuelos de Latam Airlines');
 });
 
-function descargarContenido(contenido) {
-    const contenidoText = `${contenido.title}\n\n${contenido.text}`;
+function descargarContenido(contenidoHTML) {
     let enlaceDescarga = document.createElement('a');
-    enlaceDescarga.href = 'data:text/plain;charset=utf-8,' + encodeURIComponent(contenidoText);
+    enlaceDescarga.href = 'data:text/plain;charset=utf-8,' + encodeURIComponent(contenidoHTML);
     enlaceDescarga.download = 'contenido.txt';
 
     enlaceDescarga.style.display = 'none';
