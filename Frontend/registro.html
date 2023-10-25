@@ -6,8 +6,8 @@
         <link rel="stylesheet" href="./assets/css/style.css">
         <link rel="stylesheet" href="./assets/css/formulario.css">
         <script src="./assets/js/axios.min.js"async></script> 
-        <script src="./assets/js/validaciones.js" ></script>
-        <script src="./assets/js/registro.js"  ></script>
+        <script src="./assets/js/validate.js" ></script>
+       <script src="./assets/js/registro.js"  ></script> 
         <link rel="shortcut icon" href="./assets/img/icon/hoja.svg" type="image/x-icon">
         <title>Recicla-ando Login</title>
     </head>
@@ -35,35 +35,29 @@
             <div>
                 <div class="loginLogo"> <img src="./assets/img/icon/logo.png"></div>
                 <div><h2> Crear una cuenta</h2></div>
-                <div class="formulario__grupo" id="grupo__usuario">
+                <div class="input-control" >
                     <input class="widthInput" class= 'form-field' for="GET-name" id="nombre" type="text" name="nombre" placeholder="Nombre" required>
-                    <span id="nombre-error" class="error-message"></span>
-                    <span id="nombre-icon" class="valid-icon"></span>
+                    <div class="error"></div>
                 </div>
-                <div>
+                <div class="input-control">
                     <input class="widthInput" class= 'form-field' for="GET-name" id="apellido" type="text" name="apellido" placeholder="Apellido" required>
-                    <span id="apellido-error" class="error-message"></span>
-                    <span id="apellido-icon" class="valid-icon"></span>
+                    <div class="error"></div>
                 </div>
-                <div>
+                <div class="input-control">
                     <input class="widthInput" class= 'form-field'for="GET-name" id="pais"type="text" name="pais" placeholder="País" required>
-                    <span id="pais-error" class="error-message"></span>
-                    <span id="pais-icon" class="valid-icon"></span>
+                    <div class="error"></div>
                 </div>
-                <div>
+                <div class="input-control">
                     <input class="widthInput"class= 'form-field' for="GET-name" id="correo"type="email" name="correo" placeholder="Correo electrónico" required>
-                    <span id="correo-error" class="error-message"></span>
-                    <span id="correo-icon" class="valid-icon"></span>
+                    <div class="error"></div>
                 </div>
-                <div>
+                <div class="input-control">
                     <input class="widthInput" class= 'form-field'for="GET-password" id="contrasenia"type="password" name="contrasenia" placeholder="Contraseña" required>
-                    <span id="contrasenia-error" class="error-message"></span>
-                    <span id="contrasenia-icon" class="valid-icon"></span>
+                    <div class="error"></div>
                 </div>
-                <div>
+                <div class="input-control">
                     <input class="widthInput" for="GET-name" type="password" id="confirmar-contrasenia" name="confirmar-contrasenia" placeholder="Confirmar contraseña" required>
-                    <span id="contrasenia-error" class="error-message"></span>
-                    <span id="contrasenia-icon" class="valid-icon"></span>
+                    <div class="error"></div>
                 </div>
             </div>
             <div class="inicioBoton">
