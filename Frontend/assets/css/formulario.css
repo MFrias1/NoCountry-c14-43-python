@@ -1,4 +1,4 @@
-.invalid{
+/* .invalid{
     border: solid 1px red;
     box-shadow: 0 0 10 px red;
 
@@ -7,7 +7,7 @@
 .error{
     color: red;
     display: block;
-}
+} */
 
 .contenedor1{
     background-image: url(../img/landingImg/fondoregistro.png);
@@ -20,6 +20,24 @@
     text-align: center;
     margin-top: 0px
 }
+.input-control.success input{
+    border-color: green;
+}
+
+.input-control.error input{
+    border-color: red;
+}
+.input-control .error {
+    color: red;
+    font-size: 9px ;
+    height: 13px;
+}
+
+
+
+
+
+
 @media (max-width: 768px) {
     .contenedor1 {
         background-size: 100% auto; /* Ajustar la imagen al ancho de la pantalla */
