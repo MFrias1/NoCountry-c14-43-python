@@ -6,8 +6,8 @@
         <link rel="stylesheet" href="./assets/css/style.css">
         <link rel="stylesheet" href="./assets/css/formulario.css">
         <script src="./assets/js/axios.min.js"async></script> 
-        <script src="./assets/js/validate.js" ></script>
-       <script src="./assets/js/registro.js"  ></script> 
+        <script src="./assets/js/validate3.js" ></script>
+       <!-- <script src="./assets/js/registro.js"  ></script>  -->
         <link rel="shortcut icon" href="./assets/img/icon/hoja.svg" type="image/x-icon">
         <title>Recicla-ando Login</title>
     </head>
@@ -44,7 +44,11 @@
                     <div class="error"></div>
                 </div>
                 <div class="input-control">
-                    <input class="widthInput" class= 'form-field'for="GET-name" id="pais"type="text" name="pais" placeholder="País" required>
+                    <select class="widthInput" class="form-field" id="pais" name="pais" required>
+                        <option value="opcion1">Argentina</option>
+                        <option value="opcion2">Chile</option>
+                        <option value="opcion3">Colombia</option>
+                    </select>
                     <div class="error"></div>
                 </div>
                 <div class="input-control">
@@ -61,7 +65,7 @@
                 </div>
             </div>
             <div class="inicioBoton">
-                <button type="submit" onclick="postRegistro(event)">REGISTRARME</button>
+                <button type="submit">REGISTRARME</button>
             </div>
             <div  class="registrate">
                 <span><p>¿Ya tienes una cuenta?</p></span>

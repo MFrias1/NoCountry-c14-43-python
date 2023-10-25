@@ -31,7 +31,7 @@ async function postInicioSesion(event) {
     if (response.ok) {
       // Inicio de sesión exitoso, redirige al usuario a la página de inicio
       alert('Inicio de sesión exitoso');
-      window.location.href = 'Login.html'; // Cambia '/ruta-de-la-pagina' por la URL a la que quieres redirigir al usuario.
+      window.location.href = 'login.html'; // Cambia '/ruta-de-la-pagina' por la URL a la que quieres redirigir al usuario.
     } else {
       // Mostrar un mensaje de error en caso de fallo en el inicio de sesión
       alert('Credenciales incorrectas. Por favor, verifica tu correo y contraseña.');
