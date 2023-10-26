@@ -80,6 +80,7 @@ a{
     display: flex;
     justify-content: space-around;
     height: 80%;
+    margin-left: 3rem;
 }
 .banner_principal h1 {
     font-size: 58px;
@@ -92,7 +93,12 @@ a{
     height: 100%;
     width: 50%;
 }
-
+.banner_principalImg{
+    background-image: url("../img/landingImg/banner_principal.png");
+    background-repeat: no-repeat;
+    background-position: 409px 10px;
+    background-size:52rem;
+}
 
 /*FOOTER*/
 .footer{
@@ -148,9 +154,9 @@ footer img{
 
 /*primer recuadro Recicla-ando*/
 .img_fondoniño{
-    background-image: url("../img/landingImg/5216931.png");
+    background-image: url("../img/landingImg/chicoreciclandoindex.png");
     background-repeat: no-repeat;
-    background-position: 590px 2px;
+    background-position: 620px 1px;
     background-size:45rem;
 }
 .primerRecuadro{
