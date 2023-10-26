@@ -1,8 +1,8 @@
 let juegosBody = document.getElementById("juegosBody");
 juegosBody.addEventListener("load",()=>{
     Swal.fire({
-        title: contenido.title,
-        text: contenido.text,
+        title: 'prueba',
+        text: 'hola',
         confirmButtonText: 'Descargar',
     }).then((result) => {
         if (result.isConfirmed) {
