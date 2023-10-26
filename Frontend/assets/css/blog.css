@@ -1,6 +1,11 @@
 *{
     font-family: 'Roboto', sans-serif;
 }
+
+.logo{
+    text-align: center ;
+}
+
 .imagenPrincipalDeBlog{
     background-image: url("../img/landingImg/blog4693140\ 1.png");
     width: 100%;
@@ -10,14 +15,107 @@
     margin-bottom: 2rem;
 }
 
-.carruseles{
-    text-align: center;
-    margin:2rem;
+.cuerpoDelBlog div {
+    margin-top: 5rem;
+    background-color: none;
 }
 
-.imagesDelBlog{
-    width: 100px;
-    height:100px;
+.tituloDelBlog{
+    text-align: center;
+}
+
+.carrusel{
+    margin-inline: 2rem;
+}
+
+.colorBoton{
+    color:white;
+    background-color: orange;
+    border-radius: 5px;
+    text-align:center;
+}
+
+.carousel-control-prev-icon{
+    filter:invert(108%);
+}
+
+.carousel-control-next-icon{
+    filter:invert(108%);
+}
+
+.titulosDeLasCards{
+    text-align: center;
+    align-items: center;
+}
+/*.carruseles{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin:2rem;
+    background-color: blue;
+}*/
+
+.anchoAltoCarrusel{
+    width: 500px;
+    height:500px;
+}
+
+.imagenesDelBlog{
+    border-width: 3px;
+    border-color: rgb(220, 219, 219);
+    border-style: solid;
+    border-radius: 10px;
+}    
+
+/*.imagenesDelBlog2{
+    width:750px;
+    height:600px;
+    border-width: 3px;
+    border-color:  rgb(220, 219, 219);
+    border-style: solid;
+    border-radius: 10px;
+}*/
+
+/*.slide{
+    width: 750px;
+    height:600x;
+    border-width: 3px;
+    border-color: rgb(187, 186, 186);
+    border-style: solid;
+    border-radius: 10px;
+
+}*/
+
+/*.slide2{
+    width:750px;
+    height:600px;
+    border-width: 3px;
+    border-color:  rgb(187, 186, 186);
+    border-style: solid;
+    border-radius: 10px;
+}*/
+
+/*.slide3{
+    width:750px;
+    height:400px;
+    border-width: 3px;
+    border-color:  rgb(187, 186, 186);
+    border-style: solid;
+    border-radius: 10px;
+}
+
+.alineacionCarruseles{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel-control-prev-icon{
+    filter:invert(108%);
+}
+
+.carousel-control-next-icon{
+    filter:invert(108%);
 }
 
 .logo{
@@ -28,6 +126,13 @@
     width:500px;
     height:700px;
     background-size: cover;
+}
+
+.colorBoton{
+    color:white;
+    background-color: orange;
+    border-radius: 5px;
+    text-align:center;
 }
 
 .carruselImagenes{
@@ -51,10 +156,9 @@
 
 .titulosDeLosVideos{
     text-align: center;
-
 }
 
 .videosDeYoutube{
     width:750px;
     height:500px;
-}
+}*/
