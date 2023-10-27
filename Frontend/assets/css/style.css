@@ -402,6 +402,20 @@ div.formContacto_title{
 .main_login{
     display: flex;
     justify-content:flex-start;
-    margin-left: 10px ;
-    
+    margin-left: 10px ; 
+}
+
+/*acá empieza la clase botón flotante*/
+
+.botonFlotante{
+    width: 60px;
+    height:60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor:pointer;
+    background-color: orangered;
+    position: fixed;
+    right:50px;
+    bottom: 50px;
 }
