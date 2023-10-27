@@ -113,6 +113,10 @@ function create(){
         //crea un nuevo basurero correspondiente al color seleccionado.
         this.basetacho = this.physics.add.sprite(245, 510, 'basetacho').setImmovable();
         this.tacho = this.physics.add.sprite(250, 458, 'tachorojo').setScale(0.5);
+        // Habilita la colisión del mundo para tacho
+        this.tacho.setCollideWorldBounds(true);
+        // Habilita la colisión del mundo para basetacho
+        this.basetacho.setCollideWorldBounds(true);
         colisiones(this.tacho, this.basetacho);
     })
     green.on("pointerup", ()=>{
@@ -123,6 +127,8 @@ function create(){
         }
         this.basetacho = this.physics.add.sprite(245, 510, 'basetacho').setImmovable();
         this.tacho = this.physics.add.sprite(250, 458, 'tachoverde').setScale(0.5);
+        // Habilita la colisión del mundo para basetacho
+        this.basetacho.setCollideWorldBounds(true);
         colisiones(this.tacho, this.basetacho);
     })
     black.on("pointerup", ()=>{
@@ -132,6 +138,10 @@ function create(){
         }
         this.basetacho = this.physics.add.sprite(245, 510, 'basetacho').setImmovable();
         this.tacho = this.physics.add.sprite(250, 458, 'tachonegro').setScale(0.5);
+        // Habilita la colisión del mundo para tacho
+        this.tacho.setCollideWorldBounds(true);
+        // Habilita la colisión del mundo para basetacho
+        this.basetacho.setCollideWorldBounds(true);
         colisiones(this.tacho, this.basetacho);
     })
     blue.on("pointerup", ()=>{
@@ -141,6 +151,10 @@ function create(){
         }
         this.basetacho = this.physics.add.sprite(245, 510, 'basetacho').setImmovable();
         this.tacho = this.physics.add.sprite(250, 458, 'tachoazul').setScale(0.5);
+        // Habilita la colisión del mundo para tacho
+        this.tacho.setCollideWorldBounds(true);
+        // Habilita la colisión del mundo para basetacho
+        this.basetacho.setCollideWorldBounds(true);
         colisiones(this.tacho, this.basetacho);
     })
     brown.on("pointerup", ()=>{
@@ -150,6 +164,10 @@ function create(){
         }
         this.basetacho = this.physics.add.sprite(245, 510, 'basetacho').setImmovable();
         this.tacho = this.physics.add.sprite(250, 458, 'tachomarron').setScale(0.5);
+        // Habilita la colisión del mundo para tacho
+        this.tacho.setCollideWorldBounds(true);
+        // Habilita la colisión del mundo para basetacho
+        this.basetacho.setCollideWorldBounds(true);
         colisiones(this.tacho, this.basetacho);
     })
     yellow.on("pointerup", ()=>{
@@ -159,6 +177,8 @@ function create(){
         }
         this.basetacho = this.physics.add.sprite(245, 510, 'basetacho').setImmovable();
         this.tacho = this.physics.add.sprite(250, 458, 'tachoamarillo').setScale(0.5);
+        // Habilita la colisión del mundo para basetacho
+        this.basetacho.setCollideWorldBounds(true);
         colisiones(this.tacho, this.basetacho);
     });
     
