@@ -16,7 +16,7 @@ a{
 .header_index{
     height: 100vh;
 }
-.navbar{
+.navbar, .navbarLogIn{
     align-items: center;
     background-color: white;
     display:flex;
@@ -36,7 +36,7 @@ a{
     font-size: 20px;
     margin-inline: 10px;
 }
-.navbar_enlaces{
+.navbar_enlaces, .navbar_enlaces_logIn{
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -44,27 +44,27 @@ a{
 .navbar_enlaces div{
     margin-inline: 10px;
 }
-.banner_button {
+.banner_button{
     display: flex;
 }
 .banner_button_img{
     width: 19%;
     height: 19%;
 }
-.banner_button a {
+.banner_button a, .navbarLogIn_banner_button,.banner_button_monedero{
     border-radius: 5px;
     text-align: center;
     padding: 10px;
     width: 117px;
     height: 45px;
 }
-.banner_button_login {
+.banner_button_login, .navbarLogIn_banner_button{
     background-color: var(--primary_color);
     color: white;
     margin-right: 12px;
 }
 
-.banner_button_signUp{
+.banner_button_signUp, .banner_button_monedero{
     background-color: white;
     border: var(--primary_color) solid 2px;
     border-radius: 7px;
@@ -80,6 +80,7 @@ a{
     display: flex;
     justify-content: space-around;
     height: 80%;
+    margin-left: 3rem;
 }
 .banner_principal h1 {
     font-size: 58px;
@@ -92,7 +93,12 @@ a{
     height: 100%;
     width: 50%;
 }
-
+.banner_principalImg{
+    background-image: url("../img/landingImg/banner_principal.png");
+    background-repeat: no-repeat;
+    background-position: 409px 10px;
+    background-size:52rem;
+}
 
 /*FOOTER*/
 .footer{
@@ -148,9 +154,9 @@ footer img{
 
 /*primer recuadro Recicla-ando*/
 .img_fondoniño{
-    background-image: url("../img/landingImg/5216931.png");
+    background-image: url("../img/landingImg/chicoreciclandoindex.png");
     background-repeat: no-repeat;
-    background-position: 590px 2px;
+    background-position: 620px 1px;
     background-size:45rem;
 }
 .primerRecuadro{

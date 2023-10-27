@@ -1,0 +1,95 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+.parrafosDeDivsLogInRecompensas{
+    font-weight: bolder;
+    text-align: center;
+    margin-bottom: 6px;
+    font-size: 20px;
+}
+
+.LogIntitle div{
+    margin-top: 2rem;
+    font-weight: bold;
+}
+.logIn_bannerImg{
+    text-align: center;
+}
+.logIn_bannerImg img{
+    width: 40rem;
+    height: 12rem;
+}
+.LogInMain{
+    margin-top: 5rem;
+}
+.logOut img{
+    width: 50px;
+    height: 45px;
+}
+
+.navbar_enlaces_logIn .banner_button_monedero{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-inline: 10px;
+    width: 190px;
+}
+
+.LogInRecompensasBody{
+    display: grid;
+    grid-template-columns: repeat(4, 260px);
+    grid-template-rows: repeat(2, 400px);
+    grid-gap: 20px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding: 5rem;
+}
+.logIn_recompensas{
+    text-align: center;
+}
+.logIn_recompensas div{
+    margin-top: 2rem;
+    font-weight: bold;
+}
+
+.articlesLogInRecompensas{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 100%;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 2px #818181;
+}
+
+.imgLogInArticlesRecompensas{
+    width: 80%;
+    height: 50%;
+    background-color: rgb(127, 240, 255);
+}
+.imgLogInArticlesRecompensas img{
+    width: 100%;
+    height: 100%;
+}
+.textLogInArticlesRecompensas{
+    margin-top: 20px;
+    text-align: center;
+    width: 90%;
+}
+.buttonArticles{
+    padding: 7px;
+    padding-inline: 15px;
+    background-color: orangered;
+    color: white;
+    border: none;
+    font-weight: bolder;
+    border-radius: 3px;
+
+}

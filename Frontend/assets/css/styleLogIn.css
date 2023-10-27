@@ -24,15 +24,27 @@
 .logIn_bannerImg{
     text-align: center;
 }
-
+.logIn_bannerImg img{
+    width: 40rem;
+    height: 12rem;
+}
 .LogInMain{
     margin-top: 5rem;
 }
-
 .logOut img{
     width: 50px;
     height: 45px;
 }
+
+.navbar_enlaces_logIn .banner_button_monedero{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-inline: 10px;
+    width: 190px;
+}
+
 
 .LogInBody{
     display: grid;
@@ -70,4 +82,57 @@
     margin-top: 20px;
     text-align: left;
     width: 90%;
+}
+/* Estilo para ocultar inicialmente el modal */
+
+body{
+    position: absolute;
+}
+.modal{
+    /* Estilo para ocultar el modal por defecto */
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.modalPopUp{
+    display: none;
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    width: 700px;
+    height: 500px;
+    overflow-y:scroll;
+}
+.perfilesRaking{
+    margin: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.perfilesRaking div p{
+    width: auto;
+}
+.perfilesRaking div{
+    width: 200px;
+    height: 100px;
+    margin-inline: 2rem;
+    padding: 0.6rem;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    background-color: white;
+}
+.listadoRaking ol li{
+    margin: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
