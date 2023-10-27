@@ -30,11 +30,11 @@ def list_prize() ->List[CreatePrize]:
     prize = PrizeService(db).prize_get_all()
     return JSONResponse(status_code=200, content=jsonable_encoder(prize))
 
-@prize_router.get('/prize_all', response_model=List[CreatePrize], status_code=201)
-def list_prizes():
+@prize_router.get('/prize/active', response_model=List[CreatePrize], status_code=201)
+def list_active_prizes():
     db = Session()
-    prizes = PrizeService(db).prize_get_all()
-    return prizes
+    active_prizes = PrizeService(db).get_active_prizes()
+    return JSONResponse(status_code=201, content=jsonable_encoder(active_prizes))
 
 @prize_router.put('/prize/update_prize/{id}', status_code=201, response_model=dict)
 def update_posts(id:int,prizes:CreatePrize):
@@ -44,10 +44,10 @@ def update_posts(id:int,prizes:CreatePrize):
         return JSONResponse(status_code=404, content={'message':'premio no encontrado'})
     return JSONResponse(status_code=201, content={'message':'premio actualizado con éxito'})
 
-# @prize_router.delete('/posts/delete_blog{id}', status_code=201, response_model=dict)
-# def delete_posts(id:int,posts:DeleteBlog):
-#     db = Session()
-#     result = BlogService(db).blog_delete(id,posts)
-#     if not result:
-#         return JSONResponse(status_code=404, content={'msg':'post no encontrado'})
-#     return JSONResponse(status_code=201, content={'msg':'post eliminado con éxito'})
+@prize_router.put('/prize/activate/{id}', status_code=201)
+def activate_prize(id: int, is_active: bool):
+    db = Session()
+    updated_prize = PrizeService(db).activate_prize(id, is_active)
+    if not updated_prize:
+        return JSONResponse(status_code=404, content={'message': 'Premio no encontrado'})
+    return JSONResponse(status_code=200, content={'message': 'Premio actualizado con éxito'})

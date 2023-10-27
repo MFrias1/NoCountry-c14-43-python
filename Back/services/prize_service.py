@@ -45,15 +45,14 @@ class PrizeService():
         self.db.commit()
         return prize
     
-    def prize_is_active(self, id, data: IsActivatePrize):
-        prize = self.get_Prize_for_id(id)
+    def activate_prize(self, id: int, is_active: bool):
+        prize = self.prize_get_for_id(id)
         if not prize:
             return prize
-        prize.prize_id = data.prize_id
-        prize.is_active = data.is_active
+        prize.is_active = is_active
         self.db.commit()
         return prize
-        
     
-        
-    
+    def get_active_prizes(self):
+        active_prizes = self.db.query(Prize).filter(Prize.is_active == True).all()
+        return active_prizes
