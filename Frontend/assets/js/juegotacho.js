@@ -159,6 +159,14 @@ function create(){
     this.basetacho = this.physics.add.sprite(245, 510, 'basetacho').setImmovable();
     this.tacho = this.physics.add.sprite(250, 458, 'tachoamarillo').setScale(0.5);
     this.franjaTacho = this.add.image(650,458, 'franjaTachos').setScale(0.9);
+    this.tacho.setCollideWorldBounds(true);
+    // Configura el área de colisión personalizada para el tacho
+    const tachoWidth = this.tacho.width * 0.5; // Reducimos el ancho a la mitad
+    const tachoHeight = this.tacho.height * 0.5; // Reducimos la altura a la mitad
+    this.tacho.body.setSize(tachoWidth, tachoHeight, true);
+
+    // Habilita la colisión del mundo para basetacho
+    this.basetacho.setCollideWorldBounds(true);
 
     // La función de colisión se ejecutará cuando ocurra una colisión
     this.physics.add.collider(basuras, this.basetacho, (basura)=> {
