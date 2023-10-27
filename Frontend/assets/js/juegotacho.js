@@ -66,10 +66,11 @@ function create(){
         fontSize:'22px',
         fill:'#000'
     })
+    //BASURA 1
     //grupo dinamico con basura
     const basuras = this.physics.add.group({
         key: 'basura',
-        repeat: 11,
+        repeat: 3,
     });
     
     // Itera sobre los elementos del grupo y configura cada basura
@@ -78,7 +79,23 @@ function create(){
         const randomX = Phaser.Math.Between(300, 1200); // Posición aleatoria en el eje X
         basura.x = randomX; // Configura la posición X de la basura
         // Proporciona una velocidad inicial en el eje Y para hacer que caiga
-        const randomSpeedY = Phaser.Math.Between(300, 1200); // Velocidad vertical aleatoria
+        const randomSpeedY = Phaser.Math.Between(300, 800); // Velocidad vertical aleatoria
+        basura.setVelocity(0, randomSpeedY);
+    });
+    //BASURA 2
+    //grupo dinamico con basura
+    const basuras2 = this.physics.add.group({
+        key: 'basura',
+        repeat: 3,
+    });
+    
+    // Itera sobre los elementos del grupo y configura cada basura
+    basuras.children.iterate(function(basura) {
+        basura.setScale(0.5); // Escala la basura
+        const randomX = Phaser.Math.Between(300, 1200); // Posición aleatoria en el eje X
+        basura.x = randomX; // Configura la posición X de la basura
+        // Proporciona una velocidad inicial en el eje Y para hacer que caiga
+        const randomSpeedY = Phaser.Math.Between(300, 800); // Velocidad vertical aleatoria
         basura.setVelocity(0, randomSpeedY);
     });
 
@@ -220,10 +237,10 @@ function update(){ //loop
     this.tacho.setVelocity(0) && this.basetacho.setVelocity(0);
     if (this.cursors.left.isDown)
     {
-        this.tacho.setVelocityX(-300) && this.basetacho.setVelocityX(-300);
+        this.tacho.setVelocityX(-550) && this.basetacho.setVelocityX(-550);
 
     }else if (this.cursors.right.isDown)
     {
-        this.tacho.setVelocityX(300) && this.basetacho.setVelocityX(300);
+        this.tacho.setVelocityX(550) && this.basetacho.setVelocityX(550);
     };
 };
