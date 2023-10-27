@@ -53,7 +53,7 @@ function primerEmergente(){
 };
 document.addEventListener('DOMContentLoaded',()=>{
     Swal.fire({
-        title: 'Instrucciones',
+        title: 'Instrucciones', //no puedo reutilizar title: ni text: porque se sobreescribe"
         html:'<p>En este juego, tu misión es atrapar la basura que se te indique y clasificarla en el contenedor adecuado según su color.</p>'
         +'<p>Para cambiar el color del contenedor, simplemente presiona la tecla que corresponde al color que deseas seleccionar.</p>'
         +'<span><img src="./Juegos/PNG/Environment/puntoazul.png" width=50px></span>'
