@@ -113,7 +113,7 @@ function create(){
         //crea un nuevo basurero correspondiente al color seleccionado.
         this.basetacho = this.physics.add.sprite(245, 510, 'basetacho').setImmovable();
         this.tacho = this.physics.add.sprite(250, 458, 'tachorojo').setScale(0.5);
-        colisiones(this.tacho)
+        colisiones(this.tacho, this.basetacho);
     })
     green.on("pointerup", ()=>{
         // Verifica si ya existe un basurero en la escena y, en ese caso, destrúyelo.
@@ -123,7 +123,7 @@ function create(){
         }
         this.basetacho = this.physics.add.sprite(245, 510, 'basetacho').setImmovable();
         this.tacho = this.physics.add.sprite(250, 458, 'tachoverde').setScale(0.5);
-        colisiones(this.tacho)
+        colisiones(this.tacho, this.basetacho);
     })
     black.on("pointerup", ()=>{
         if (this.basetacho && this.tacho) {
@@ -132,7 +132,7 @@ function create(){
         }
         this.basetacho = this.physics.add.sprite(245, 510, 'basetacho').setImmovable();
         this.tacho = this.physics.add.sprite(250, 458, 'tachonegro').setScale(0.5);
-        colisiones(this.tacho)
+        colisiones(this.tacho, this.basetacho);
     })
     blue.on("pointerup", ()=>{
         if (this.basetacho && this.tacho) {
@@ -141,7 +141,7 @@ function create(){
         }
         this.basetacho = this.physics.add.sprite(245, 510, 'basetacho').setImmovable();
         this.tacho = this.physics.add.sprite(250, 458, 'tachoazul').setScale(0.5);
-        colisiones(this.tacho)
+        colisiones(this.tacho, this.basetacho);
     })
     brown.on("pointerup", ()=>{
         if (this.basetacho && this.tacho) {
@@ -150,7 +150,7 @@ function create(){
         }
         this.basetacho = this.physics.add.sprite(245, 510, 'basetacho').setImmovable();
         this.tacho = this.physics.add.sprite(250, 458, 'tachomarron').setScale(0.5);
-        colisiones(this.tacho)
+        colisiones(this.tacho, this.basetacho);
     })
     yellow.on("pointerup", ()=>{
         if (this.basetacho && this.tacho) {
@@ -162,9 +162,9 @@ function create(){
         colisiones(this.tacho, this.basetacho);
     });
     
+    this.franjaTacho = this.add.image(650,458, 'franjaTachos').setScale(0.9);
     this.basetacho = this.physics.add.sprite(245, 510, 'basetacho').setImmovable();
     this.tacho = this.physics.add.sprite(250, 458, 'tachoamarillo').setScale(0.5);
-    this.franjaTacho = this.add.image(650,458, 'franjaTachos').setScale(0.9);
     
     // Habilita la colisión del mundo para tacho
     this.tacho.setCollideWorldBounds(true);
