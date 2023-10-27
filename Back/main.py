@@ -30,3 +30,4 @@ allow_headers=["*"],
 @app.get('/', tags=['home'])
 def message():
     return HTMLResponse('<h1> \U0001F648 Hola soy un aguacate \U0001F951 </h1>')
+    
