@@ -11,6 +11,7 @@ class Movement(Base):
     user_id = Column(Integer, ForeignKey('users.id'))
     date = Column(DateTime(timezone=True), server_default=func.now())
     
+    
     def dict(self):
         return {
             "movement_id": self.movement_id,
