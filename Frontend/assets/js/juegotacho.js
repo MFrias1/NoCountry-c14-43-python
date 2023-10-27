@@ -29,14 +29,13 @@ let game = new Phaser.Game(config);
 //1st - Load images, audio, videos so they can be used.
 function preload(){
     //load background img
-    this.load.image('background','./Juegos/PNG/Background/bg_layer1.png');
+    this.load.image('background','./Juegos/PNG/Background/bg_juego.png');
+    this.load.image('franjaTachos','./Juegos/PNG/Background/franjaTachos.png');
     //load basura img
     this.load.image('platform', './Juegos/PNG/Environment/ground_grass.png');
     this.load.image('basura', './Juegos/PNG/Environment/cactus.png')
     this.load.image('colores', './Juegos/PNG/Environment/grass2.png');
     this.load.image('tacho','./Juegos/PNG/Environment/grass1.png');
-    this.load.image('gameover', './Juegos/PNG/Background/bg_layer3.png');
-    this.load.image('start','./Juegos/PNG/Background/bg_layer2.png')
     //tachos de basura
     this.load.image('tachoverde', './Juegos/PNG/Environment/tachoverde.png');
     this.load.image('tachorojo', './Juegos/PNG/Environment/tachorojo.png');
@@ -59,7 +58,7 @@ function preload(){
 function create(){ 
 
     // x and y position, and key in preload().//BACKGROUND img loaded to scene
-    this.add.image(280, 320,'background'); 
+    this.add.image(600, 200,'background'); 
     //monedas de recompensa
     let monedas=0;
     let monedasText;
@@ -84,12 +83,12 @@ function create(){
     });
 
     //colors img loaded to scene by using '.add'
-    const black= this.add.image(500,550, 'puntonegro').setScale(0.5);
-    const brown= this.add.image(550,550, 'puntomarron').setScale(0.5); 
-    const green= this.add.image(600,550, 'puntoverde').setScale(0.5);
-    const yellow= this.add.image(650,550, 'puntoamarillo').setScale(0.5);
-    const blue= this.add.image(700,550, 'puntoazul').setScale(0.5);
-    const red= this.add.image(750,550, 'puntorojo').setScale(0.5);
+    const black= this.add.image(450,592, 'puntonegro').setScale(0.5);
+    const brown= this.add.image(550,592, 'puntomarron').setScale(0.5); 
+    const green= this.add.image(650,592, 'puntoverde').setScale(0.5);
+    const yellow= this.add.image(750,592, 'puntoamarillo').setScale(0.5);
+    const blue= this.add.image(850,592, 'puntoazul').setScale(0.5);
+    const red= this.add.image(950,592, 'puntorojo').setScale(0.5);
     /*
     this.start = this.add.image(240, 320, 'start');
     this.start.visible=true;
@@ -157,8 +156,9 @@ function create(){
         this.tacho = this.physics.add.sprite(250, 450, 'tachoamarillo').setScale(0.5);
     });
 
-    this.basetacho = this.physics.add.sprite(250, 490, 'basetacho').setImmovable();
-    this.tacho = this.physics.add.sprite(250, 450, 'tachoamarillo').setScale(0.5);
+    this.basetacho = this.physics.add.sprite(245, 510, 'basetacho').setImmovable();
+    this.tacho = this.physics.add.sprite(250, 458, 'tachoamarillo').setScale(0.5);
+    this.franjaTacho = this.add.image(650,458, 'franjaTachos').setScale(0.9);
 
     // La función de colisión se ejecutará cuando ocurra una colisión
     this.physics.add.collider(basuras, this.basetacho, (basura)=> {
