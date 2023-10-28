@@ -12,4 +12,4 @@ class User(Base):
     country = Column(String, nullable=False)
     coins = Column(Integer, default=0)
     password = Column(String, nullable=False)
-
+    
