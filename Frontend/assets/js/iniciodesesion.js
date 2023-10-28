@@ -40,12 +40,3 @@ async function postInicioSesion(event) {
     console.error('Error de red:', error);
   }
 }
-
-//acá el js de botón flotante
-document.getElementById("botonFlotante").addEventListener('click',scroll);
-function scroll(){
-  let scroll=document.documentElement.scrollTop;
-  if (scroll>0){
-    window.scrollTo (0.0)
-  }
-};

@@ -408,14 +408,17 @@ div.formContacto_title{
 /*acá empieza la clase botón flotante*/
 
 .botonFlotante{
-    width: 60px;
-    height:60px;
+    width: 28px;
+    height:28px;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor:pointer;
-    background-color: orangered;
+    background-color: white;
     position: fixed;
     right:50px;
     bottom: 50px;
+    border-radius: 50%;
+    transform:scale(0);
+    transition: all 300ms ease;
 }
