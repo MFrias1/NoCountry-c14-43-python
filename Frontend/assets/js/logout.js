@@ -8,7 +8,7 @@ logoutButton.addEventListener('click',logout);
 //traigo monedero
 let contenidoMonedero = document.getElementById("contenidoMonedero")
 //solicito datos a la API
-fetch('https://nocountry-api.onrender.com/users/2')
+fetch('https://nocountry-api.onrender.com/users/4')
 .then(respuestaApi => { 
     if (!respuestaApi.ok) {
       throw new Error('No se pudo obtener la respuesta de la API');
