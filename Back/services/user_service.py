@@ -51,6 +51,9 @@ class UserService():
         self.db.commit()
         return user
     
+    def delete_user():
+        pass
+    
 # Se tuvo que agregar el incremento de monedas desde el manejo de la entedidad USER
     def put_coins_user(self, user_id, coins):
         # Actualizar el saldo de monedas del usuario
