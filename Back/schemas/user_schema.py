@@ -5,7 +5,6 @@ class CreateUser(BaseModel):
     last_name : str
     email : str
     country : str
-    coins : int
     password : str
 
 class CreateUserOut(BaseModel):
