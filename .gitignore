@@ -1,8 +1,8 @@
 # Created by https://www.toptal.com/developers/gitignore/api/python,node
 # Edit at https://www.toptal.com/developers/gitignore?templates=python,node
 
-recicla_ando/
-r
+recicla_ando
+
 alembic.ini
 a.py
 ### Node ###
