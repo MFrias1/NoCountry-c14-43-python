@@ -41,4 +41,5 @@ class UpdateInfoUser(BaseModel):
 class ChangeUserPassword(BaseModel):
     password : str
 
+
 #todo #recocha

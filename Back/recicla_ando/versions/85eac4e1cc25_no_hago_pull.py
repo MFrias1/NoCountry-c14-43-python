@@ -1,8 +1,8 @@
-"""move
+"""no hago pull
 
-Revision ID: 290c5cf96f35
-Revises: fab6c1245416
-Create Date: 2023-10-21 16:55:07.383683
+Revision ID: 85eac4e1cc25
+Revises: 6d35b8662ce1
+Create Date: 2023-10-27 18:10:38.759745
 
 """
 from typing import Sequence, Union
@@ -12,8 +12,8 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision: str = '290c5cf96f35'
-down_revision: Union[str, None] = 'fab6c1245416'
+revision: str = '85eac4e1cc25'
+down_revision: Union[str, None] = '6d35b8662ce1'
 branch_labels: Union[str, Sequence[str], None] = None
 depends_on: Union[str, Sequence[str], None] = None
 
