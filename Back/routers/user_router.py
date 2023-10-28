@@ -68,7 +68,7 @@ def change_password(id:int, user:ChangeUserPassword):
     if not result:
         return JSONResponse(status_code=404, content={'message':'Usuario no encontrado'})
     return JSONResponse(status_code=201, content={'message' : 'Contraseña ha sido actualizada'})
-#! Crear ruta desactivar usuario
+#! Crear ruta eliminar usuario
 # @user_router.get('/login', status_code=201)
 # def user(token: str = Depends(oauth2_scheme)):
 #     return 'hola'
