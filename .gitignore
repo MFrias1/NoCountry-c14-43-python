@@ -2,6 +2,7 @@
 # Edit at https://www.toptal.com/developers/gitignore?templates=python,node
 
 recicla_ando/
+recicla_ando/version/
 alembic.ini
 a.py
 ### Node ###
