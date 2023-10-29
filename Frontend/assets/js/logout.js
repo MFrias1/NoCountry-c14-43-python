@@ -14,7 +14,7 @@ fetch('https://nocountry-api.onrender.com/users/2')
 
     .then(respuestaApi => { 
             if (!respuestaApi.ok) {
-            throw new Error('No se pudo obtener la respuesta de la API');
+            throw new Error('No se pudo obtener los datos del usuario');
             }
             //retorno la respuesta como un json.
             return respuestaApi.json(); 
