@@ -8,7 +8,6 @@ async function postInicioSesion(event) {
   const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
 
   if (!email.match(emailPattern)) {
-    // Utiliza SweetAlert para mostrar un mensaje
     Swal.fire({
       icon: 'error',
       title: 'Error',
@@ -32,14 +31,25 @@ async function postInicioSesion(event) {
     });
 
     if (response.ok) {
-      // Si el inicio de sesión es exitoso, utiliza SweetAlert y luego redirige
+      const responseData = await response.json();
+      const token = responseData.token; // Obtén el token del servidor
+      const userId = responseData.id; // Obtén el ID del usuario del servidor
+
+      // Almacena el token y el ID del usuario en el localStorage
+      localStorage.setItem('token', token);
+      localStorage.setItem('userId', userId);
+
+      // Muestra el token en un alert
+      alert(`Token de autenticación: ${token}`);
+      
+      // Mostrar mensaje de inicio de sesión exitoso
       Swal.fire({
         icon: 'success',
         title: 'Inicio de sesión exitoso',
         showConfirmButton: false,
-        timer: 3000 // Muestra el mensaje durante 3 segundos
+        timer: 3000
       }).then(() => {
-        window.location.href = 'login.html'; // Redirige al usuario después de 3 segundos
+        window.location.href = 'login.html';
       });
     } else {
       // Si hay un error en el inicio de sesión, muestra un mensaje de error
