@@ -48,8 +48,8 @@
 
 .LogInBody{
     display: grid;
-    grid-template-columns: repeat(2, 40%);
-    grid-template-rows: repeat(2, 40%);
+    grid-template-columns: repeat(2, 500px);
+    grid-template-rows: repeat(1, 400px);
     grid-gap: 50px;
     text-align: center;
     justify-content: center;
@@ -135,4 +135,15 @@ body{
     background-color: white;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+.logIn_ranking{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-inline: 5rem;
+    padding-bottom: 5rem;
+}
+.articleranking{
+    width: 500px;
+    height: 400px;
 }
