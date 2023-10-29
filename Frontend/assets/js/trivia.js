@@ -2,6 +2,7 @@ let preguntas_aleatorias = true;
 let mostrar_pantalla_juego_términado = true;
 let reiniciar_puntos_al_reiniciar_el_juego = true;
 let temporizador;
+let puntosTotales = 0;
 
 window.onload = function () {
   base_preguntas = readText("./assets/js/base-preguntas.json");
@@ -95,6 +96,23 @@ function escogerPregunta(n) {
       select_id("imagen").setAttribute("src", "");
     }, 500);
   }
+  if (npreguntas.length == interprete_bp.length) {
+    // Aquí es donde el juego se reinicia
+    if (mostrar_pantalla_juego_términado) {
+      swal.fire({
+        title: "Juego finalizado",
+        html:
+          "Preguntas correctas: " + preguntas_correctas + "<br>Puntos totales: " + puntosTotales,
+        icon: "success"
+      });
+    }
+    if (reiniciar_puntos_al_reiniciar_el_juego) {
+      preguntas_correctas = 0;
+      preguntas_hechas = 0;
+      puntosTotales = 0; // Reiniciar los puntos al reiniciar el juego
+    }
+    npreguntas = [];
+  }
 }
 
 function desordenarRespuestas(pregunta) {
@@ -120,6 +138,7 @@ function oprimir_btn(i) {
   }
   suspender_botones = true;
   if (posibles_respuestas[i] == pregunta.respuesta) {
+    puntosTotales += 100; // Suma 100 puntos por cada respuesta correcta
     preguntas_correctas++;
     btn_correspondiente[i].style.background = "lightgreen";
   } else {
