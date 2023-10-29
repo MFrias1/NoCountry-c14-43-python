@@ -48,7 +48,7 @@
 
 .LogInBody{
     display: grid;
-    grid-template-columns: repeat(2, 500px);
+    grid-template-columns: repeat(2, 450px);
     grid-template-rows: repeat(1, 400px);
     grid-gap: 50px;
     text-align: center;
@@ -144,6 +144,6 @@ body{
     padding-bottom: 5rem;
 }
 .articleranking{
-    width: 500px;
+    width: 450px;
     height: 400px;
 }
