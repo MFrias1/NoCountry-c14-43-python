@@ -3,6 +3,31 @@ let mostrar_pantalla_juego_términado = true;
 let reiniciar_puntos_al_reiniciar_el_juego = true;
 let temporizador;
 let puntosTotales = 0;
+let tiempoRestante = 10; // Variable para almacenar el tiempo restante
+
+function iniciarTemporizador() {
+  tiempoRestante = 10; // Reiniciar el tiempo a 10 segundos
+  temporizador = setInterval(actualizarTemporizador, 1000); // Llama a la función cada segundo (1000 ms)
+}
+
+function actualizarTemporizador() {
+  tiempoRestante--;
+  if (tiempoRestante < 0) {
+    clearInterval(temporizador); // Limpiar el temporizador
+    reiniciar(); // Llama a la función para cambiar a la siguiente pregunta
+  } else {
+    // Actualiza el contador de tiempo en tu interfaz de usuario (si es necesario)
+    // Por ejemplo:
+    select_id("contador_tiempo").textContent = tiempoRestante;
+    // select_id("tiempo_restante").innerHTML = tiempoRestante;
+  }
+}
+
+function reiniciarTemporizador() {
+  clearInterval(temporizador); // Limpia el temporizador actual
+  iniciarTemporizador(); // Vuelve a empezar el temporizador para la siguiente pregunta
+}
+
 
 window.onload = function () {
   base_preguntas = readText("./assets/js/base-preguntas.json");
@@ -138,7 +163,7 @@ function oprimir_btn(i) {
   }
   suspender_botones = true;
   if (posibles_respuestas[i] == pregunta.respuesta) {
-    puntosTotales += 100; // Suma 100 puntos por cada respuesta correcta
+    puntosTotales += 100;
     preguntas_correctas++;
     btn_correspondiente[i].style.background = "lightgreen";
   } else {
@@ -153,16 +178,16 @@ function oprimir_btn(i) {
   setTimeout(() => {
     reiniciar();
     suspender_botones = false;
+    reiniciarTemporizador(); // Reinicia el temporizador después de responder
   }, 3000);
 }
-
-// let p = prompt("numero")
 
 function reiniciar() {
   for (const btn of btn_correspondiente) {
     btn.style.background = "white";
   }
   escogerPreguntaAleatoria();
+  reiniciarTemporizador(); // Reinicia el temporizador al cambiar de pregunta
 }
 
 function select_id(id) {
