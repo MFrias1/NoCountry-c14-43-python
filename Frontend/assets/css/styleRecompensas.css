@@ -83,6 +83,9 @@
     text-align: center;
     width: 90%;
 }
+.textLogInArticlesRecompensas p{
+    margin-bottom: 0.5rem;
+}
 .buttonArticles{
     padding: 7px;
     padding-inline: 15px;
