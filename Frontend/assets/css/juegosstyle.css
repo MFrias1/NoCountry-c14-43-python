@@ -1,6 +1,5 @@
 .juegosBody{
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background-color:white;
+    margin-inline: 2rem; /* Asegúrate de que no haya márgenes en el body */
+    position: absolute;
 }
