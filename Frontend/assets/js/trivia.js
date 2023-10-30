@@ -78,9 +78,7 @@ function escogerPreguntaAleatoria() {
     escogerPregunta(n);
 
     // Iniciar el temporizador de 10 segundos
-    temporizador = setTimeout(() => {
-      reiniciar();
-    }, 10000); // 10 segundos en milisegundos
+    iniciarTemporizador();
   } else {
     // Manejar flujo si las preguntas no son aleatorias
     // ...
