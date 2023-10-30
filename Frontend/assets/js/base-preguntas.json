@@ -48,7 +48,108 @@
         "incorrecta3": "Metal",
         "imagen": "./assets/img/landingimg/preguntasfondo.png",
         "objectFit": "contain"
+    },
+    {
+        "categoria": "",
+        "pregunta": "Cuál de los siguientes materiales es altamente reciclable y se utiliza comunmente en envases de bebidas?",
+        "respuesta": "Aluminio",
+        "incorrecta1": "Vidrio",
+        "incorrecta2": "Plástico",
+        "incorrecta3": "Papel",
+        "imagen": "./assets/img/landingimg/preguntasfondo.png",
+        "objectFit": "contain"
+    },
+    {
+        "categoria": "",
+        "pregunta": "¿Qué es un 'punto limpio' en el contexto del reciclaje?",
+        "respuesta": "Un centro de recogida de residuos reciclables",
+        "incorrecta1": "Un lugar donde se depositan residuos tóxicos",
+        "incorrecta2": "Una instalación de reciclaje de papel",
+        "incorrecta3": "Un contenedor para vidrio",
+        "imagen": "./assets/img/landingimg/preguntasfondo.png",
+        "objectFit": "contain"
+    },
+    {
+        "categoria": "",
+        "pregunta": "¿Por qué es importante reciclar el aceite de cocina usado?",
+        "respuesta": "Para prevenir la obstrucción de las tuberías de alcantarillado",
+        "incorrecta1": "Para disminuir la demanda de aceite nuevo",
+        "incorrecta2": "Para disminuir el costo de la eliminación de residuos",
+        "incorrecta3": "Para fomentar el uso de aceite de cocina no reciclado",
+        "imagen": "./assets/img/landingimg/preguntasfondo.png",
+        "objectFit": "contain"
+    },
+    {
+        "categoria": "",
+        "pregunta": "¿Cuál de los siguientes materiales generalmente no es reciclable en la corriente de reciclaje convencional?",
+        "respuesta": "Ropa",
+        "incorrecta1": "Vidrio",
+        "incorrecta2": "Papel",
+        "incorrecta3": "Plástico",
+        "imagen": "./assets/img/landingimg/preguntasfondo.png",
+        "objectFit": "contain"
+    },
+    {
+        "categoria": "",
+        "pregunta": "¿Qué es el 'upcycling' en el contexto del reciclaje?",
+        "respuesta": " La reutilización de materiales para crear productos de mayor valor",
+        "incorrecta1": "La combustión de residuos para generar energía",
+        "incorrecta2": "El envío de residuos al vertedero",
+        "incorrecta3": "Un proceso de descomponer materiales en sus componentes básicos",
+        "imagen": "./assets/img/landingimg/preguntasfondo.png",
+        "objectFit": "contain"
+    },
+    {
+        "categoria": "",
+        "pregunta": "¿Cuál de los siguientes elementos generalmente no es apto para reciclaje en la mayoría de los programas de reciclaje?",
+        "respuesta": " Lámparas fluorescentes",
+        "incorrecta1": "Cartuchos de tóner de impresora",
+        "incorrecta2": "Botellas de vidrio",
+        "incorrecta3": "Botellas de plástico",
+        "imagen": "./assets/img/landingimg/preguntasfondo.png",
+        "objectFit": "contain"
+    },
+    {
+        "categoria": "",
+        "pregunta": "¿Qué es la 'basura electrónica' o 'e-waste'?",
+        "respuesta": " Residuos de productos electrónicos, como dispositivos obsoletos o dañados",
+        "incorrecta1": "Bolsas de basura utilizadas para contener productos electrónicos.",
+        "incorrecta2": "Residuos orgánicos generados por dispositivos electrónicos.",
+        "incorrecta3": "Un término coloquial para dispositivos electrónicos de alta calidad.",
+        "imagen": "./assets/img/landingimg/preguntasfondo.png",
+        "objectFit": "contain"
+    },
+    {
+        "categoria": "",
+        "pregunta": "¿Cuál de los siguientes materiales a menudo contiene materiales reciclados en su fabricación?",
+        "respuesta": "Bicicletas",
+        "incorrecta1": "Juguetes de plástico",
+        "incorrecta2": "Papel de alta calidad",
+        "incorrecta3": "Muebles de madera maciza",
+        "imagen": "./assets/img/landingimg/preguntasfondo.png",
+        "objectFit": "contain"
+    },
+    {
+        "categoria": "",
+        "pregunta": "¿Qué es el 'cradle to grave' en el contexto del ciclo de vida de un producto?",
+        "respuesta": "La evaluación del impacto ambiental de un producto desde su fabricación hasta su eliminación",
+        "incorrecta1": "El proceso de descomposición de materiales orgánicos.",
+        "incorrecta2": "La disposición adecuada de residuos en vertederos",
+        "incorrecta3": "El enfoque de diseño que busca crear productos sostenibles desde el inicio.",
+        "imagen": "./assets/img/landingimg/preguntasfondo.png",
+        "objectFit": "contain"
+    },
+    {
+        "categoria": "",
+        "pregunta": "¿Cuál es el propósito principal del reciclaje de textiles?",
+        "respuesta": "Reducir la demanda de recursos naturales.",
+        "incorrecta1": "Crear ropa de moda exclusiva.",
+        "incorrecta2": "Aumentar la producción de ropa nueva",
+        "incorrecta3": "Agotar los recursos naturales",
+        "imagen": "./assets/img/landingimg/preguntasfondo.png",
+        "objectFit": "contain"
     }
+
 
 
 
