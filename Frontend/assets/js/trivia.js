@@ -54,46 +54,37 @@ function escogerPreguntaAleatoria() {
     clearTimeout(temporizador);
   }
 
-  let n;
+  
   if (preguntas_aleatorias) {
-    n = Math.floor(Math.random() * interprete_bp.length);
-  } else {
-    n = 0;
-  }
-
-  while (npreguntas.includes(n)) {
-    n++;
-    if (n >= interprete_bp.length) {
-      n = 0;
-    }
-    if (npreguntas.length == interprete_bp.length) {
-      // Aquí es donde el juego se reinicia
+    let n;
+    if (npreguntas.length >= 10) {
+      // Si ya se han mostrado 10 preguntas, muestra el juego finalizado
       if (mostrar_pantalla_juego_términado) {
         swal.fire({
           title: "Juego finalizado",
-          text:
-            "Puntuación: " + preguntas_correctas + "/" + (preguntas_hechas - 1),
+          html: "Puntos totales: " + puntosTotales,
           icon: "success"
         });
       }
-      if (reiniciar_puntos_al_reiniciar_el_juego) {
-        preguntas_correctas = 0;
-        preguntas_hechas = 0;
-      }
-      npreguntas = [];
+      return; // Detener el juego después de 10 preguntas
     }
+
+    do {
+      n = Math.floor(Math.random() * interprete_bp.length);
+    } while (npreguntas.includes(n));
+    npreguntas.push(n);
+    preguntas_hechas++;
+
+    escogerPregunta(n);
+
+    // Iniciar el temporizador de 10 segundos
+    temporizador = setTimeout(() => {
+      reiniciar();
+    }, 10000); // 10 segundos en milisegundos
+  } else {
+    // Manejar flujo si las preguntas no son aleatorias
+    // ...
   }
-  npreguntas.push(n);
-  preguntas_hechas++;
-
-  escogerPregunta(n);
-
-  // Iniciar el temporizador de 10 segundos
-  temporizador = setTimeout(() => {
-    // Aquí puedes manejar lo que sucede cuando se agota el tiempo (cambiar de pregunta, etc.)
-    // Por ejemplo, puedes llamar a la función reiniciar para pasar a la siguiente pregunta.
-    reiniciar();
-  }, 10000); // 10 segundos en milisegundos
 }
 
 function escogerPregunta(n) {
@@ -158,12 +149,12 @@ function desordenarRespuestas(pregunta) {
 let suspender_botones = false;
 
 function oprimir_btn(i) {
-  if (suspender_botones) {
+  if (suspender_botones || npreguntas.length >= 10) {
     return;
   }
   suspender_botones = true;
   if (posibles_respuestas[i] == pregunta.respuesta) {
-    puntosTotales += 100;
+    puntosTotales += 100; // Sumar 100 puntos por respuesta correcta
     preguntas_correctas++;
     btn_correspondiente[i].style.background = "lightgreen";
   } else {
@@ -178,7 +169,7 @@ function oprimir_btn(i) {
   setTimeout(() => {
     reiniciar();
     suspender_botones = false;
-    reiniciarTemporizador(); // Reinicia el temporizador después de responder
+    reiniciarTemporizador(); // Reiniciar el temporizador después de responder
   }, 3000);
 }
 
@@ -187,7 +178,20 @@ function reiniciar() {
     btn.style.background = "white";
   }
   escogerPreguntaAleatoria();
-  reiniciarTemporizador(); // Reinicia el temporizador al cambiar de pregunta
+  if (npreguntas.length >= 10) {
+    // Detener el juego después de 10 preguntas
+    mostrarFinalDelJuego();
+  } else {
+    reiniciarTemporizador(); // Reiniciar el temporizador al cambiar de pregunta
+  }
+}
+
+function mostrarFinalDelJuego() {
+  swal.fire({
+    title: "Juego finalizado",
+    html: "Puntos totales: " + puntosTotales,
+    icon: "success"
+  });
 }
 
 function select_id(id) {
