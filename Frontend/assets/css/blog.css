@@ -1,0 +1,90 @@
+*{
+    font-family: 'Roboto', sans-serif;
+}
+
+.logo{
+    text-align: center ;
+}
+
+.imagenPrincipalDeBlog{
+    background-image: url("../img/landingimg/blog4693140\ 1.png");
+    width: 100%;
+    height: 1200px;
+    background-size:100%;
+    background-repeat: no-repeat;
+    margin-bottom: 2rem;
+}
+
+.cuerpoDelBlog div {
+    background-color: none;
+    padding: 2rem;
+}
+
+.tituloDelBlog{
+    text-align: center;
+}
+
+.colorBoton{
+    color:white;
+    background-color: orange;
+    border-radius: 5px;
+    text-align:center;
+    align-items: center;
+}
+
+.carousel-control-prev-icon{
+    filter:invert(108%);
+}
+
+.carousel-control-next-icon{
+    filter:invert(108%);
+}
+
+.textosArticulos{
+    text-align: justify;
+
+}
+
+.imagenesDelBlog{
+    border-width: 3px;
+    border-color: rgb(220, 219, 219);
+    border-style: solid;
+    border-radius: 10px;
+}   
+
+
+.carousel{
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel-control-prev-icon{
+    filter:invert(108%);
+}
+
+.carousel-control-next-icon{
+    filter:invert(108%);
+}
+
+.logo{
+    text-align: center ;
+}
+
+.colorBoton{
+    color:white;
+    background-color: orange;
+    border-radius: 5px;
+    text-align:center;
+    padding: 10px;
+}
+
+.titulosDeLosArticulos{
+    text-align: center;
+    align-items: center;
+    font-weight: bolder;
+}
+
+.titulosDeLosVideos{
+    text-align: center;
+}

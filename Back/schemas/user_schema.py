@@ -5,7 +5,6 @@ class CreateUser(BaseModel):
     last_name : str
     email : str
     country : str
-    coins : int
     password : str
 
 class CreateUserOut(BaseModel):
@@ -13,9 +12,34 @@ class CreateUserOut(BaseModel):
     first_name : str
     last_name : str
 
-
 class LoginUser(BaseModel):
     email : str
     password : str
+
+class UserGetAll(BaseModel):
+    first_name : str
+    last_name : str
+    email : str
+    country : str
+    coins : int
+    password : str
+
+class UserForId(BaseModel):
+    id: int
+    first_name : str
+    last_name : str
+    email : str
+    country : str
+    coins : int
+    password : str
+
+class UpdateInfoUser(BaseModel):
+    first_name : str
+    last_name : str
+    country : str
+  
+class ChangeUserPassword(BaseModel):
+    password : str
+
 
 #todo #recocha

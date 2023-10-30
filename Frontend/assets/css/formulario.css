@@ -1,0 +1,51 @@
+/* .invalid{
+    border: solid 1px red;
+    box-shadow: 0 0 10 px red;
+
+
+}
+.error{
+    color: red;
+    display: block;
+} */
+
+.contenedor1{
+    background-image: url(../img/landingImg/fondoregistro.png);
+    background-size: 70% auto; /* Esto ajustará la imagen al tamaño del contenedor */
+    background-position: right center; /* Esto centrará la imagen en el contenedor */
+    background-repeat: no-repeat;
+}
+
+.contenedor-2{
+    text-align: center;
+    margin-top: 0px
+}
+.input-control.success input{
+    border-color: green;
+}
+
+.input-control.error input{
+    border-color: red;
+}
+.input-control .error {
+    color: red;
+    font-size: 9px ;
+    height: 13px;
+}
+
+
+
+
+
+
+@media (max-width: 768px) {
+    .contenedor1 {
+        background-size: 100% auto; /* Ajustar la imagen al ancho de la pantalla */
+        background-position: right top; /* Cambiar la posición de la imagen */
+    }
+
+    .contenedor-2 {
+        text-align: center;
+        margin-top: 10px; /* Aumentar el margen superior */
+    }
+}

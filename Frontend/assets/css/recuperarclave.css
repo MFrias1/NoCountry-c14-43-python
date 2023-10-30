@@ -1,0 +1,38 @@
+.contenedor-1{
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: space-around;
+    
+}
+.contenedor_modificador1{
+    padding-top: 330px;
+    text-align: center;
+}
+.contenedor-logo{
+    padding-bottom: 70px;
+    align-items: center;
+}
+.contenedor-formulario{
+    padding: 10px;
+}
+.contenedor-formulario input{
+    border-radius: 5px;
+    padding: 1rem;
+    width: 95%;
+}
+
+.contenedor-no-tienes-cuenta{
+    display: flex;
+    justify-content: space-around;
+    margin-right: 3px; 
+
+}
+.recuperar-boton{
+    cursor:pointer;
+    background-color: green;
+    margin: 15px;
+    padding: 1rem;
+    width: 95%;
+    border-radius: 3px;
+    color: white;
+}

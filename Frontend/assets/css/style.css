@@ -6,54 +6,71 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: 'Roboto', sans-serif;
 }
+
 a{
     text-decoration: none;
     color:black;
 }
+
+.estiloEnlaces{
+    text-decoration: none;
+    color:black;
+}
+
 .header_index{
     height: 100vh;
 }
-.navbar{
+.navbar, .navbarLogIn{
     align-items: center;
-    background-color: none;
+    background-color: white;
     display:flex;
     justify-content: space-around;
     padding: 2rem; 
 }
 .logo_navbar img {
-    height: 50px;
-    width: 150px;
+    height: 70px;
+    width: 190px;
 }
-.navbar ul{
+.navbar div ul{
     display: flex;
     list-style: none;
     background-color: none;
 }
 .navbar li{
     font-size: 20px;
-    margin-inline: 20px;
+    margin-inline: 10px;
 }
-.banner_button {
+.navbar_enlaces, .navbar_enlaces_logIn{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.navbar_enlaces div{
+    margin-inline: 10px;
+}
+.banner_button{
     display: flex;
 }
-.banner_button a {
-    border-radius: 54px;
+.banner_button_img{
+    width: 19%;
+    height: 19%;
+}
+.banner_button a, .navbarLogIn_banner_button,.banner_button_monedero{
+    border-radius: 5px;
     text-align: center;
     padding: 10px;
-    width: 110px;
-    -webkit-border-radius: 54px;
-    -moz-border-radius: 54px;
-    -ms-border-radius: 54px;
-    -o-border-radius: 54px;
+    width: 117px;
+    height: 45px;
 }
-.banner_button_login {
+.banner_button_login, .navbarLogIn_banner_button{
     background-color: var(--primary_color);
     color: white;
     margin-right: 12px;
 }
 
-.banner_button_signUp{
+.banner_button_signUp, .banner_button_monedero{
     background-color: white;
     border: var(--primary_color) solid 2px;
     border-radius: 7px;
@@ -61,7 +78,7 @@ a{
 }
 .banner_button a:hover {
     background-color: var(--secondary_color);
-    border: none;
+    border-color: var(--secondary_color);
     color: white; 
 } 
 .banner_principal{
@@ -69,6 +86,7 @@ a{
     display: flex;
     justify-content: space-around;
     height: 80%;
+    margin-left: 3rem;
 }
 .banner_principal h1 {
     font-size: 58px;
@@ -81,7 +99,15 @@ a{
     height: 100%;
     width: 50%;
 }
-.footer{
+.banner_principalImg{
+    background-image: url("../img/landingImg/banner_principal.png");
+    background-repeat: no-repeat;
+    background-position: 409px 10px;
+    background-size:52rem;
+}
+
+/*FOOTER*/
+.footer, .footer a{
     background-color: rgba(38, 34, 34, 1) ;
 }
 
@@ -89,13 +115,19 @@ footer section{
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 1rem;
+    padding: 3rem;
+    margin-top: 3rem;
 }
+
 
 footer section span {
     margin: 10px;
 }
 
+footer img{
+    height: 30px;
+    width: 30px;
+}
 
 /* ! Seguir ordenando */
 
@@ -103,89 +135,16 @@ footer section span {
 /*botones banner*/
 
 
-
-
-
 /* empeiza estilo de landing page
 
 */
-#primerBanner{
-    background-image: url("../Imagenes/LandingImg/7903543.png");
-    background-size: cover;
-    height: 600px;
+
+/*Estilos generales*/
+.parrafosDeDivs{
+    font-weight: bolder;
+    margin-bottom: 1rem;
     text-align: center;
-}
-
-#tercerBanner{
-    background-image: url('../Imagenes/LandingImg/8667919.png');
-    background-position: left;
-    background-repeat: no-repeat;
-    height: 600px;
-    background-size: contain;
-    background-color: rgb(14, 58, 58);
-}
-#comoFunciona{
-    border: 1px solid black;
-    border-radius: 10px;
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0.5)
-}
-
-#reci-clando{
-    width: 500px;
-    height: 290px;
-    margin-left: 3rem;
-    margin-top: 0%;
-    text-align: justify;
-    border: solid black 1px;
-    border-radius: 5px;
-    padding: 2rem;
-}
-#beneficios{
-    text-align: center;
-}
-.section_comoFunciona{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-#comoFunciona{
-    margin-top: 5rem;
-    width: 70rem;
-    height: 25rem;
-}
-#comoFunciona ul{
-    margin-inline: 50px;
-    margin-bottom: 5px;
-}
-#beneficios2{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-#howWorks{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
-#beneficios{
-    padding: 3rem;
-}
-
-#beneficios article{
-    justify-content: center;
-    align-items: center;
-    width: 150px;
-    height: 195px;
-    margin: 2rem;
-}
-
-#beneficios article div img{
-    height: 150px;
-    width: 150px;
-    padding: 3rem;
+    font-size: 20px;
 }
 
 .buttonLanding{
@@ -196,42 +155,180 @@ footer section span {
     border: none;
     font-weight: bolder;
     border-radius: 3px;
-
+    cursor: pointer;
 }
-#comoReciclar{
+
+/*primer recuadro Recicla-ando*/
+.img_fondoniño{
+    background-image: url("../img/landingImg/chicoreciclandoindex.png");
+    background-repeat: no-repeat;
+    background-position: 620px 1px;
+    background-size:45rem;
+}
+.primerRecuadro{
+    height: 630px;
+    margin-top: 3rem;
+    margin-bottom: 5rem;
+    margin-left: 1rem;
+}
+#reci-clando{
+    width: 700px;
+    height: 290px;
+    margin-left: 3rem;
+    margin-top: 0%;
+    text-align: justify;
+    border: solid black 1px;
+    border-radius: 5px;
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+.reci-clandoButton{
     text-align: center;
+    margin: 2rem;
 }
 
-.subtitulos{
-    font-weight: bolder;
-    margin-bottom: 1rem;
-    text-align: center;
-}
-
-#TresR{
+/*segundo recuadro Cómo funciona Recicla-Ando*/
+.section_comoFunciona, .TresR, .beneficios_imgs, .sectionForm{
     display: flex;
     justify-content: center;
     align-items: center;
 }
-#TresR article{
-    padding-top: 2rem;
-    height: 300px;
-    width: 300px;
-    margin: 10px;
+.primerRecuadro_img{
+    background-image: url("../img/landingImg/8667919.png");
+    background-repeat: no-repeat;
+    background-position: 10px;
+    background-size:45rem;
 }
-#TresR article div{
+.remarco_comoFunciona{
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.remarco_comoFunciona{
+    margin-top: 5rem;
+    width: 59rem;
+    height: 33rem;
+    text-align: justify;
+}
+.remarco_comoFunciona div{
+    margin: 1rem;
+}
+
+.comoFunciona_listado li{
+    margin: 0.5rem;
+}
+.comoFunciona_listado p{
+    text-align: center;
+    font-weight: bold;
+}
+
+.remarco_comoFunciona ul{
+    margin-inline: 90px;
+    margin-bottom: 5px;
+}
+
+/*beneficios que podras ganar*/
+.beneficios{
+    padding: 3rem;
+    text-align: center;
+}
+
+.beneficios article{
+    width: 190px;
+    height: 199px;
+    margin: 1rem;
+}
+.beneficios_imgs article div{
+    margin: 1.5rem;
+}
+
+.beneficios_imgs{
+    margin: 1rem;
+}
+.beneficios_imgs img{
+    height: 100px;
+    width: 100px;
+}
+
+/*Cómo empezar*/
+.comoEmpezar{
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.TresR article{
+    padding-top: 2rem;
+    height: 340px;
+    width: 290px;
+    margin: 10px;
+    margin-bottom: 1rem;
+    margin-inline: 1.5rem;
+}
+.TresR article div{
     margin-bottom: 20px;
     
 }
-#TresR article div img{
-    width: 150px;
-    height: 150px;
+.tresR_descipcion{
+    text-align: justify;
+}
+.tresR_button{
+    margin: 1rem;
+}
+.TresR article div img{
+    width: 170px;
+    height: 170px;
+    margin: 10px;
 }
 
-/*
-css de registro.html
-/*
-*/
+/*section form*/
+.sectionForm{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-inline: 0.5rem;
+    height: 500px;
+    margin-top: 5rem;
+}
+.formImg{
+    text-align: center;
+}
+.sectionForm div{
+    width: 50%;
+}
+.sectionForm div img{
+    width: 70%;
+    height: 70%;
+}
+.formContacto{
+    width: 90%;
+    height: 100%;
+}
+div.formContacto_title{
+    margin-bottom: 2rem;
+    width: 100%;
+}
+.formContacto form{
+    display:flex;
+    flex-direction: column;
+}
+.formContacto form div{
+    margin: 0.6rem;
+    width: 100%;
+    height: 100%;
+}
+.formContacto form div input{
+    background-color: #22c55e;
+    border-radius: 5px;
+    padding: 1rem;
+    width: 95%;
+}
+.formContacto_Mesaje{
+    height: 100px;
+}
+
+/*css de registro.html*/
 /*Es el que se importa a JavaScript*/
 .inicioDeSesion{
     background-color: white;
@@ -264,6 +361,7 @@ css de registro.html
     background-color: green;
     color:white;
     border: none;
+    cursor: pointer;
 }
 /*Afecta a los inputs del form (correro y contraseña)*/
 .widthInput{
@@ -281,19 +379,52 @@ css de registro.html
 }
 /*Clase padre que afecta el centrado de inicio de sesion (afecta todo el formulario y boton)*/
 .mainBody{
-    display: flex;
+    display:flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    align-items:baseline;
+    justify-content:flex-start;
     background-color: none;
+    padding: 50px;
 }
+/*afecta al título inicio de sesión*/
+.tituloiniciodesesion{
+    text-align: center;
+}
+
 /*Afecta al logo del inicio de sesion*/
 .loginLogo{
     margin: 50px;
     text-align: center;
-    background-color: none;
 }
 
+.presentacioninicio{
+    margin-right:  10px;
+}
 
+.formularioeimagen{
+    display:flex;
+}
 
-  
+.main_login{
+    display: flex;
+    justify-content:flex-start;
+    margin-left: 10px ; 
+}
+
+/*acá empieza la clase botón flotante*/
+
+.botonFlotante{
+    width: 28px;
+    height:28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor:pointer;
+    background-color: white;
+    position: fixed;
+    right:50px;
+    bottom: 50px;
+    border-radius: 50%;
+    transform:scale(0);
+    transition: all 300ms ease;
+}
