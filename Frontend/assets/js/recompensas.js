@@ -1,6 +1,6 @@
 let rankingBoton = document.getElementById('rankingBoton');
 let modal = document.getElementById('modal');
-let modalPopUp = document.getElementById('modalPopUp')
+let modalPopUp = document.getElementById('modalPopUp');
 let cierreBoton = document.getElementById('close');
 let cierreRanking = document.getElementById('cierre');
 

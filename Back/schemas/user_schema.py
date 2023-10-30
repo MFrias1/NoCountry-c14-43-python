@@ -41,7 +41,5 @@ class UpdateInfoUser(BaseModel):
 class ChangeUserPassword(BaseModel):
     password : str
 
-class delete_user(BaseModel):
-    id: int
 
 #todo #recocha
