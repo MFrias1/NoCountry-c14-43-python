@@ -62,9 +62,11 @@ recompensasLogInBotonXiaomi.addEventListener('click',()=>{
     const contenido ={
         title: "-10% en Xiaomi",
         text: '¡Perfecto aquí tienes tu premio. Para canjearlo, simplemente presenta este código en el establecimiento correspondiente.',
+        html: '<input type="text" id="qrInput" value="felicidad" placeholder="Texto para el código QR"><button onclick="generateQR()">Generar QR</button><canvas id="qrcode"></canvas>',
         confirmButtonText: 'Descargar',
     };
     mostrarAlerta(contenido);//llamado a la funcion que contiene a la ventana emergente.
+
 });
 recompensasLogInBotonLatam.addEventListener('click',()=>{
     const contenido ={
@@ -79,7 +81,8 @@ function mostrarAlerta(contenido) {
     Swal.fire({
         title: contenido.title,
         text: contenido.text,
-        confirmButtonText: 'Descargar',
+        html: contenido.html,
+        confirmButtonText: contenido.confirmButtonText,
     }).then((result) => {
         if (result.isConfirmed) {
             //llama a la función para descargar el contenido de la ventana emergente.
@@ -90,7 +93,7 @@ function mostrarAlerta(contenido) {
 
 function descargarContenido(contenido) {
     // Concatena el título y el texto 
-    const contenidoTexto = `${contenido.title}+${contenido.text}`;
+    const contenidoTexto = `${contenido.title} ${contenido.text}`;
 
     // Crea un elemento <a> para la descarga
     const enlaceDescarga = document.createElement('a');
@@ -103,3 +106,19 @@ function descargarContenido(contenido) {
     enlaceDescarga.click();
     document.body.removeChild(enlaceDescarga);
 }
+
+function generateQR() {
+    var qrInput = document.getElementById("qrInput");
+    var qrText = qrInput.value;
+
+    // Verificar si se ingresó un texto para el código QR
+    if (qrText) {
+      var qr = new QRious({
+        element: document.getElementById('qrcode'),
+        value: qrText,
+        size: 200
+      });
+    } else {
+      alert("Por favor, ingresa un texto para generar el código QR.");
+    }
+  }
