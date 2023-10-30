@@ -1,4 +1,4 @@
-/*let recompensasLogInBotonCinecolombia = document.getElementById('recompensasLogInBotonCinecolombia');
+let recompensasLogInBotonCinecolombia = document.getElementById('recompensasLogInBotonCinecolombia');
 let recompensasLogInBotonMcDonalds = document.getElementById('recompensasLogInBotonMcDonalds');
 let recompensasLogInBotonKFC = document.getElementById('recompensasLogInBotonKFC');
 let recompensasLogInBotonCinecolombiaMensual = document.getElementById('recompensasLogInBotonCinecolombiaMensual');
@@ -10,7 +10,6 @@ let recompensasLogInBotonLatam= document.getElementById('recompensasLogInBotonLa
 recompensasLogInBotonCinecolombia.addEventListener('click',()=>{
     const contenido ={
         title: 'Entrada a cine x1',
-        text: '¡Perfecto aquí tienes tu premio. Para canjearlo, simplemente presenta este código en el establecimiento correspondiente.',
         confirmButtonText: 'Descargar',
     };
     mostrarAlerta(contenido);
@@ -18,7 +17,6 @@ recompensasLogInBotonCinecolombia.addEventListener('click',()=>{
 recompensasLogInBotonMcDonalds.addEventListener('click',()=>{
     const contenido ={
         title: 'Combo Mc Donalds',
-        text: '¡Perfecto aquí tienes tu premio. Para canjearlo, simplemente presenta este código en el establecimiento correspondiente.',
         confirmButtonText: 'Descargar',
     };
     mostrarAlerta(contenido);
@@ -26,14 +24,13 @@ recompensasLogInBotonMcDonalds.addEventListener('click',()=>{
 recompensasLogInBotonKFC.addEventListener('click',()=>{
     const contenido = {
         title: 'Combo KFC',
-        text: '¡Perfecto aquí tienes tu premio. Para canjearlo, simplemente presenta este código en el establecimiento correspondiente.'
+        confirmButtonText: 'Descargar',
     };
     mostrarAlerta(contenido);
 });
 recompensasLogInBotonCinecolombiaMensual.addEventListener('click',()=>{
     const contenido ={
         title: 'Entrada a cine x2',
-        text: '¡Perfecto aquí tienes tu premio. Pra canjearlo, simplemente presenta este código en el establecimiento correspondiente.',
         confirmButtonText: 'Descargar',
     };
     mostrarAlerta(contenido);
@@ -41,32 +38,25 @@ recompensasLogInBotonCinecolombiaMensual.addEventListener('click',()=>{
 recompensasLogInBotonApple.addEventListener('click',()=>{
     const contenido ={
         title: '-10% en Apple',
-        text: '¡Perfecto aquí tienes tu premio. Para canjearlo, simplemente presenta este código en el establecimiento correspondiente.',
         confirmButtonText: 'Descargar',
     };
     mostrarAlerta(contenido);
 });
 recompensasLogInBotonPizza.addEventListener('click',()=>{
     const contenido ={
-        title: "Pizza familiar Domino's",
-        text: '¡Perfecto aquí tienes tu premio. Para canjearlo, simplemente presenta este código en el establecimiento correspondiente.',
-        showCancelButton: true,
+        title: "-10% en Xiaomi",
         confirmButtonText: 'Descargar',
-        cancelButtonText: 'Cancelar',
-        showLoaderOnConfirm: true,
     };
     mostrarAlerta(contenido);
 });
-recompensasLogInBotonXiaomi.addEventListener('click',()=>{
-    //variable donde se almacena el contenido que se mostrará en la ventana emergente.
-    const contenido ={
+recompensasLogInBotonXiaomi.addEventListener('click', () => {
+    // Variable donde se almacena el contenido que se mostrará en la ventana emergente.
+    const contenido = {
         title: "-10% en Xiaomi",
-        text: '¡Perfecto aquí tienes tu premio. Para canjearlo, simplemente presenta este código en el establecimiento correspondiente.',
-        html: '<input type="text" id="qrInput" value="felicidad" placeholder="Texto para el código QR"><button onclick="generateQR()">Generar QR</button><canvas id="qrcode"></canvas>',
         confirmButtonText: 'Descargar',
     };
-    mostrarAlerta(contenido);//llamado a la funcion que contiene a la ventana emergente.
 
+    mostrarAlerta(contenido); // Llamado a la función que contiene la ventana emergente.
 });
 recompensasLogInBotonLatam.addEventListener('click',()=>{
     const contenido ={
@@ -80,10 +70,11 @@ recompensasLogInBotonLatam.addEventListener('click',()=>{
 function mostrarAlerta(contenido) {
     Swal.fire({
         title: contenido.title,
-        text: contenido.text,
-        html: contenido.html,
+        html: '<p>¡Perfecto, aquí tienes tu premio. Para canjearlo, simplemente presenta este código en el establecimiento correspondiente.</p>'+
+        '<div id="qrcode"></div>', // Coloca el elemento HTML en el contenido HTML
         confirmButtonText: contenido.confirmButtonText,
-    }).then((result) => {
+    }).then(generateQR())
+    .then((result) => {
         if (result.isConfirmed) {
             //llama a la función para descargar el contenido de la ventana emergente.
             descargarContenido(contenido);
@@ -107,6 +98,15 @@ function descargarContenido(contenido) {
     document.body.removeChild(enlaceDescarga);
 }
 
+
+// Función para generar el código QR
+function generateQR() {
+    // Obtén el elemento con el id 'qrcode' y añade la imagen del código QR
+    let qrCodeElement = document.getElementById('qrcode').innerHTML='<img src="https://api.qrserver.com/v1/create-qr-code/?data=HelloWorld&amp;size=100x100"/>';
+}
+
+
+/*
 function generateQR() {
     var qrInput = document.getElementById("qrInput");
     var qrText = qrInput.value;
@@ -121,9 +121,9 @@ function generateQR() {
     } else {
       alert("Por favor, ingresa un texto para generar el código QR.");
     }
-  }*/
+}*/
 
-document.addEventListener('DOMContentLoaded', function() {
+/*document.addEventListener('DOMContentLoaded', function() {
     // Coloca aquí tu código JavaScript
     let recompensasLogInBotonXiaomi = document.getElementById('recompensasLogInBotonXiaomi');
   
@@ -151,5 +151,5 @@ document.addEventListener('DOMContentLoaded', function() {
           confirmButtonText: 'Aceptar'
         });
     });
-});
+});*/
   
