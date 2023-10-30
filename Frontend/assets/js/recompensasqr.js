@@ -102,7 +102,7 @@ function descargarContenido(contenido) {
 // Función para generar el código QR
 function generateQR() {
     // Obtén el elemento con el id 'qrcode' y añade la imagen del código QR
-    let qrCodeElement = document.getElementById('qrcode').innerHTML='<img src="https://api.qrserver.com/v1/create-qr-code/?data=HelloWorld&amp;size=100x100"/>';
+    document.getElementById('qrcode').innerHTML='<img src="https://api.qrserver.com/v1/create-qr-code/?data=HelloWorld&amp;size=100x100"/>';
 }
 
 
