@@ -191,6 +191,9 @@ function mostrarFinalDelJuego() {
     title: "Juego finalizado",
     html: "Puntos totales: " + puntosTotales,
     icon: "success"
+  }).then(() => {
+    // Redirigir a log.html después de mostrar el mensaje de juego finalizado
+    window.location.href = "login.html";
   });
 }
 
