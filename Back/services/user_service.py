@@ -50,4 +50,18 @@ class UserService():
         user.password = data.password
         self.db.commit()
         return user
+    
+    def delete_user():
+        pass
+    
+# Se tuvo que agregar el incremento de monedas desde el manejo de la entedidad USER
+    def put_coins_user(self, user_id, coins):
+        # Actualizar el saldo de monedas del usuario
+        user = self.get_user_for_id(user_id)
+        user.coins += coins
+        self.db.commit()
+        self.db.refresh(user)
+        return user
 
+
+    

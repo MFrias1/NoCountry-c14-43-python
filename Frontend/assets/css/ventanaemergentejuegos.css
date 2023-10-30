@@ -1,0 +1,22 @@
+/* Estilo para ocultar inicialmente el modal */
+.modalJuego{
+    /* Estilo para ocultar el modal por defecto */
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    justify-content: center;
+    bottom: 0;
+    margin-bottom: 3rem;
+    align-items: center;
+    text-align: center;
+}
+.modalPopUp{
+    display: none;
+    z-index: 1000;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    margin-inline-start: 3rem ;
+    width: 300px;
+    height: 40px;
+}

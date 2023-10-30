@@ -169,28 +169,43 @@ document.addEventListener("DOMContentLoaded", function () {
           
             // Realizar una solicitud POST al servidor utilizando la Fetch API
             await fetch('https://nocountry-api.onrender.com/create_user', {
-              method: 'POST',
-              headers: {
-                'Content-Type': 'application/json',
-              },
-              body: JSON.stringify(userData),
-            })
-              .then(response => response.json())
-              .then(data => {
-                // Manejar la respuesta del servidor
-                console.log(data);
-                if (data.message === 'Registro exitoso') {
-                  // Registro exitoso, redirige al usuario a la página de inicio de sesión o a la página que desees
-                  alert('Registro exitoso: ' + data.message);
-                  window.location.href = 'iniciodesesion.html'; // Cambia '/ruta-de-la-pagina' por la URL a la que quieres redirigir al usuario después del registro.
-                } else {
-                  // Mostrar un mensaje de error en caso de fallo en el registro
-                  alert('Error en el registro: ' + data.message);
-                }
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(userData),
               })
-              .catch(error => {
-                console.error('Error de red:', error);
-              });
-          }
+                .then(response => response.json())
+                .then(data => {
+                  console.log(data);
+                  if (data.message === 'Registro exitoso') {
+                    // Registro exitoso, muestra SweetAlert y luego redirige después de 3 segundos
+                    Swal.fire({
+                      icon: 'success',
+                      title: 'Registro exitoso',
+                      showConfirmButton: false,
+                      timer: 3000 // Muestra el mensaje durante 3 segundos
+                    }).then(() => {
+                      window.location.href = 'iniciodesesion.html'; // Redirige al usuario después de 3 segundos
+                    });
+                  } else {
+                    // Mostrar un mensaje de error en caso de fallo en el registro
+                    Swal.fire({
+                      icon: 'error',
+                      title: 'Error en el registro',
+                      text: data.message,
+                    });
+                  }
+                })
+                .catch(error => {
+                  console.error('Error de red:', error);
+                  // Mostrar un mensaje de error si hay problemas de conexión
+                  Swal.fire({
+                    icon: 'error',
+                    title: 'Error de red',
+                    text: 'Ha ocurrido un error en la conexión.',
+                  });
+                });
+            }
     
 });
