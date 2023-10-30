@@ -1,4 +1,4 @@
-let recompensasLogInBotonCinecolombia = document.getElementById('recompensasLogInBotonCinecolombia');
+/*let recompensasLogInBotonCinecolombia = document.getElementById('recompensasLogInBotonCinecolombia');
 let recompensasLogInBotonMcDonalds = document.getElementById('recompensasLogInBotonMcDonalds');
 let recompensasLogInBotonKFC = document.getElementById('recompensasLogInBotonKFC');
 let recompensasLogInBotonCinecolombiaMensual = document.getElementById('recompensasLogInBotonCinecolombiaMensual');
@@ -121,4 +121,35 @@ function generateQR() {
     } else {
       alert("Por favor, ingresa un texto para generar el código QR.");
     }
-  }
+  }*/
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Coloca aquí tu código JavaScript
+    let recompensasLogInBotonXiaomi = document.getElementById('recompensasLogInBotonXiaomi');
+  
+    function generateQR() {
+        var qrText = "¡Hola! Este es un código QR de ejemplo.";
+  
+        var qrCodeContainer = document.getElementById("qrcode");
+        qrCodeContainer.innerHTML = ""; // Limpiar el contenedor
+  
+        var qrImg = document.createElement("img");
+        qrImg.src = "https://chart.googleapis.com/chart?chs=200x200&cht=qr&chl=" + qrText;
+  
+        qrCodeContainer.appendChild(qrImg);
+    }
+  
+    recompensasLogInBotonXiaomi.addEventListener('click', () => {
+        generateQR(); // Generar el código QR
+  
+        // Mostrar SweetAlert al comprar
+        Swal.fire({
+          title: '¡Felicidades!',
+          text: '¡Ganaste un computador!',
+          imageUrl: 'https://chart.googleapis.com/chart?chs=200x200&cht=qr&chl=¡Hola!%20Este%20es%20un%20código%20QR%20de%20ejemplo.',
+          imageAlt: 'QR Code',
+          confirmButtonText: 'Aceptar'
+        });
+    });
+});
+  
