@@ -72,7 +72,7 @@
 .imgLogInArticlesRecompensas{
     width: 80%;
     height: 50%;
-    background-color: rgb(127, 240, 255);
+    background-color: white;
 }
 .imgLogInArticlesRecompensas img{
     width: 100%;
@@ -82,6 +82,9 @@
     margin-top: 20px;
     text-align: center;
     width: 90%;
+}
+.textLogInArticlesRecompensas p{
+    margin-bottom: 0.5rem;
 }
 .buttonArticles{
     padding: 7px;
