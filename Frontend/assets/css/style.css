@@ -149,7 +149,7 @@ footer img{
     border: none;
     font-weight: bolder;
     border-radius: 3px;
-
+    cursor: pointer;
 }
 
 /*primer recuadro Recicla-ando*/
