@@ -26,17 +26,16 @@ def create_user(user: CreateUser) -> CreateUserOut:
     }
     return JSONResponse(status_code=201, content=content)
 
-@user_router.post('/login', status_code=200, response_model= dict)
+@user_router.post('/login', status_code=200, response_model= LoginUserOut)
 def login(user: LoginUser) -> dict:
-    db = Session()
-    data = UserService(db).post_login_user(user.email, user.password)
-    if not data:
+    try:
+        db = Session()
+        data = UserService(db).post_login_user(user.email, user.password)
+        if data:
+            return data
         return JSONResponse(status_code=418, content={"message": "El servidor se rehusa a preparar café porque es una tetera"})
-    content = {
-        'message':'Ha iniciado sesión correctamente',
-        'data' : jsonable_encoder(data)
-    }
-    return JSONResponse(status_code=200, content=content)
+    except Exception as e:
+        return JSONResponse(status_code=500, content={f"message": "Server Error: {e}"})
 
 #todo Metodos GET
 @user_router.get('/users',response_model=List[UserGetAll],status_code=200)
