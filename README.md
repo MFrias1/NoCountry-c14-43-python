@@ -25,7 +25,7 @@
       <img src="https://github.com/devicons/devicon/blob/master/icons/javascript/javascript-plain.svg" title="JavaScript" alt="HTML" width="40" heigth="40"/>
       <img src="https://github.com/devicons/devicon/blob/master/icons/github/github-original.svg" title="GitHub" alt="HTML" width="40" heigth="40"/>&nbsp;
        <img src="https://github.com/devicons/devicon/blob/master/icons/linux/linux-plain.svg" title="Linux" alt="HTML" width="40" heigth="40"/>
-       <img src="https://github.com/devicons/devicon/blob/master/icons/go/go-plain.svg" title="Git" alt="HTML" width="40" heigth="40"/>
+       <img src="https://github.com/devicons/devicon/blob/master/icons/git/git-plain.svg" title="Git" alt="HTML" width="40" heigth="40"/>
      </div>
 </div>
 
