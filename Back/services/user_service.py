@@ -25,11 +25,11 @@ class UserService():
         return result
             
     def get_user_all(self):
-        users =self.db.query(User).all()
+        users =self.db.query(User).filter(User.is_active).all()
         return users
     
     def get_user_for_id(self, id):
-        user = self.db.query(User).filter(User.id == id).first()
+        user = self.db.query(User).filter(and_(User.id == id, User.is_active)).first()
         return user
     
     def put_user_update(self, id, data:UpdateInfoUser):
@@ -51,8 +51,13 @@ class UserService():
         self.db.commit()
         return user
     
-    def delete_user():
-        pass
+    def put_deactivate_user(self, id):
+        user = self.get_user_for_id(id)
+        if not user: 
+            return user
+        user.is_active = False
+        self.db.commit()
+        return user
     
 # Se tuvo que agregar el incremento de monedas desde el manejo de la entedidad USER
     def put_coins_user(self, user_id, coins):

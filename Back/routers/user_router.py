@@ -34,7 +34,7 @@ def login(user: LoginUser) -> dict:
         return JSONResponse(status_code=418, content={"message": "El servidor se rehusa a preparar café porque es una tetera"})
     content = {
         'message':'Ha iniciado sesión correctamente',
-        'data' : jsonable_encoder(data)
+        'data' : jsonable_encoder(data) #! Hacer cambios devolver solo lo necesario.
     }
     return JSONResponse(status_code=200, content=content)
 
@@ -60,7 +60,6 @@ def update_user(id:int, user: UpdateInfoUser):
         return JSONResponse(status_code=404, content={'message':'Usuario no encontrado'})
     return JSONResponse(status_code=201, content={'message':'La información del usuario ha sido actualizada'})
 
-#! Crear ruta cambiar contrasena
 @user_router.put('/user/change_password/{id}', status_code=201, response_model=dict)
 def change_password(id:int, user:ChangeUserPassword):
     db = Session()
@@ -69,6 +68,13 @@ def change_password(id:int, user:ChangeUserPassword):
         return JSONResponse(status_code=404, content={'message':'Usuario no encontrado'})
     return JSONResponse(status_code=201, content={'message' : 'Contraseña ha sido actualizada'})
 #! Crear ruta eliminar usuario
+@user_router.put('/user/deactivate/{id}', status_code=201, response_model=dict)
+def deactivate_user(id:int):
+    db = Session()
+    result =UserService(db).put_deactivate_user(id)
+    if not result:
+        return JSONResponse(status_code=404, content={'message':'Usuario no encontrado'})
+    return JSONResponse(status_code=201, content={'message' : 'Usuario ha sido desactivado'})
 # @user_router.get('/login', status_code=201)
 # def user(token: str = Depends(oauth2_scheme)):
 #     return 'hola'
