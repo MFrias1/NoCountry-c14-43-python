@@ -32,15 +32,14 @@ async function postInicioSesion(event) {
 
     if (response.ok) {
       const responseData = await response.json();
-      const token = responseData.token; // Obtén el token del servidor
       const userId = responseData.id; // Obtén el ID del usuario del servidor
+      const coins= responseData.coins;
+      const name= responseData.first_name;
 
-      // Almacena el token y el ID del usuario en el localStorage
-      localStorage.setItem('token', token);
-      localStorage.setItem('userId', userId);
+      // Almacena el token y el ID del usuario en el localStorag
 
       // Muestra el token en un alert
-      alert(`Token de autenticación: ${token}`);
+
       
       // Mostrar mensaje de inicio de sesión exitoso
       Swal.fire({
@@ -49,6 +48,9 @@ async function postInicioSesion(event) {
         showConfirmButton: false,
         timer: 3000
       }).then(() => {
+        localStorage.setItem('userId', userId);
+        localStorage.setItem('coins', coins);
+        localStorage.setItem('name', name);
         window.location.href = 'login.html';
       });
     } else {
