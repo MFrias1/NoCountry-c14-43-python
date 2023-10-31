@@ -38,11 +38,18 @@ def login(user: LoginUser) -> dict:
         return JSONResponse(status_code=500, content={f"message": "Server Error: {e}"})
 
 #todo Metodos GET
-@user_router.get('/users',response_model=List[UserGetAll],status_code=200)
-def list_users() -> List[UserGetAll]:
+@user_router.get('/users_active',response_model=List[UserGetAll],status_code=200)
+def list_users_active() -> List[UserGetAll]:
+    db = Session()
+    users = UserService(db).get_user_all_active()
+    return JSONResponse(status_code=200, content=jsonable_encoder(users))
+
+@user_router.get('/users_all',response_model=List[UserGetAll],status_code=200)
+def list_users_all() -> List[UserGetAll]:
     db = Session()
     users = UserService(db).get_user_all()
     return JSONResponse(status_code=200, content=jsonable_encoder(users))
+    
     
 @user_router.get('/users/{id}',status_code=200, response_model=UserForId)
 def get_user_id(id:int):
@@ -59,7 +66,6 @@ def update_user(id:int, user: UpdateInfoUser):
         return JSONResponse(status_code=404, content={'message':'Usuario no encontrado'})
     return JSONResponse(status_code=201, content={'message':'La información del usuario ha sido actualizada'})
 
-#! Crear ruta cambiar contrasena
 @user_router.put('/user/change_password/{id}', status_code=201, response_model=dict)
 def change_password(id:int, user:ChangeUserPassword):
     db = Session()
@@ -67,7 +73,16 @@ def change_password(id:int, user:ChangeUserPassword):
     if not result:
         return JSONResponse(status_code=404, content={'message':'Usuario no encontrado'})
     return JSONResponse(status_code=201, content={'message' : 'Contraseña ha sido actualizada'})
-#! Crear ruta eliminar usuario
+
+@user_router.put('/user/deactivate/{id}', status_code=201, response_model=dict)
+def deactivate_user(id:int):
+    db = Session()
+    result =UserService(db).put_deactivate_user(id)
+    if not result:
+        return JSONResponse(status_code=404, content={'message':'Usuario no encontrado'})
+    return JSONResponse(content={'message' : 'Usuario ha sido desactivado'})
+
+
 # @user_router.get('/login', status_code=201)
 # def user(token: str = Depends(oauth2_scheme)):
 #     return 'hola'

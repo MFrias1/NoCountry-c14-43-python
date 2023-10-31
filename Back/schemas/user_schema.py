@@ -22,7 +22,6 @@ class UserGetAll(BaseModel):
     email : str
     country : str
     coins : int
-    password : str
 
 class UserForId(BaseModel):
     id: int
@@ -40,6 +39,9 @@ class UpdateInfoUser(BaseModel):
   
 class ChangeUserPassword(BaseModel):
     password : str
+
+class DeactivateUser(BaseModel):
+    id: int
 
 class LoginUserOut(BaseModel):
     id: int
