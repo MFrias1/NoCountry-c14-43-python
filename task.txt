@@ -1,0 +1,2 @@
+quitar password de get all y de by id, agregar id en get all,
+ todas las rutas con try y except, proteger las rutas
