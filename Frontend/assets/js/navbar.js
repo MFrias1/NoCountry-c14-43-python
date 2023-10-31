@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let navbar=document.getElementById('navbar');
     function navbarLogOut() {
         navbar.innerHTML= `
-        <a class="logo_navbar" href="./index.html"><img src="./assets/img/icon/logo.png" alt=""></a>
+        <a class="logo_navbar" href=""><img src="./assets/img/icon/logo.png" alt=""></a>
                         <div class="navbar_enlaces">
                             <div id="listadoMenu">
                                 <ul>
@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function navbarLogin(){
         navbar.innerHTML=`
-        <a class="logo_navbar" href="./index.html"><img src="./assets/img/icon/logo.png" alt=""></a>
+        <a class="logo_navbar" ><img src="./assets/img/icon/logo.png" alt=""></a>
             <div class="navbar_enlaces_logIn">
                     <div class="navbarLogIn_banner_button">
                         <a class="banner_button_login" href="./recompensas.html">Recompensas</a>
@@ -33,12 +33,20 @@ document.addEventListener("DOMContentLoaded", function () {
                     <div class="banner_button_monedero">
                         <p>Monedero $ </p><p id="contenidoMonedero"></p>
                     </div>
-                    <a href="#" class="logOut" id="logOut" ><img src="./assets/img/landingimg/logout.png" alt="" srcset="" ></a>
+                    <a href="" class="logOut" id="logOut" ><img src="./assets/img/landingimg/logout.png" alt="" srcset="" ></a>
             </div>
         `;
+
+        document.getElementById('logOut').addEventListener('click', function (event) {
+            event.preventDefault(); // Evitar el comportamiento predeterminado del enlace
+            localStorage.clear(); // Limpiar el localStorage
+            window.location.href = "./index.html"; // Redirigir a la página de inicio o a la página deseada después del logout
+        });
          
        
     };
+
+    
     
     /*if(window.location.href = 'login.html'){
         botonInicioDeSesionIndex.style.display="none";
@@ -49,16 +57,9 @@ document.addEventListener("DOMContentLoaded", function () {
     let coins=localStorage.getItem('coins');
     let first_name= localStorage.getItem('nombre');
 
-    // logout
-    function logout(){
-        sessionStorage.removeItem('userId','coins','nombre');
-        window.location ='../index.html';
-    };
 
-    const logoutButton =document.getElementById("logOut");
-    if (logoutButton) {
-        logoutButton.addEventListener('click', logout);
- }
+
+
     
     
     //traigo monedero
@@ -90,18 +91,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
     };
     
-    if(userId!=null && coins!=null && first_name!=null && (document.title="Bienvenido") ){
+    if(userId!=null && coins!=null && first_name!=null && (document.title==="Bienvenido") ){
        navbarLogin();
-    }else if(userId!=null && coins!=null && first_name!=null && (document.title="blog")){
-        navbarLogin();
+    }else if(userId!=null && coins!=null && first_name!=null && (document.title==="blog")){
+       navbarLogin();
         
-    } else if (userId!=null && coins!=null && first_name!=null && (document.title="Recicla-ando Bienvenidos")){
+    } else if (userId!=null && coins!=null && first_name!=null && (document.title==="Recicla-ando Bienvenidos")){
         navbarLogin();
        
-    }else if(userId==null && coins==null && first_name==null && (document.title="Recicla-ando Bienvenidos")){
+    }else if(userId==null && coins==null && first_name==null && (document.title==="Recicla-ando Bienvenidos")){
         navbarLogOut();
     
-    }else if(userId==null && coins==null && first_name==null && (document.title="blog")){
+    }else if(userId==null && coins==null && first_name==null && (document.title==="blog")){
         navbarLogOut(); 
     };
 });
