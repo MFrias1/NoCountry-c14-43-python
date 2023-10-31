@@ -1,5 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     let navbar=document.getElementById('navbar');
+
+    //Funcion que carga el navbar, cuando el usuario esta deslogueado
     function navbarLogOut() {
         navbar.innerHTML= `
         <a class="logo_navbar" href=""><img src="./assets/img/icon/logo.png" alt=""></a>
@@ -22,13 +24,16 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
    
-
+    //Funcion que carga el navbar, cuando el usuario esta logueado
     function navbarLogin(){
         navbar.innerHTML=`
-        <a class="logo_navbar" ><img src="./assets/img/icon/logo.png" alt=""></a>
+        <a class="logo_navbar" href="./index.html" ><img src="./assets/img/icon/logo.png" alt=""></a>
             <div class="navbar_enlaces_logIn">
                     <div class="navbarLogIn_banner_button">
                         <a class="banner_button_login" href="./recompensas.html">Recompensas</a>
+                    </div>
+                    <div class="navbarLogIn_banner_button">
+                        <a class="banner_button_login" href="./blog.html">Blog</a>
                     </div>
                     <div class="banner_button_monedero">
                         <p>Monedero $ </p><p id="contenidoMonedero"></p>
@@ -46,12 +51,8 @@ document.addEventListener("DOMContentLoaded", function () {
        
     };
 
-    
-    
-    /*if(window.location.href = 'login.html'){
-        botonInicioDeSesionIndex.style.display="none";
-        botonRegistro.style.display="none";
-    }*/
+    // se guarda en distintas variables lo contenido en el localstorage
+
 
     let userId= localStorage.getItem('userId');
     let coins=localStorage.getItem('coins');
@@ -62,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     
     
-    //traigo monedero
+    // se convierte el userId en interger, ya que en la api esta de tipo de variable interger
    
 
     userId = parseInt(userId, 10); 
@@ -91,19 +92,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     };
     
-    if(userId!=null && coins!=null && first_name!=null && (document.title==="Bienvenido") ){
-       navbarLogin();
-    }else if(userId!=null && coins!=null && first_name!=null && (document.title==="blog")){
-       navbarLogin();
-        
-    } else if (userId!=null && coins!=null && first_name!=null && (document.title==="Recicla-ando Bienvenidos")){
-        navbarLogin();
-       
-    }else if(userId==null && coins==null && first_name==null && (document.title==="Recicla-ando Bienvenidos")){
-        navbarLogOut();
-    
-    }else if(userId==null && coins==null && first_name==null && (document.title==="blog")){
-        navbarLogOut(); 
-    };
+    if (userId && coins && first_name) {
+        navbarLogin(); // Si hay información en el localStorage, el usuario está logueado
+    } else {
+        navbarLogOut(); // Si no hay información, el usuario está deslogueado
+    }
 });
 
