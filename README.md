@@ -1,6 +1,6 @@
 <div align="center">
   <h1>Reciclando_ando</h1>
-  <img width="200" style="margin-bottom: 1.5rem" src="./logo_readme.jpg" />
+  <img width="150" style="margin-bottom: 1.5rem" src="./logo_readme.jpg" />
 </div>
 
 ---
