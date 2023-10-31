@@ -12,6 +12,7 @@ from fastapi import FastAPI, Depends
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 from fastapi import HTTPException
 from services.user_service import UserService
+from services.prize_service import PrizeService
 
 
 movement_router = APIRouter()
@@ -28,7 +29,8 @@ def create_movement(movement_data: MovementCreate):
                 user_id=movement_data.user_id,
                 name=movement_data.name,
                 description=movement_data.description,
-                coins=movement_data.coins
+                coins=movement_data.coins,
+                origin=movement_data.origin
             )
 
             if new_movement:
@@ -46,6 +48,7 @@ def create_movement(movement_data: MovementCreate):
         return http_exception
     except Exception as e:
         return JSONResponse(status_code=500, content={'message': str(e)})
+ 
 
 @movement_router.get('/movement/{user_id}/user_movements')
 def get_user_movements(user_id: int):
@@ -71,5 +74,29 @@ def get_user_movements(user_id: int):
         return HTTPException(status_code=500, detail=error_response)
 
 
+@movement_router.post('/redeem_prize', response_model=dict)
+def redeem_prize(user_id: int, prize_id: int):
+    db = Session()
+    movement_service = MovementService(db)
+    user_service = UserService(db)
+    prize_service = PrizeService(db)
+    try:
+        prize = prize_service.prize_get_for_id(prize_id)
 
+        if not prize:
+            return JSONResponse(status_code=404, content={'message': 'Premio no encontrado'})
 
+        if not prize.is_active:
+            return JSONResponse(status_code=400, content={'message': 'El premio no está activo'})
+
+        user = user_service.get_user_for_id(user_id)
+        if user.coins < prize.coins:
+            return JSONResponse(status_code=400, content={'message': 'Saldo insuficiente para canjear el premio'})
+
+        # Llama a la función en service.py
+        if movement_service.redeem_prize(user_id, prize, user_service):
+            return JSONResponse(status_code=200, content={'message': 'Premio canjeado con éxito'})
+        else:
+            return JSONResponse(status_code=500, content={'message': 'Error interno del servidor'})
+    except HTTPException as http_exception:
+        raise http_exception

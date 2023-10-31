@@ -10,7 +10,8 @@ class Movement(Base):
     coins = Column(Integer)
     user_id = Column(Integer, ForeignKey('users.id'))
     date = Column(DateTime(timezone=True), server_default=func.now())
-    not_push = Column(String)
+    origin = Column(String)
+    
     def dict(self):
         return {
             "movement_id": self.movement_id,
