@@ -28,12 +28,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let userId= localStorage.getItem('userId');
     let coins=localStorage.getItem('coins');
-    let first_name= localStorage.getItem('name');
+    let first_name= localStorage.getItem('nombre');
   
     function logOut(){
         const logOutImg= document.getElementById('logOut');
         logOutImg.addEventListener('click', ()=> {
-            localStorage.removeItem('userId', 'coins','name');
+            localStorage.removeItem('userId', 'coins','nombre');
         });
     };
 

@@ -33,24 +33,26 @@ async function postInicioSesion(event) {
     if (response.ok) {
       const responseData = await response.json();
       const userId = responseData.id; // Obtén el ID del usuario del servidor
-      const coins= responseData.coins;
-      const name= responseData.first_name;
+      const nombre = responseData.first_name; // Obtén el nombre del usuario
+      const coins = responseData.coins; // Obtén las coins del usuario
+      // Obtén los apellidos del usuario
 
-      // Almacena el token y el ID del usuario en el localStorag
+     
 
       // Muestra el token en un alert
-
       
       // Mostrar mensaje de inicio de sesión exitoso
       Swal.fire({
         icon: 'success',
         title: 'Inicio de sesión exitoso',
         showConfirmButton: false,
-        timer: 3000
+        timer: 3000,
       }).then(() => {
         localStorage.setItem('userId', userId);
+        localStorage.setItem('nombre', nombre);
         localStorage.setItem('coins', coins);
-        localStorage.setItem('name', name);
+
+        
         window.location.href = 'login.html';
       });
     } else {
