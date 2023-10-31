@@ -42,4 +42,12 @@ class ChangeUserPassword(BaseModel):
 
 class DeactivateUser(BaseModel):
     id: int
+
+class LoginUserOut(BaseModel):
+    id: int
+    first_name : str
+    last_name : str
+    email : str
+    country : str
+    coins : int
 #todo #recocha

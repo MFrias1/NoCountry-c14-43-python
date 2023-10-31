@@ -26,24 +26,30 @@ def create_user(user: CreateUser) -> CreateUserOut:
     }
     return JSONResponse(status_code=201, content=content)
 
-@user_router.post('/login', status_code=200, response_model= dict)
+@user_router.post('/login', status_code=200, response_model= LoginUserOut)
 def login(user: LoginUser) -> dict:
-    db = Session()
-    data = UserService(db).post_login_user(user.email, user.password)
-    if not data:
+    try:
+        db = Session()
+        data = UserService(db).post_login_user(user.email, user.password)
+        if data:
+            return data
         return JSONResponse(status_code=418, content={"message": "El servidor se rehusa a preparar café porque es una tetera"})
-    content = {
-        'message':'Ha iniciado sesión correctamente',
-        'data' : jsonable_encoder(data) #! Hacer cambios devolver solo lo necesario.
-    }
-    return JSONResponse(status_code=200, content=content)
+    except Exception as e:
+        return JSONResponse(status_code=500, content={f"message": "Server Error: {e}"})
 
 #todo Metodos GET
-@user_router.get('/users',response_model=List[UserGetAll],status_code=200)
-def list_users() -> List[UserGetAll]:
+@user_router.get('/users_active',response_model=List[UserGetAll],status_code=200)
+def list_users_active() -> List[UserGetAll]:
+    db = Session()
+    users = UserService(db).get_user_all_active()
+    return JSONResponse(status_code=200, content=jsonable_encoder(users))
+
+@user_router.get('/users_all',response_model=List[UserGetAll],status_code=200)
+def list_users_all() -> List[UserGetAll]:
     db = Session()
     users = UserService(db).get_user_all()
     return JSONResponse(status_code=200, content=jsonable_encoder(users))
+    
     
 @user_router.get('/users/{id}',status_code=200, response_model=UserForId)
 def get_user_id(id:int):
@@ -67,14 +73,16 @@ def change_password(id:int, user:ChangeUserPassword):
     if not result:
         return JSONResponse(status_code=404, content={'message':'Usuario no encontrado'})
     return JSONResponse(status_code=201, content={'message' : 'Contraseña ha sido actualizada'})
-#! Crear ruta eliminar usuario
+
 @user_router.put('/user/deactivate/{id}', status_code=201, response_model=dict)
 def deactivate_user(id:int):
     db = Session()
     result =UserService(db).put_deactivate_user(id)
     if not result:
         return JSONResponse(status_code=404, content={'message':'Usuario no encontrado'})
-    return JSONResponse(status_code=201, content={'message' : 'Usuario ha sido desactivado'})
+    return JSONResponse(content={'message' : 'Usuario ha sido desactivado'})
+
+
 # @user_router.get('/login', status_code=201)
 # def user(token: str = Depends(oauth2_scheme)):
 #     return 'hola'

@@ -18,6 +18,4 @@ Session = sessionmaker(bind=engine)
 
 Base = declarative_base()
 
-
-
 #print(database_url)

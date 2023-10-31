@@ -78,9 +78,7 @@ function escogerPreguntaAleatoria() {
     escogerPregunta(n);
 
     // Iniciar el temporizador de 10 segundos
-    temporizador = setTimeout(() => {
-      reiniciar();
-    }, 10000); // 10 segundos en milisegundos
+    iniciarTemporizador();
   } else {
     // Manejar flujo si las preguntas no son aleatorias
     // ...
@@ -191,6 +189,9 @@ function mostrarFinalDelJuego() {
     title: "Juego finalizado",
     html: "Puntos totales: " + puntosTotales,
     icon: "success"
+  }).then(() => {
+    // Redirigir a log.html después de mostrar el mensaje de juego finalizado
+    window.location.href = "login.html";
   });
 }
 

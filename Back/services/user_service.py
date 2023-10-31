@@ -24,8 +24,13 @@ class UserService():
         result = self.db.query(User).filter(and_(User.email == email, User.password == password_hash)).first()
         return result
             
-    def get_user_all(self):
+    def get_user_all_active(self):
         users =self.db.query(User).filter(User.is_active).all()
+        return users
+    
+    def get_user_all(self):
+        self.db = Session()
+        users =self.db.query(User).all()
         return users
     
     def get_user_for_id(self, id):
