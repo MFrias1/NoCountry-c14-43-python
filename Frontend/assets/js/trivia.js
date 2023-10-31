@@ -57,14 +57,19 @@ function escogerPreguntaAleatoria() {
   
   if (preguntas_aleatorias) {
     let n;
-    if (npreguntas.length >= 10) {
+    if (npreguntas.length >= 5) {
       // Si ya se han mostrado 10 preguntas, muestra el juego finalizado
       if (mostrar_pantalla_juego_términado) {
         swal.fire({
           title: "Juego finalizado",
           html: "Puntos totales: " + puntosTotales,
           icon: "success"
-        });
+        }).then((result) => {
+          if (result.isConfirmed) {
+            enviarPuntosAlBackend(); // Envía los puntos al backend
+            
+          }
+          });
       }
       return; // Detener el juego después de 10 preguntas
     }
@@ -184,17 +189,41 @@ function reiniciar() {
   }
 }
 
-function mostrarFinalDelJuego() {
-  swal.fire({
-    title: "Juego finalizado",
-    html: "Puntos totales: " + puntosTotales,
-    icon: "success"
-  }).then(() => {
-    // Redirigir a log.html después de mostrar el mensaje de juego finalizado
-    window.location.href = "login.html";
+function enviarPuntosAlBackend() {
+  // Obtener la ID del usuario desde el Local Storage
+  const userId = parseInt(localStorage.getItem('userId',10));
+
+  // Datos a enviar al backend
+  const datos = {
+    user_id: userId,
+    name: "Nombre del usuario", // Reemplaza con el nombre del usuario si tienes acceso
+    description: "Descripción del evento",
+    coins: puntosTotales,
+    date: new Date().toISOString()
+  };
+
+  fetch('https://nocountry-api.onrender.com/movement/create_movement', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(datos),
+  })
+  .then(response => {
+    if (response.ok) {
+      // Si la respuesta del backend es exitosa, redirige a la página de inicio de sesión
+      window.location.href = `login.html`;
+    } else {
+      // Manejo de errores
+      console.error('Error al enviar los puntos al servidor.');
+    }
+  })
+  .catch(error => {
+    console.error('Error de red: ', error);
   });
 }
 
+// 
 function select_id(id) {
   return document.getElementById(id);
 }
