@@ -7,8 +7,8 @@ from schemas.user_schema import UpdateInfoUser, ChangeUserPassword
 #from jwt_manager import create_token
 
 class UserService():
-    def __init__(self,db) -> None:
-        self.db = db
+    def __init__(self) -> None:
+        self.db = Session()
 
     def post_register_user(self, user) -> dict:
         new_user = User(**user.model_dump())
@@ -16,21 +16,24 @@ class UserService():
         self.db.add(new_user)
         self.db.commit() 
         self.db.refresh(new_user) 
+        self.db.close()
         data = new_user
         return data
     
     def post_login_user(self, email, password):
         password_hash = hash_password(password)
         result = self.db.query(User).filter(and_(User.email == email, User.password == password_hash)).first()
+        self.db.close()
         return result
             
     def get_user_all_active(self):
         users =self.db.query(User).filter(User.is_active).all()
+        self.db.close()
         return users
     
     def get_user_all(self):
-        self.db = Session()
         users =self.db.query(User).all()
+        self.db.close()
         return users
     
     def get_user_for_id(self, id):
@@ -45,6 +48,7 @@ class UserService():
         user.last_name = data.last_name
         user.country = data.country     
         self.db.commit()
+        self.db.close()
         return user      
 
     def put_change_password(self, id, data:ChangeUserPassword):
@@ -54,6 +58,7 @@ class UserService():
         data.password = hash_password(data.password)
         user.password = data.password
         self.db.commit()
+        self.db.close()
         return user
     
     def put_deactivate_user(self, id):
@@ -62,6 +67,7 @@ class UserService():
             return user
         user.is_active = False
         self.db.commit()
+        self.db.close()
         return user
     
 # Se tuvo que agregar el incremento de monedas desde el manejo de la entedidad USER
@@ -71,6 +77,7 @@ class UserService():
         user.coins += coins
         self.db.commit()
         self.db.refresh(user)
+        
         return user
 
 

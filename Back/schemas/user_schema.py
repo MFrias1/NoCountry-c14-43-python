@@ -30,7 +30,6 @@ class UserForId(BaseModel):
     email : str
     country : str
     coins : int
-    password : str
 
 class UpdateInfoUser(BaseModel):
     first_name : str
