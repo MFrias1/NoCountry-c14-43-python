@@ -7,3 +7,4 @@ class MovementCreate(BaseModel):
     description: str
     coins: int
     date: datetime
+    origin: str
