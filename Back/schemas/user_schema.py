@@ -41,5 +41,11 @@ class UpdateInfoUser(BaseModel):
 class ChangeUserPassword(BaseModel):
     password : str
 
-
+class LoginUserOut(BaseModel):
+    id: int
+    first_name : str
+    last_name : str
+    email : str
+    country : str
+    coins : int
 #todo #recocha
