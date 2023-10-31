@@ -21,6 +21,8 @@ document.addEventListener("DOMContentLoaded", function () {
     `;
     };
 
+   
+
     function navbarLogin(){
         navbar.innerHTML=`
         <a class="logo_navbar" href="./index.html"><img src="./assets/img/icon/logo.png" alt=""></a>
@@ -34,6 +36,8 @@ document.addEventListener("DOMContentLoaded", function () {
                     <a href="#" class="logOut" id="logOut" ><img src="./assets/img/landingimg/logout.png" alt="" srcset="" ></a>
             </div>
         `;
+         
+       
     };
     
     /*if(window.location.href = 'login.html'){
@@ -58,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function () {
     
     
     //traigo monedero
-    let contenidoMonedero = document.getElementById("contenidoMonedero");
+   
 
     userId = parseInt(userId, 10); 
         
