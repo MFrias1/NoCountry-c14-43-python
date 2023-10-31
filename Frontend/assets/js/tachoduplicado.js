@@ -32,10 +32,8 @@ function preload(){
     this.load.image('background','./Juegos/PNG/Background/bg_juego.png');
     this.load.image('franjaTachos','./Juegos/PNG/Background/franjaTachos.png');
     //load basura img
-    this.load.image('banano', './Juegos/PNG/Environment/banano.png');
-    this.load.image('celular', './Juegos/PNG/Environment/celular.png')
-    this.load.image('bolsaPlastica', './Juegos/PNG/Environment/bolsa_plastica.png');
-    this.load.image('vidrio','./Juegos/PNG/Environment/botella_de_vidrio.png');
+    this.load.image('basura', './Juegos/PNG/Environment/cactus.png')
+    this.load.image('basura2', './Juegos/PNG/Environment/.png');
     //tachos de basura
     this.load.image('tachoverde', './Juegos/PNG/Environment/tachoverde.png');
     this.load.image('tachorojo', './Juegos/PNG/Environment/tachorojo.png');
@@ -65,30 +63,58 @@ function create(){
         fontSize:'22px',
         fill:'#000'
     })
+    
+    /*//BASURA 1
+    //grupo dinamico con basura
+    const basuras = this.physics.add.group({
+        key: 'basura',
+        repeat: 3,
+    });
+    
+    // Itera sobre los elementos del grupo y configura cada basura
+    basuras.children.iterate(function(basura) {
+        basura.setScale(0.5); // Escala la basura
+        const randomX = Phaser.Math.Between(300, 1200); // Posición aleatoria en el eje X
+        basura.x = randomX; // Configura la posición X de la basura
+        // Proporciona una velocidad inicial en el eje Y para hacer que caiga
+        const randomSpeedY = Phaser.Math.Between(300, 800); // Velocidad vertical aleatoria
+        basura.setVelocity(0, randomSpeedY);
+    });*/
+    //BASURA 2
+    //grupo dinamico con basura
+    /*const basuras2 = this.physics.add.group({
+        key: 'basura',
+        repeat: 3,
+    });*/
 
-    for (let i = 0; i<5; i++) {
-        this.time.delayedCall(2700 * i, () => {
+    for (let i = 0; i < 10; i++) {
+        this.time.delayedCall(2500 * i, () => {
+            
             // Grupo de basuras 2
-            let reciclable = this.physics.add.group({
-                key: ['banano', 'celular', 'bolsaPlastica', 'vidrio'],
+            const basuras2 = this.physics.add.group({
+                key: 'basura2',
                 repeat: 3,
             });
     
-            reciclable.children.iterate(function (basurareciclable) {
-                basurareciclable.setScale(0.1);
+            basuras2.children.iterate(function (basura) {
+                basura.setScale(0.5);
                 const randomX = Phaser.Math.Between(100, 1200);
-                basurareciclable.x = randomX;
+                basura.x = randomX;
                 const randomSpeedY = Phaser.Math.Between(300, 800);
-                basurareciclable.setVelocity(0, randomSpeedY);
+                basura.setVelocity(0, randomSpeedY);
             });
-    
+            
+
             // La función de colisión se ejecutará cuando ocurra una colisión
-            this.physics.add.collider(reciclable, this.basetacho, (basura) => {
+            this.physics.add.collider(basuras2, this.basetacho, (basura) => {
                 // Desactiva la gravedad de la basura
                 basura.setGravityY(0);
-                // con cada colisión incrementa monedas
-                monedas++;
-                monedasText.setText('Total Monedas: ' + monedas);
+                if (this.tacho.texture.key === 'tachoamarillo' && basura.texture.key === 'basura2') {
+                    // Las claves de textura coinciden
+                    // Incrementa el contador de monedas solo si coinciden los tipos
+                    monedas++;
+                    monedasText.setText('Total Monedas: ' + monedas);
+                }
             });
     
         }, [], this);
@@ -219,14 +245,11 @@ function create(){
     this.cursors = this.input.keyboard.createCursorKeys();
 };
 
-function update(){ //loop
+function update() {
     this.tacho.setVelocity(0) && this.basetacho.setVelocity(0);
-    if (this.cursors.left.isDown)
-    {
+    if (this.cursors.left.isDown) {
         this.tacho.setVelocityX(-550) && this.basetacho.setVelocityX(-550);
-
-    }else if (this.cursors.right.isDown)
-    {
+    } else if (this.cursors.right.isDown) {
         this.tacho.setVelocityX(550) && this.basetacho.setVelocityX(550);
-    };
-};
+    }
+}
