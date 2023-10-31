@@ -5,6 +5,7 @@ alembic/
 recicla_ando
 alembic.ini
 a.py
+.env.example
 ### Node ###
 # Logs
 logs
