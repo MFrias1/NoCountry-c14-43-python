@@ -14,67 +14,71 @@ user_router = APIRouter()
 oauth2_scheme = OAuth2PasswordBearer('/token')
 
 #todo Metodos POST
-@user_router.post('/create_user', status_code=201, response_model=CreateUser)
-def create_user(user: CreateUser) -> CreateUserOut:
-    db =  Session()
-    data = UserService(db).post_register_user(user)
-    if not data:
-        return JSONResponse(status_code=201, content={'message':'Usuario teregistrado'})
-    content = {
-        'message':'Registro exitoso',
-        'data' : jsonable_encoder(data)
-    }
-    return JSONResponse(status_code=201, content=content)
+@user_router.post('/create_user', status_code=200, response_model=UserOut)
+def create_user(user: CreateUser):
+    try:
+        db =  Session()
+        data = UserService(db).post_register_user(user)
+        if data:
+            return data
+        return JSONResponse(status_code=404, content={f'"message":"Usuario NO Creado"'})
+    except Exception as e:
+        return JSONResponse(status_code=500, content={f"message": "Server Error: {e}"})
 
-@user_router.post('/login', status_code=200, response_model= LoginUserOut)
-def login(user: LoginUser) -> dict:
+@user_router.post('/login', status_code=200, response_model= UserOut)
+def login(user: LoginUser):
     try:
         db = Session()
         data = UserService(db).post_login_user(user.email, user.password)
         if data:
             return data
-        return JSONResponse(status_code=418, content={"message": "El servidor se rehusa a preparar café porque es una tetera"})
+        return JSONResponse(status_code=403, content={"message": "Error en datos de Usuario"})
     except Exception as e:
         return JSONResponse(status_code=500, content={f"message": "Server Error: {e}"})
 
 #todo Metodos GET
-@user_router.get('/users',response_model=List[UserGetAll],status_code=200)
-def list_users() -> List[UserGetAll]:
-    db = Session()
-    users = UserService(db).get_user_all()
-    return JSONResponse(status_code=200, content=jsonable_encoder(users))
+@user_router.get('/users',status_code=200 ,response_model=List[UserOut])
+def list_users():
+    try:
+        db = Session()
+        users = UserService(db).get_user_all()
+        if users:
+            return users
+        return JSONResponse(status_code=404, content='{"message":"No Existen Usuarios"}')
+    except Exception as e:
+        return JSONResponse(status_code=500, content={f"message": "Server Error: {e}"})
     
-@user_router.get('/users/{id}',status_code=200, response_model=UserForId)
+@user_router.get('/users/{id}',status_code=200, response_model=UserOut)
 def get_user_id(id:int):
-    db = Session()
-    user = UserService(db).get_user_for_id(id)
-    return JSONResponse(status_code=200,content=jsonable_encoder(user))
+    try:
+        db = Session()
+        user = UserService(db).get_user_for_id(id)
+        if user:
+            return user
+        return JSONResponse(status_code=404, content='{"message":"Usuario NO Existe"}')
+    except Exception as e:
+        return JSONResponse(status_code=500, content={f"message": "Server Error: {e}"})
 
 #todo Metodos PUT
-@user_router.put('/user/update_profile/{id}', status_code=201, response_model=dict)
+@user_router.put('/user/update_profile/{id}', status_code=200, response_model=UserOut)
 def update_user(id:int, user: UpdateInfoUser):
-    db = Session()
-    result = UserService(db).put_user_update(id,user)
-    if not result:
-        return JSONResponse(status_code=404, content={'message':'Usuario no encontrado'})
-    return JSONResponse(status_code=201, content={'message':'La información del usuario ha sido actualizada'})
+    try:
+        db = Session()
+        result = UserService(db).put_user_update(id,user)
+        if result:
+            return result
+        return JSONResponse(status_code=404, content={'message':'Usuario NO Actualizado'})
+    except Exception as e:
+        return JSONResponse(status_code=500, content={f"message": "Server Error: {e}"})
 
 #! Crear ruta cambiar contrasena
-@user_router.put('/user/change_password/{id}', status_code=201, response_model=dict)
+@user_router.put('/user/change_password/{id}', status_code=201, response_model=UserOut)
 def change_password(id:int, user:ChangeUserPassword):
-    db = Session()
-    result = UserService(db).put_change_password(id, user)
-    if not result:
-        return JSONResponse(status_code=404, content={'message':'Usuario no encontrado'})
-    return JSONResponse(status_code=201, content={'message' : 'Contraseña ha sido actualizada'})
-#! Crear ruta eliminar usuario
-# @user_router.get('/login', status_code=201)
-# def user(token: str = Depends(oauth2_scheme)):
-#     return 'hola'
-
-# @user_router.post('/token', status_code=201)
-# def login(form_data: OAuth2PasswordRequestForm = Depends()):
-#     print(form_data.username, form_data.password)
-#     return 'ok'
-
-# newUserDict = jsonable_encoder(CreateUserOut(**jsonable_encoder(newUser)))
+    try:
+        db = Session()
+        result = UserService(db).put_change_password(id, user)
+        if result:
+            return result
+        return JSONResponse(status_code=404, content={'message':'Fallo el Cambio de Contraseña'})
+    except Exception as e:
+        return JSONResponse(status_code=500, content={f"message": "Server Error: {e}"})

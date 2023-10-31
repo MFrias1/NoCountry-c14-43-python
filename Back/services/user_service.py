@@ -10,7 +10,7 @@ class UserService():
     def __init__(self,db) -> None:
         self.db = db
 
-    def post_register_user(self, user) -> dict:
+    def post_register_user(self, user):
         new_user = User(**user.model_dump())
         new_user.password = hash_password(new_user.password)
         self.db.add(new_user)
@@ -54,7 +54,7 @@ class UserService():
     def delete_user():
         pass
     
-# Se tuvo que agregar el incremento de monedas desde el manejo de la entedidad USER
+    # Se tuvo que agregar el incremento de monedas desde el manejo de la entedidad USER
     def put_coins_user(self, user_id, coins):
         # Actualizar el saldo de monedas del usuario
         user = self.get_user_for_id(user_id)
