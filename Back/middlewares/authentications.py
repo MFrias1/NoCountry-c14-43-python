@@ -1,4 +1,8 @@
 import bcrypt
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 # from middlewares import salt
 # Luego, al inicio de la aplicación, lee la sal desde el archivo
 
@@ -25,6 +29,7 @@ def hash_password(password: str) -> str:
     # Codifica la contraseña en bytes antes de hashearla
     password_bytes = password.encode('utf-8')
     # Utiliza la sal almacenada
-    hashed_password = bcrypt.hashpw(password_bytes, stored_salt)
+    # hashed_password = bcrypt.hashpw(password_bytes, stored_salt)
+    hashed_password = bcrypt.hashpw(password_bytes, os.getenv('SSECRET_KEY'))
     return hashed_password.decode('utf-8')
 
