@@ -71,11 +71,86 @@ function create(){
         fill:'#000'
     })
 
-    for (let i = 0; i<5; i++) {
-        this.time.delayedCall(2700 * i, () => {
+    for (let i = 0; i<2; i++) {
+        this.time.delayedCall(2900 * i, () => {
             // Grupo de basuras 2
             let reciclable = this.physics.add.group({
-                key: ['banano', 'celular', 'bolsaPlastica', 'vidrio'],
+                key: 'banano',
+                repeat: 3,
+            });
+    
+            reciclable.children.iterate(function (basurareciclable) {
+                basurareciclable.setScale(0.1);
+                const randomX = Phaser.Math.Between(100, 1200);
+                basurareciclable.x = randomX;
+                const randomSpeedY = Phaser.Math.Between(300, 800);
+                basurareciclable.setVelocity(0, randomSpeedY);
+            });
+    
+            // La función de colisión se ejecutará cuando ocurra una colisión
+            this.physics.add.collider(reciclable, this.basetacho, (basura) => {
+                // Desactiva la gravedad de la basura
+                basura.setGravityY(0);
+                // con cada colisión incrementa monedas
+                monedas++;
+                monedasText.setText('Total Monedas: ' + monedas);
+            });
+    
+        }, [], this);
+        this.time.delayedCall(3000 * i, () => {
+            // Grupo de basuras 2
+            let reciclable = this.physics.add.group({
+                key: 'celular',
+                repeat: 3,
+            });
+    
+            reciclable.children.iterate(function (basurareciclable) {
+                basurareciclable.setScale(0.1);
+                const randomX = Phaser.Math.Between(100, 1200);
+                basurareciclable.x = randomX;
+                const randomSpeedY = Phaser.Math.Between(300, 800);
+                basurareciclable.setVelocity(0, randomSpeedY);
+            });
+    
+            // La función de colisión se ejecutará cuando ocurra una colisión
+            this.physics.add.collider(reciclable, this.basetacho, (basura) => {
+                // Desactiva la gravedad de la basura
+                basura.setGravityY(0);
+                // con cada colisión incrementa monedas
+                monedas++;
+                monedasText.setText('Total Monedas: ' + monedas);
+            });
+    
+        }, [], this);
+        this.time.delayedCall(3500 * i, () => {
+            // Grupo de basuras 2
+            let reciclable = this.physics.add.group({
+                key: 'bolsaPlastica',
+                repeat: 3,
+            });
+    
+            reciclable.children.iterate(function (basurareciclable) {
+                basurareciclable.setScale(0.1);
+                const randomX = Phaser.Math.Between(100, 1200);
+                basurareciclable.x = randomX;
+                const randomSpeedY = Phaser.Math.Between(300, 800);
+                basurareciclable.setVelocity(0, randomSpeedY);
+            });
+    
+            // La función de colisión se ejecutará cuando ocurra una colisión
+            this.physics.add.collider(reciclable, this.basetacho, (basura) => {
+                // Desactiva la gravedad de la basura
+                basura.setGravityY(0);
+                // con cada colisión incrementa monedas
+                monedas++;
+                monedasText.setText('Total Monedas: ' + monedas);
+            });
+    
+        }, [], this);
+        this.time.delayedCall(4000 * i, () => {
+            // Grupo de basuras 2
+            let reciclable = this.physics.add.group({
+                key:  'vidrio',
                 repeat: 3,
             });
     
