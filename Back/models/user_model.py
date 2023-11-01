@@ -11,7 +11,7 @@ class User(Base):
     email = Column(String,unique=True, nullable=False)
     country = Column(String, nullable=False)
     coins = Column(Integer, default=0)
-    currency_history = Column(Integer, default=0)
+    currency_history = Column(Integer, default=0, nullable=True)
     password = Column(String, nullable=False)
     is_active = Column(Boolean, default=True)
     is_admin = Column(Boolean, default=False)

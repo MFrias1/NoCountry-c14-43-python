@@ -3,7 +3,7 @@ from middlewares.authentications import hash_password
 from config.database import Session
 from models.user_model import User
 from schemas.user_schema import UpdateInfoUser, ChangeUserPassword
-
+from services.movement_service import *
 #from jwt_manager import create_token
 
 class UserService():
@@ -77,10 +77,12 @@ class UserService():
         return user
     
     # Se tuvo que agregar el incremento de monedas desde el manejo de la entedidad USER
-    def put_coins_user(self, user_id, coins):
+    def put_coins_user(self, user_id, coins, origin):
         # Actualizar el saldo de monedas del usuario
         user = self.get_user_for_id(user_id)
         user.coins += coins
+        if origin != "premio":
+            user.currency_history += coins
         self.db.commit()
         self.db.refresh(user)
         return user

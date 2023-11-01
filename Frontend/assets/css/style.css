@@ -42,6 +42,13 @@ a{
     font-size: 20px;
     margin-inline: 10px;
 }
+.navbar a{
+    text-decoration: none;
+}
+.navbar li a{
+    text-decoration: none;
+    color: black;
+}
 .navbar_enlaces, .navbar_enlaces_logIn{
     display: flex;
     flex-direction: row;
