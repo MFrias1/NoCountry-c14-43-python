@@ -19,7 +19,6 @@ function actualizarTemporizador() {
     // Actualiza el contador de tiempo en tu interfaz de usuario (si es necesario)
     // Por ejemplo:
     select_id("contador_tiempo").textContent = tiempoRestante;
-    // select_id("tiempo_restante").innerHTML = tiempoRestante;
   }
 }
 
@@ -43,8 +42,10 @@ btn_correspondiente = [
   select_id("btn3"),
   select_id("btn4")
 ];
-let npreguntas = [];
 
+//variables para el numero de preguntas
+
+let npreguntas = [];
 let preguntas_hechas = 0;
 let preguntas_correctas = 0;
 
@@ -92,7 +93,6 @@ function escogerPreguntaAleatoria() {
 
 function escogerPregunta(n) {
   pregunta = interprete_bp[n];
-  // select_id("categoria").innerHTML = pregunta.categoria;
   select_id("pregunta").innerHTML = pregunta.pregunta;
   select_id("numero").innerHTML = n;
   let pc = preguntas_correctas;
@@ -115,23 +115,23 @@ function escogerPregunta(n) {
       select_id("imagen").setAttribute("src", "");
     }, 500);
   }
-  if (npreguntas.length == interprete_bp.length) {
-    // Aquí es donde el juego se reinicia
-    if (mostrar_pantalla_juego_términado) {
-      swal.fire({
-        title: "Juego finalizado",
-        html:
-          "Preguntas correctas: " + preguntas_correctas + "<br>Puntos totales: " + puntosTotales,
-        icon: "success"
-      });
-    }
-    if (reiniciar_puntos_al_reiniciar_el_juego) {
-      preguntas_correctas = 0;
-      preguntas_hechas = 0;
-      puntosTotales = 0; // Reiniciar los puntos al reiniciar el juego
-    }
-    npreguntas = [];
-  }
+  // if (npreguntas.length == interprete_bp.length) {
+  //   // Aquí es donde el juego se reinicia
+  //   if (mostrar_pantalla_juego_términado) {
+  //     swal.fire({
+  //       title: "Juego finalizado",
+  //       html:
+  //         "Preguntas correctas: " + preguntas_correctas + "<br>Puntos totales: " + puntosTotales,
+  //       icon: "success"
+  //     });
+  //   }
+  //   if (reiniciar_puntos_al_reiniciar_el_juego) {
+  //     preguntas_correctas = 0;
+  //     preguntas_hechas = 0;
+  //     puntosTotales = 0; // Reiniciar los puntos al reiniciar el juego
+  //   }
+  //   npreguntas = [];
+  // }
 }
 
 function desordenarRespuestas(pregunta) {
@@ -189,39 +189,42 @@ function reiniciar() {
   }
 }
 
-function enviarPuntosAlBackend() {
-  // Obtener la ID del usuario desde el Local Storage
-  const userId = parseInt(localStorage.getItem('userId',10));
+//enviar al backend
 
-  // Datos a enviar al backend
-  const datos = {
-    user_id: userId,
-    name: "Nombre del usuario", // Reemplaza con el nombre del usuario si tienes acceso
-    description: "Descripción del evento",
-    coins: puntosTotales,
-    date: new Date().toISOString()
-  };
+async function enviarPuntosAlBackend() {
+  try {
+    const userId = parseInt(localStorage.getItem('userId'));
+    const puntosAcumulados = puntosTotales;
 
-  fetch('https://nocountry-api.onrender.com/movement/create_movement', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(datos),
-  })
-  .then(response => {
+    const datos = {
+      user_id: userId,
+      name: "trivia",
+      description: "Descripción del evento",
+      coins: puntosAcumulados,
+      date: new Date().toISOString(),
+    };
+
+    const response = await fetch('https://nocountry-api.onrender.com/create_movement', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(datos),
+    });
+
     if (response.ok) {
-      // Si la respuesta del backend es exitosa, redirige a la página de inicio de sesión
       window.location.href = `login.html`;
     } else {
-      // Manejo de errores
-      console.error('Error al enviar los puntos al servidor.');
+      const responseData = await response.json(); // Obtener información adicional del servidor si está disponible
+      throw new Error(`Error en la respuesta del servidor: ${response.status} - ${response.statusText}. Detalles: ${JSON.stringify(responseData)}`);
     }
-  })
-  .catch(error => {
-    console.error('Error de red: ', error);
-  });
+  } catch (error) {
+    console.error('Error al enviar los puntos al servidor:', error);
+    // Aquí puedes manejar el error de una manera más específica si es necesario
+  }
 }
+
+
 
 // 
 function select_id(id) {
