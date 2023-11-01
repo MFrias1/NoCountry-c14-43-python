@@ -54,16 +54,17 @@ function preload(){
     this.load.image('puntorojo', './Juegos/PNG/Environment/puntorojo.png');
     this.load.image('puntoverde', './Juegos/PNG/Environment/puntoverde.png');
 };
+let gameOver;
+let salirButton;
 let monedasText;
 let monedas=0;
-let juegoGanado = false;
 //2nd - the loaded content is set on the game scene.
 function create(){ 
     // x and y position, and key in preload().//BACKGROUND img loaded to scene
     this.add.image(600, 200,'background'); 
     //monedas de recompensa
     this.gameover = this.add.image(240, 320, 'gameover');
-    this.gameover.visible=false;
+    this.gameover.setVisible(false);
     this.gameover.setDepth(1); // Establecer la profundidad a 1
 
     const fondoBlanco = this.add.rectangle(config.width - 189, 16, 126, 20, 0xffffff);
@@ -76,122 +77,132 @@ function create(){
     //texto delante del fondo
     monedasText.setOrigin(0.5);
     monedasText.setDepth(1);
-
+    
     // Crear un botón de "Salir"
-    const salirButton = this.add.rectangle(config.width - 1205, 25, 90, 20, 0xffffff); // Crear un rectángulo blanco
+    salirButton = this.add.rectangle(config.width - 1205, 25, 90, 20, 0xffffff); // Crear un rectángulo blanco
     salirButton.setInteractive({ useHandCursor: true }); // Cambiar el cursor 
     const salirText = this.add.text(config.width - 1205, 25, 'SALIR', { fontSize: '12px', fill: '#000000' }); // Agregar texto "Salir"
     salirText.setOrigin(0.5, 0.5); // Establecer el punto de origen en el centro
-    salirText.setDepth(1); // Establecer la profundidad para que esté encima del botón
+    salirText.setDepth(2); // Establecer la profundidad para que esté encima del botón
 
     // Evento de clic para redirigir a otra página
     salirButton.on('pointerup', () => {
         // Redireccionar a la otra página
         window.location.href = './login.html';
     });
+    salirButton.setDepth(1);
 
-    for (let i = 0; i<5; i++) {
-        this.time.delayedCall(4000 * i, () => {
-            // Grupo de basuras 2
-            let reciclable = this.physics.add.group({
-                key: 'banano',
-                repeat: 3,
-            });
+    for (let i = 0; i < 5; i++) {
+        const delayTime = 40000 * i; // Tiempo de retraso específico para cada función
+        const cuartabasura = () =>{
+            this.time.delayedCall(delayTime, ()=> {
+                let papel_metal = this.physics.add.group({
+                    key:  'vidrio',
+                    repeat: 3,
+                });
+                // Grupo de basuras 4 (Papel y Metal)
+                papel_metal.children.iterate(function (basurareciclable) {
+                    basurareciclable.setScale(0.1);
+                    const randomX = Phaser.Math.Between(100, 1200);
+                    basurareciclable.x = randomX;
+                    const randomSpeedY = Phaser.Math.Between(300, 900);
+                    basurareciclable.setVelocity(0, randomSpeedY);
+                });
+        
+                // La función de colisión se ejecutará cuando ocurra una colisión
+                this.physics.add.collider(papel_metal, this.basetacho, (basura) => {
+                    // Desactiva la gravedad de la basura
+                    basura.setGravityY(0);
+                    // Con cada colisión incrementa monedas
+                    monedas++;
+                    monedasText.setText('Total Monedas: ' + monedas);
+                });
+        
+            }, [], this);
+        }
+        const tercerabasura = () =>{
+            this.time.delayedCall(delayTime, ()=> {
+                let organico = this.physics.add.group({
+                    key: 'bolsaPlastica',
+                    repeat: 3,
+                });
+                // Grupo de basuras 3 (Orgánico)
+                organico.children.iterate(function (basurareciclable) {
+                    basurareciclable.setScale(0.1);
+                    const randomX = Phaser.Math.Between(100, 1200);
+                    basurareciclable.x = randomX;
+                    const randomSpeedY = Phaser.Math.Between(300, 900);
+                    basurareciclable.setVelocity(0, randomSpeedY);
+                });
+        
+                // La función de colisión se ejecutará cuando ocurra una colisión
+                this.physics.add.collider(organico, this.basetacho, (basura) => {
+                    // Desactiva la gravedad de la basura
+                    basura.setGravityY(0);
+                    // Con cada colisión incrementa monedas
+                    monedas++;
+                    monedasText.setText('Total Monedas: ' + monedas);
+                });
+        
+            }, [], this);
+            cuartabasura();
+        }
+        const segundabasura = ()=>{
+            this.time.delayedCall(delayTime, () => {
+                let Noreciclable = this.physics.add.group({
+                    key: 'celular',
+                    repeat: 3,
+                });
+                // Grupo de basuras 2 (No reciclable)
+                Noreciclable.children.iterate(function (basurareciclable) {
+                    basurareciclable.setScale(0.1);
+                    const randomX = Phaser.Math.Between(100, 1200);
+                    basurareciclable.x = randomX;
+                    const randomSpeedY = Phaser.Math.Between(300, 900);
+                    basurareciclable.setVelocity(0, randomSpeedY);
+                });
+        
+                // La función de colisión se ejecutará cuando ocurra una colisión
+                this.physics.add.collider(Noreciclable, this.basetacho, (basura) => {
+                    // Desactiva la gravedad de la basura
+                    basura.setGravityY(0);
+                    // Con cada colisión incrementa monedas
+                    monedas++;
+                    monedasText.setText('Total Monedas: ' + monedas);
+                });
+        
+            }, [], this);
+            tercerabasura();
+        }
+        const primerbasura = ()=>{
+            this.time.delayedCall(delayTime, () => {
+                let vidrios = this.physics.add.group({
+                    key: 'banano',
+                    repeat: 3,
+                });
+                vidrios.children.iterate(function (basurareciclable) {
+                    basurareciclable.setScale(0.1);
+                    const randomX = Phaser.Math.Between(100, 1200);
+                    basurareciclable.x = randomX;
+                    const randomSpeedY = Phaser.Math.Between(300, 900);
+                    basurareciclable.setVelocity(0, randomSpeedY);
+                });
     
-            reciclable.children.iterate(function (basurareciclable) {
-                basurareciclable.setScale(0.1);
-                const randomX = Phaser.Math.Between(100, 1200);
-                basurareciclable.x = randomX;
-                const randomSpeedY = Phaser.Math.Between(300, 800);
-                basurareciclable.setVelocity(0, randomSpeedY);
-            });
+                this.physics.add.collider(vidrios, this.basetacho, (basura) => {
+                    basura.setGravityY(0);
+                    monedas++;
+                    monedasText.setText('Total Monedas: ' + monedas);
+                });
     
-            // La función de colisión se ejecutará cuando ocurra una colisión
-            this.physics.add.collider(reciclable, this.basetacho, (basura) => {
-                // Desactiva la gravedad de la basura
-                basura.setGravityY(0);
-                // con cada colisión incrementa monedas
-                monedas++;
-                monedasText.setText('Total Monedas: ' + monedas);
-            });
-    
+            }, [], this);
+            segundabasura();
+        };
+        primerbasura();
+        const timerDuration = delayTime + 5000; // 5000 milisegundos (5 segundos)
+        this.time.delayedCall(timerDuration, () => {
+            // Aquí puedes realizar otras acciones o cerrar la ventana emergente
         }, [], this);
-        this.time.delayedCall(5500 * i, () => {
-            // Grupo de basuras 2
-            let reciclable = this.physics.add.group({
-                key: 'celular',
-                repeat: 3,
-            });
-    
-            reciclable.children.iterate(function (basurareciclable) {
-                basurareciclable.setScale(0.1);
-                const randomX = Phaser.Math.Between(100, 1200);
-                basurareciclable.x = randomX;
-                const randomSpeedY = Phaser.Math.Between(300, 800);
-                basurareciclable.setVelocity(0, randomSpeedY);
-            });
-    
-            // La función de colisión se ejecutará cuando ocurra una colisión
-            this.physics.add.collider(reciclable, this.basetacho, (basura) => {
-                // Desactiva la gravedad de la basura
-                basura.setGravityY(0);
-                // con cada colisión incrementa monedas
-                monedas++;
-                monedasText.setText('Total Monedas: ' + monedas);
-            });
-    
-        }, [], this);
-        this.time.delayedCall(7500 * i, () => {
-            // Grupo de basuras 2
-            let reciclable = this.physics.add.group({
-                key: 'bolsaPlastica',
-                repeat: 3,
-            });
-    
-            reciclable.children.iterate(function (basurareciclable) {
-                basurareciclable.setScale(0.1);
-                const randomX = Phaser.Math.Between(100, 1200);
-                basurareciclable.x = randomX;
-                const randomSpeedY = Phaser.Math.Between(300, 800);
-                basurareciclable.setVelocity(0, randomSpeedY);
-            });
-    
-            // La función de colisión se ejecutará cuando ocurra una colisión
-            this.physics.add.collider(reciclable, this.basetacho, (basura) => {
-                // Desactiva la gravedad de la basura
-                basura.setGravityY(0);
-                // con cada colisión incrementa monedas
-                monedas++;
-                monedasText.setText('Total Monedas: ' + monedas);
-            });
-    
-        }, [], this);
-        this.time.delayedCall(9500 * i, () => {
-            // Grupo de basuras 2
-            let reciclable = this.physics.add.group({
-                key:  'vidrio',
-                repeat: 3,
-            });
-    
-            reciclable.children.iterate(function (basurareciclable) {
-                basurareciclable.setScale(0.1);
-                const randomX = Phaser.Math.Between(100, 1200);
-                basurareciclable.x = randomX;
-                const randomSpeedY = Phaser.Math.Between(300, 800);
-                basurareciclable.setVelocity(0, randomSpeedY);
-            });
-    
-            // La función de colisión se ejecutará cuando ocurra una colisión
-            this.physics.add.collider(reciclable, this.basetacho, (basura) => {
-                // Desactiva la gravedad de la basura
-                basura.setGravityY(0);
-                // con cada colisión incrementa monedas
-                monedas++;
-                monedasText.setText('Total Monedas: ' + monedas);
-            });
-    
-        }, [], this);
-    }
+    };
     
     //colors img loaded to scene by using '.add'
     const black= this.add.image(450,592, 'puntonegro').setScale(0.5);
@@ -324,24 +335,26 @@ function create(){
         // Habilita la colisión del mundo para basetacho
         basetacho.setCollideWorldBounds(true);
     }
-
+    
     //this.physics.add.collider(basura, this.basetacho);
     //access to user´s keyboard
     this.cursors = this.input.keyboard.createCursorKeys();
+    
 };
 
 function update(){ //loop
-    this.tacho.setVelocity(0) && this.basetacho.setVelocity(0);
-    if (monedas >= 10) { // Cambia 10 por la cantidad de monedas requerida para ganar
-       // mostrarMensajeVictoria.call(this);
-       this.gameover.visible=true;
-       this.gameover.setScale(2)
-       this.gameover.setPosition(config.width / 2, config.height / 2);
-       monedasText.setText('Total Monedas: ' + monedas);
-       monedasText.setOrigin(0.5); // Establecer el punto de origen en el centro
-       monedasText.setPosition(config.width / 2, config.height / 2);
-       monedasText.setDepth(2); // Establecer la profundidad a 2 para que esté encima de la imagen de "Game Over"
-       this.scene.pause();
+    this.tacho.setVelocity(0);
+    this.basetacho.setVelocity(0);
+    if (monedas >= 10) {
+        
+            this.gameover.setVisible(true);
+            this.gameover.setScale(2);
+            this.gameover.setPosition(config.width / 2, config.height / 2);
+            monedasText.setText('Total Monedas: ' + monedas);
+            monedasText.setOrigin(0.5);
+            monedasText.setPosition(config.width / 2, config.height / 2);
+            monedasText.setDepth(2);
+        
     } else {
         if (this.cursors.left.isDown)
         {
