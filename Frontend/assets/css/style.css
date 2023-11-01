@@ -147,15 +147,18 @@ footer img{
     font-size: 20px;
 }
 
-.buttonLanding{
+.buttonLanding, .buttonLandingSend{
     padding: 7px;
     padding-inline: 15px;
-    background-color: orangered;
+    background-color: #ff8624;
     color: white;
     border: none;
     font-weight: bolder;
     border-radius: 3px;
     cursor: pointer;
+}
+.buttonLandingSend{
+    padding-inline: 100px;
 }
 
 /*primer recuadro Recicla-ando*/
@@ -319,11 +322,24 @@ div.formContacto_title{
     height: 100%;
 }
 .formContacto form div input{
-    background-color: #22c55e;
+    background-color: #bae3b9;
     border-radius: 5px;
     padding: 1rem;
     width: 95%;
+    border-color: none;
+    border-style: none;
 }
+
+input:focus{
+    outline:none;
+    &:focus {
+        border: none;
+    }
+    &:active{
+        border:none;
+    }
+}
+
 .formContacto_Mesaje{
     height: 100px;
 }
