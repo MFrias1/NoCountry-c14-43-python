@@ -66,10 +66,17 @@ function create(){
     this.gameover.visible=false;
     this.gameover.setDepth(1); // Establecer la profundidad a 1
 
-    monedasText = this.add.text(config.width -156, 16, 'TotalMonedas:0', {
-        fontSize:'12px',
-        fill:'#000'
-    })
+    const fondoBlanco = this.add.rectangle(config.width - 189, 16, 126, 20, 0xffffff);
+    fondoBlanco.setOrigin(0);
+
+    monedasText = this.add.text(fondoBlanco.x + fondoBlanco.width / 2, fondoBlanco.y + fondoBlanco.height / 2, 'TotalMonedas:0', {
+        fontSize: '12px',
+        fill: '#000'
+    });
+    //texto delante del fondo
+    monedasText.setOrigin(0.5);
+    monedasText.setDepth(1);
+
     // Crear un botón de "Salir"
     const salirButton = this.add.rectangle(config.width - 1205, 25, 90, 20, 0xffffff); // Crear un rectángulo blanco
     salirButton.setInteractive({ useHandCursor: true }); // Cambiar el cursor 
