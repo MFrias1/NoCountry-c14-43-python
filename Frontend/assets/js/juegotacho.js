@@ -66,10 +66,22 @@ function create(){
     this.gameover.visible=false;
     this.gameover.setDepth(1); // Establecer la profundidad a 1
 
-    monedasText = this.add.text(16, 16, 'TotalMonedas:0', {
-        fontSize:'22px',
+    monedasText = this.add.text(config.width -156, 16, 'TotalMonedas:0', {
+        fontSize:'12px',
         fill:'#000'
     })
+    // Crear un botón de "Salir"
+    const salirButton = this.add.rectangle(config.width - 1205, 25, 90, 20, 0xffffff); // Crear un rectángulo blanco
+    salirButton.setInteractive({ useHandCursor: true }); // Cambiar el cursor 
+    const salirText = this.add.text(config.width - 1205, 25, 'SALIR', { fontSize: '12px', fill: '#000000' }); // Agregar texto "Salir"
+    salirText.setOrigin(0.5, 0.5); // Establecer el punto de origen en el centro
+    salirText.setDepth(1); // Establecer la profundidad para que esté encima del botón
+
+    // Evento de clic para redirigir a otra página
+    salirButton.on('pointerup', () => {
+        // Redireccionar a la otra página
+        window.location.href = './login.html';
+    });
 
     for (let i = 0; i<5; i++) {
         this.time.delayedCall(4000 * i, () => {
