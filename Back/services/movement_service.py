@@ -34,7 +34,7 @@ class MovementService():
             raise HTTPException(status_code=404, detail="El usuario no tiene movimientos registrados.")
         return movements
     
-    def redeem_prize(self, user_id, prize, user_service):
+    def redeem_prize(self, user_id, prize, user_service, origin):
         # Llama a la función para crear un nuevo movimiento
         self.create_movement(
             user_id=user_id,
@@ -44,5 +44,5 @@ class MovementService():
             origin="premio"
         )
         # Actualiza el saldo del usuario
-        user_service.put_coins_user(user_id, -prize.coins)
+        user_service.put_coins_user(user_id, -prize.coins, origin)
         return True

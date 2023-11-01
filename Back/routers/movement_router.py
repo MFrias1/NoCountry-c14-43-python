@@ -34,7 +34,7 @@ def create_movement(movement_data: MovementCreate):
             )
 
             if new_movement:
-                UserService().put_coins_user(user_id=movement_data.user_id, coins=movement_data.coins)
+                UserService().put_coins_user(user_id=movement_data.user_id, coins=movement_data.coins, origin=movement_data.origin)
                 content = {
                     'message': 'Movimiento ha sido creado',
                     'new_movement' : new_movement.dict()
@@ -94,7 +94,7 @@ def redeem_prize(user_id: int, prize_id: int):
             return JSONResponse(status_code=400, content={'message': 'Saldo insuficiente para canjear el premio'})
 
         # Llama a la función en service.py
-        if movement_service.redeem_prize(user_id, prize, user_service):
+        if movement_service.redeem_prize(user_id, prize, user_service, origin="premio"):
             return JSONResponse(status_code=200, content={'message': 'Premio canjeado con éxito'})
         else:
             return JSONResponse(status_code=500, content={'message': 'Error interno del servidor'})
