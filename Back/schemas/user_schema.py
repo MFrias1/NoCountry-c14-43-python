@@ -13,6 +13,7 @@ class UserOut(BaseModel):
     last_name : str
     email : str
     country : str
+    coins : int
 
 class LoginUser(BaseModel):
     email : str
