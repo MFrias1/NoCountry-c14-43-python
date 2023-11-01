@@ -19,7 +19,6 @@ function actualizarTemporizador() {
     // Actualiza el contador de tiempo en tu interfaz de usuario (si es necesario)
     // Por ejemplo:
     select_id("contador_tiempo").textContent = tiempoRestante;
-    // select_id("tiempo_restante").innerHTML = tiempoRestante;
   }
 }
 
@@ -43,8 +42,10 @@ btn_correspondiente = [
   select_id("btn3"),
   select_id("btn4")
 ];
-let npreguntas = [];
 
+//variables para el numero de preguntas
+
+let npreguntas = [];
 let preguntas_hechas = 0;
 let preguntas_correctas = 0;
 
@@ -57,14 +58,19 @@ function escogerPreguntaAleatoria() {
   
   if (preguntas_aleatorias) {
     let n;
-    if (npreguntas.length >= 10) {
+    if (npreguntas.length >= 5) {
       // Si ya se han mostrado 10 preguntas, muestra el juego finalizado
       if (mostrar_pantalla_juego_términado) {
         swal.fire({
           title: "Juego finalizado",
           html: "Puntos totales: " + puntosTotales,
           icon: "success"
-        });
+        }).then((result) => {
+          if (result.isConfirmed) {
+            enviarPuntosAlBackend(); // Envía los puntos al backend
+            
+          }
+          });
       }
       return; // Detener el juego después de 10 preguntas
     }
@@ -87,7 +93,6 @@ function escogerPreguntaAleatoria() {
 
 function escogerPregunta(n) {
   pregunta = interprete_bp[n];
-  // select_id("categoria").innerHTML = pregunta.categoria;
   select_id("pregunta").innerHTML = pregunta.pregunta;
   select_id("numero").innerHTML = n;
   let pc = preguntas_correctas;
@@ -110,23 +115,23 @@ function escogerPregunta(n) {
       select_id("imagen").setAttribute("src", "");
     }, 500);
   }
-  if (npreguntas.length == interprete_bp.length) {
-    // Aquí es donde el juego se reinicia
-    if (mostrar_pantalla_juego_términado) {
-      swal.fire({
-        title: "Juego finalizado",
-        html:
-          "Preguntas correctas: " + preguntas_correctas + "<br>Puntos totales: " + puntosTotales,
-        icon: "success"
-      });
-    }
-    if (reiniciar_puntos_al_reiniciar_el_juego) {
-      preguntas_correctas = 0;
-      preguntas_hechas = 0;
-      puntosTotales = 0; // Reiniciar los puntos al reiniciar el juego
-    }
-    npreguntas = [];
-  }
+  // if (npreguntas.length == interprete_bp.length) {
+  //   // Aquí es donde el juego se reinicia
+  //   if (mostrar_pantalla_juego_términado) {
+  //     swal.fire({
+  //       title: "Juego finalizado",
+  //       html:
+  //         "Preguntas correctas: " + preguntas_correctas + "<br>Puntos totales: " + puntosTotales,
+  //       icon: "success"
+  //     });
+  //   }
+  //   if (reiniciar_puntos_al_reiniciar_el_juego) {
+  //     preguntas_correctas = 0;
+  //     preguntas_hechas = 0;
+  //     puntosTotales = 0; // Reiniciar los puntos al reiniciar el juego
+  //   }
+  //   npreguntas = [];
+  // }
 }
 
 function desordenarRespuestas(pregunta) {
@@ -184,17 +189,45 @@ function reiniciar() {
   }
 }
 
-function mostrarFinalDelJuego() {
-  swal.fire({
-    title: "Juego finalizado",
-    html: "Puntos totales: " + puntosTotales,
-    icon: "success"
-  }).then(() => {
-    // Redirigir a log.html después de mostrar el mensaje de juego finalizado
-    window.location.href = "login.html";
-  });
+//enviar al backend
+
+async function enviarPuntosAlBackend() {
+  try {
+    const userId = parseInt(localStorage.getItem('userId'));
+    const puntosAcumulados = puntosTotales;
+
+    const datos = {
+      user_id: userId,
+      name: "trivia",
+      description: "Descripción del evento",
+      coins: puntosAcumulados,
+      date: new Date().toISOString(),
+      origin: "juego"
+    };
+
+    const response = await fetch('https://nocountry-api.onrender.com/create_movement', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(datos),
+    });
+
+    if (response.ok) {
+      window.location.href = `login.html`;
+    } else {
+      const responseData = await response.json(); // Obtener información adicional del servidor si está disponible
+      throw new Error(`Error en la respuesta del servidor: ${response.status} - ${response.statusText}. Detalles: ${JSON.stringify(responseData)}`);
+    }
+  } catch (error) {
+    console.error('Error al enviar los puntos al servidor:', error);
+    // Aquí puedes manejar el error de una manera más específica si es necesario
+  }
 }
 
+
+
+// 
 function select_id(id) {
   return document.getElementById(id);
 }
