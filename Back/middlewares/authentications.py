@@ -1,4 +1,8 @@
 import bcrypt
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 # from middlewares import salt
 # Luego, al inicio de la aplicación, lee la sal desde el archivo
 
@@ -18,13 +22,14 @@ import bcrypt
 #     file.write(new_salt)
 
 # Luego, al inicio de la aplicación, lee la sal desde el archivo
-with open('salt.txt', 'rb') as file:
-    stored_salt = file.read()
+# with open('salt.txt', 'rb') as file:
+#     stored_salt = file.read()
 
 def hash_password(password: str) -> str:
     # Codifica la contraseña en bytes antes de hashearla
     password_bytes = password.encode('utf-8')
     # Utiliza la sal almacenada
-    hashed_password = bcrypt.hashpw(password_bytes, stored_salt)
+    # hashed_password = bcrypt.hashpw(password_bytes, stored_salt)
+    hashed_password = bcrypt.hashpw(password_bytes, os.getenv('SECRET_KEY').encode('utf-8'))
     return hashed_password.decode('utf-8')
 
