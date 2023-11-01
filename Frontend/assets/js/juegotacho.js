@@ -71,8 +71,8 @@ function create(){
         fill:'#000'
     })
 
-    for (let i = 0; i<2; i++) {
-        this.time.delayedCall(2900 * i, () => {
+    for (let i = 0; i<5; i++) {
+        this.time.delayedCall(4000 * i, () => {
             // Grupo de basuras 2
             let reciclable = this.physics.add.group({
                 key: 'banano',
@@ -97,7 +97,7 @@ function create(){
             });
     
         }, [], this);
-        this.time.delayedCall(3000 * i, () => {
+        this.time.delayedCall(5500 * i, () => {
             // Grupo de basuras 2
             let reciclable = this.physics.add.group({
                 key: 'celular',
@@ -122,7 +122,7 @@ function create(){
             });
     
         }, [], this);
-        this.time.delayedCall(3500 * i, () => {
+        this.time.delayedCall(7500 * i, () => {
             // Grupo de basuras 2
             let reciclable = this.physics.add.group({
                 key: 'bolsaPlastica',
@@ -147,7 +147,7 @@ function create(){
             });
     
         }, [], this);
-        this.time.delayedCall(4000 * i, () => {
+        this.time.delayedCall(9500 * i, () => {
             // Grupo de basuras 2
             let reciclable = this.physics.add.group({
                 key:  'vidrio',
