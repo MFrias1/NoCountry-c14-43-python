@@ -16,14 +16,13 @@ oauth2_scheme = OAuth2PasswordBearer('/token')
 #todo Metodos POST
 @user_router.post('/create_user', status_code=200, response_model=UserOut)
 def create_user(user: CreateUser):
-    try:
-        db =  Session()
-        data = UserService(db).post_register_user(user)
-        if data:
-            return data
-        return JSONResponse(status_code=404, content={f'"message":"Usuario NO Creado"'})
-    except Exception as e:
-        return JSONResponse(status_code=500, content={f"message": "Server Error: {e}"})
+    # try:
+    data = UserService().post_register_user(user)
+    if data:
+        return data
+    return JSONResponse(status_code=404, content={f'"message":"Usuario NO Creado"'})
+    # except Exception as e:
+    #     return JSONResponse(status_code=500, content={f"message": "Server Error: {e}"})
 
 @user_router.post('/login', status_code=200, response_model= UserOut)
 def login(user: LoginUser):
@@ -45,7 +44,17 @@ def list_users():
         return JSONResponse(status_code=404, content='{"message":"No Existen Usuarios"}')
     except Exception as e:
         return JSONResponse(status_code=500, content={f"message": "Server Error: {e}"})
-    
+
+@user_router.get('/users/active',status_code=200 ,response_model=List[UserOut])
+def list_users_all():
+    try:
+        users = UserService().get_user_all_active()
+        if users:
+            return users
+        return JSONResponse(status_code=404, content='{"message":"No Existen Usuarios"}')
+    except Exception as e:
+        return JSONResponse(status_code=500, content={f"message": "Server Error: {e}"})
+
 @user_router.get('/users/{id}',status_code=200, response_model=UserOut)
 def get_user_id(id:int):
     try:
@@ -57,7 +66,7 @@ def get_user_id(id:int):
         return JSONResponse(status_code=500, content={f"message": "Server Error: {e}"})
 
 #todo Metodos PUT
-@user_router.put('/user/update_profile/{id}', status_code=200, response_model=UserOut)
+@user_router.put('/user/update_profile/{id}', status_code=200, response_model=UpdateInfoUser)
 def update_user(id:int, user: UpdateInfoUser):
     try:
         result = UserService().put_user_update(id,user)
@@ -75,5 +84,15 @@ def change_password(id:int, user:ChangeUserPassword):
         if result:
             return result
         return JSONResponse(status_code=404, content={'message':'Fallo el Cambio de Contraseña'})
+    except Exception as e:
+        return JSONResponse(status_code=500, content={f"message": "Server Error: {e}"})
+
+@user_router.put('/user/deactivate_user/{id}', status_code=201, response_model=dict)
+def deactivate_user(id:int):
+    try:
+        result = UserService().put_deactivate_user(id)
+        if result:
+            return JSONResponse(content={'message': 'Usuario desactivado'})
+        return JSONResponse(status_code=404, content={'message':'Fallo la desactivación del usuario'})
     except Exception as e:
         return JSONResponse(status_code=500, content={f"message": "Server Error: {e}"})

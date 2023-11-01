@@ -23,6 +23,9 @@ class UserService():
     def post_login_user(self, email, password):
         password_hash = hash_password(password)
         result = self.db.query(User).filter(and_(User.email == email, User.password == password_hash)).first()
+        result.is_active = True
+        self.db.commit()
+        self.db.refresh(result)
         self.db.close()
         return result
             
@@ -48,7 +51,9 @@ class UserService():
         user.last_name = data.last_name
         user.country = data.country     
         self.db.commit()
+        self.db.refresh(user) 
         self.db.close()
+        
         return user      
 
     def put_change_password(self, id, data:ChangeUserPassword):
@@ -58,6 +63,7 @@ class UserService():
         data.password = hash_password(data.password)
         user.password = data.password
         self.db.commit()
+        self.db.refresh(user) 
         self.db.close()
         return user
     
@@ -77,7 +83,6 @@ class UserService():
         user.coins += coins
         self.db.commit()
         self.db.refresh(user)
-        
         return user
 
 
