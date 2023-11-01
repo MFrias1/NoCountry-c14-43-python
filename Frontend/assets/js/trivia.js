@@ -202,6 +202,7 @@ async function enviarPuntosAlBackend() {
       description: "Descripción del evento",
       coins: puntosAcumulados,
       date: new Date().toISOString(),
+      origin: "juego"
     };
 
     const response = await fetch('https://nocountry-api.onrender.com/create_movement', {
