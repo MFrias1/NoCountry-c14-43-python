@@ -13,11 +13,11 @@ document.addEventListener("DOMContentLoaded", function () {
         const validationResult = validateInputs();
         if (validationResult) {
             const registrationResult = await postRegistro(e); // Pasa el evento como argumento
-            if (registrationResult.message === 'Registro exitoso') {
-                alert('Registro exitoso: ' + registrationResult.message);
+            if (registrationResult.id !== undefined && registrationResult.first_name !== undefined && registrationResult.last_name !== undefined && registrationResult.email !== undefined && registrationResult.country !== undefined){
+                alert('Registro exitoso: ' );
                 window.location.href = 'iniciodesesion.html';
             } else {
-                alert('Error en el registro: ' + registrationResult.message);
+                alert('Error en el registro: ' );
             }
         }
     });
@@ -178,7 +178,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 .then(response => response.json())
                 .then(data => {
                   console.log(data);
-                  if (data.message === 'Registro exitoso') {
+                  if (data.id !== undefined && data.first_name !== undefined && data.last_name !== undefined && data.email !== undefined && data.country !== undefined) {
                     // Registro exitoso, muestra SweetAlert y luego redirige después de 3 segundos
                     Swal.fire({
                       icon: 'success',
@@ -193,7 +193,6 @@ document.addEventListener("DOMContentLoaded", function () {
                     Swal.fire({
                       icon: 'error',
                       title: 'Error en el registro',
-                      text: data.message,
                     });
                   }
                 })
