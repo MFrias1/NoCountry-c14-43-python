@@ -16,13 +16,13 @@ oauth2_scheme = OAuth2PasswordBearer('/token')
 #todo Metodos POST
 @user_router.post('/create_user', status_code=200, response_model=UserOut)
 def create_user(user: CreateUser):
-    # try:
-    data = UserService().post_register_user(user)
-    if data:
-        return data
-    return JSONResponse(status_code=404, content={f'"message":"Usuario NO Creado"'})
-    # except Exception as e:
-    #     return JSONResponse(status_code=500, content={f"message": "Server Error: {e}"})
+    try:
+        data = UserService().post_register_user(user)
+        if data:
+            return data
+        return JSONResponse(status_code=404, content={f'"message":"Usuario NO Creado"'})
+    except Exception as e:
+         return JSONResponse(status_code=500, content={f"message": "Server Error: {e}"})
 
 @user_router.post('/login', status_code=200, response_model= UserOut)
 def login(user: LoginUser):
