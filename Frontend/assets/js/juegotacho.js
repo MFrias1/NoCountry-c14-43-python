@@ -31,6 +31,7 @@ function preload(){
     //load background img
     this.load.image('background','./Juegos/PNG/Background/bg_juego.png');
     this.load.image('franjaTachos','./Juegos/PNG/Background/franjaTachos.png');
+    this.load.image('gameover', './Juegos/PNG/Background/game_over.png')
     //load basura img
     this.load.image('banano', './Juegos/PNG/Environment/banano.png');
     this.load.image('celular', './Juegos/PNG/Environment/celular.png')
@@ -53,14 +54,18 @@ function preload(){
     this.load.image('puntorojo', './Juegos/PNG/Environment/puntorojo.png');
     this.load.image('puntoverde', './Juegos/PNG/Environment/puntoverde.png');
 };
-
+let monedasText;
+let monedas=0;
+let juegoGanado = false;
 //2nd - the loaded content is set on the game scene.
 function create(){ 
     // x and y position, and key in preload().//BACKGROUND img loaded to scene
     this.add.image(600, 200,'background'); 
     //monedas de recompensa
-    let monedas=0;
-    let monedasText;
+    this.gameover = this.add.image(240, 320, 'gameover');
+    this.gameover.visible=false;
+    this.gameover.setDepth(1); // Establecer la profundidad a 1
+
     monedasText = this.add.text(16, 16, 'TotalMonedas:0', {
         fontSize:'22px',
         fill:'#000'
@@ -105,9 +110,21 @@ function create(){
     this.start = this.add.image(240, 320, 'start');
     this.start.visible=true;
     this.scene.pause();*/
+    
     /*
-    this.gameover = this.add.image(240, 320, 'gameover');
-    this.start.visible=false;*/
+    function mostrarMensajeVictoria() {
+        juegoGanado = true;
+        this.physics.pause();
+
+        // Agregar un fondo negro semi transparente
+        const fondoNegro = this.add.graphics();
+        fondoNegro.fillStyle(0x000000, 0.7);
+        fondoNegro.fillRect(0, 0, config.width, config.height);
+
+        // Agregar el mensaje de victoria
+        const mensajeVictoria = this.add.text(400, 300, '¡Has ganado el juego!', { fontSize: '32px', fill: '#fff' });
+    }*/
+
 
     red.setInteractive({ useHandCursor:true }); //cambia el cursor al estar encima del color
     green.setInteractive({ useHandCursor:true });
@@ -221,12 +238,24 @@ function create(){
 
 function update(){ //loop
     this.tacho.setVelocity(0) && this.basetacho.setVelocity(0);
-    if (this.cursors.left.isDown)
-    {
-        this.tacho.setVelocityX(-550) && this.basetacho.setVelocityX(-550);
+    if (monedas >= 10) { // Cambia 10 por la cantidad de monedas requerida para ganar
+       // mostrarMensajeVictoria.call(this);
+       this.gameover.visible=true;
+       this.gameover.setScale(2)
+       this.gameover.setPosition(config.width / 2, config.height / 2);
+       monedasText.setText('Total Monedas: ' + monedas);
+       monedasText.setOrigin(0.5); // Establecer el punto de origen en el centro
+       monedasText.setPosition(config.width / 2, config.height / 2);
+       monedasText.setDepth(2); // Establecer la profundidad a 2 para que esté encima de la imagen de "Game Over"
+       this.scene.pause();
+    } else {
+        if (this.cursors.left.isDown)
+        {
+            this.tacho.setVelocityX(-550) && this.basetacho.setVelocityX(-550);
 
-    }else if (this.cursors.right.isDown)
-    {
-        this.tacho.setVelocityX(550) && this.basetacho.setVelocityX(550);
-    };
+        }else if (this.cursors.right.isDown)
+        {
+            this.tacho.setVelocityX(550) && this.basetacho.setVelocityX(550);
+        };
+    }
 };
