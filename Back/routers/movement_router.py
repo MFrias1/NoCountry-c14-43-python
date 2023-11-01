@@ -20,9 +20,9 @@ oauth2_scheme = OAuth2PasswordBearer('/token')
 
 @movement_router.post('/create_movement')
 def create_movement(movement_data: MovementCreate):
+    db = Session()
     try:
-        db = Session()
-        user = UserService(db).get_user_for_id(movement_data.user_id)
+        user = UserService().get_user_for_id(movement_data.user_id)
         
         if user:
             new_movement = MovementService(db).create_movement(
@@ -34,7 +34,7 @@ def create_movement(movement_data: MovementCreate):
             )
 
             if new_movement:
-                UserService(db).put_coins_user(user_id=movement_data.user_id, coins=movement_data.coins)
+                UserService().put_coins_user(user_id=movement_data.user_id, coins=movement_data.coins)
                 content = {
                     'message': 'Movimiento ha sido creado',
                     'new_movement' : new_movement.dict()
@@ -78,7 +78,7 @@ def get_user_movements(user_id: int):
 def redeem_prize(user_id: int, prize_id: int):
     db = Session()
     movement_service = MovementService(db)
-    user_service = UserService(db)
+    user_service = UserService()
     prize_service = PrizeService(db)
     try:
         prize = prize_service.prize_get_for_id(prize_id)
