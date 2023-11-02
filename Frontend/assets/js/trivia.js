@@ -195,6 +195,7 @@ async function enviarPuntosAlBackend() {
   try {
     const userId = parseInt(localStorage.getItem('userId'));
     const puntosAcumulados = puntosTotales;
+    localStorage.setItem('coins', puntosAcumulados);
 
     const datos = {
       user_id: userId,

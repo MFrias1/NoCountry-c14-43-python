@@ -9,7 +9,7 @@ let recompensasLogInBotonLatam= document.getElementById('recompensasLogInBotonLa
 
 //variables del localstorage
 const userId = parseInt(localStorage.getItem('userId'));
-const coins =200;
+const coins = parseInt(localStorage.getItem('coins'));
 
 recompensasLogInBotonCinecolombia.addEventListener('click', () => {
     if (coins < 10000) {
