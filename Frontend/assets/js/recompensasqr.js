@@ -9,7 +9,7 @@ let recompensasLogInBotonLatam= document.getElementById('recompensasLogInBotonLa
 
 //variables del localstorage
 const userId = parseInt(localStorage.getItem('userId'));
-const coins = parseInt(localStorage.getItem('coins'));
+let coins = parseInt(localStorage.getItem('coins'));
 
 function decrementCoinsUser (id,coin,title1,title2,limit){
     if (coins < limit) {
@@ -98,6 +98,18 @@ function generateQR() {
     document.getElementById('qrcode').innerHTML='<img src="https://api.qrserver.com/v1/create-qr-code/?data=HelloWorld&amp;size=100x100"/>';
 }
 
+function actualizarMonedas(valor) {
+    localStorage.setItem('coins', valor);
+    // Actualizar la variable 'coins' para reflejar el cambio
+    coins = valor;
+    // Actualizar el elemento visual con la cantidad de monedas
+    const elementoMonedas = document.getElementById('contenidoMonedero'); // 
+    if (elementoMonedas) {
+      elementoMonedas.textContent = valor;
+    }
+  }
+
+
 //enviar datos al Back
 
 async function enviarPuntosAlBackend(coins,limit,idUser) {
@@ -122,6 +134,8 @@ async function enviarPuntosAlBackend(coins,limit,idUser) {
   
       if (response.ok) {
         getUserById(idUser);
+        const updatedCoins = coins - limit;
+        actualizarMonedas(updatedCoins);
         
       } else {
         const responseData = await response.json(); // Obtener información adicional del servidor si está disponible
