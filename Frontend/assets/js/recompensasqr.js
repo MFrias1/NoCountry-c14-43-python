@@ -36,90 +36,28 @@ recompensasLogInBotonMcDonalds.addEventListener('click',()=>{
 });
 
 recompensasLogInBotonKFC.addEventListener('click',()=>{
-    if (coins < 25000) {
-        Swal.fire({
-            title: "No tienes la cantidad suficiente"
-        });
-    } else {
-        const contenido = {
-            title: 'Combo KFC',
-            confirmButtonText: 'Descargar'
-        };
-        mostrarAlerta(contenido);
-        enviarPuntosAlBackend();
-    }
+    decrementCoinsUser(userId,coins,"No tienes cantidad suficiente",'KFC',25000) 
 });
+
 recompensasLogInBotonCinecolombiaMensual.addEventListener('click',()=>{
-    if (coins < 20000) {
-        Swal.fire({
-            title: "No tienes la cantidad suficiente"
-        });
-    } else {
-        const contenido = {
-            title: 'Entradas a cine X2',
-            confirmButtonText: 'Descargar'
-        };
-        mostrarAlerta(contenido);
-        enviarPuntosAlBackend();
-    }
+    decrementCoinsUser(userId,coins,"No tienes cantidad suficiente",'Entradas a cine X2',20000)  
 });
+
 recompensasLogInBotonApple.addEventListener('click',()=>{
-    if (coins < 50000) {
-        Swal.fire({
-            title: "No tienes la cantidad suficiente"
-        });
-    } else {
-        const contenido = {
-            title: '-10% en Apple',
-            confirmButtonText: 'Descargar'
-        };
-        mostrarAlerta(contenido);
-        enviarPuntosAlBackend();
-    }
+    decrementCoinsUser(userId,coins,"No tienes cantidad suficiente",'-10% en Apple',50000)
 });
+
 recompensasLogInBotonPizza.addEventListener('click',()=>{
-    if (coins < 30000) {
-        Swal.fire({
-            title: "No tienes la cantidad suficiente"
-        });
-    } else {
-        const contenido = {
-            title: 'Pizza familiar',
-            confirmButtonText: 'Descargar'
-        };
-        mostrarAlerta(contenido);
-        enviarPuntosAlBackend();
-    }
+    decrementCoinsUser(userId,coins,"No tienes cantidad suficiente",'Pizza familiar',30000)
 });
+
 recompensasLogInBotonXiaomi.addEventListener('click', () => {
     // Variable donde se almacena el contenido que se mostrará en la ventana emergente.
-    if (coins < 50000) {
-        Swal.fire({
-            title: "No tienes la cantidad suficiente"
-        });
-    } else {
-        const contenido = {
-            title: '-10% en Xiaomi',
-            confirmButtonText: 'Descargar'
-        };
-        mostrarAlerta(contenido);
-        enviarPuntosAlBackend();
-    }
+    decrementCoinsUser(userId,coins,"No tienes cantidad suficiente",'-10% en Xiaomi',50000)
 });
-recompensasLogInBotonLatam.addEventListener('click',()=>{
-    if (coins < 60000) {
-        Swal.fire({
-            title: "No tienes la cantidad suficiente"
-        });
-    } else {
-        const contenido = {
-            title: '-10% en vuelos',
-            confirmButtonText: 'Descargar'
-        };
-        mostrarAlerta(contenido);
-        enviarPuntosAlBackend();
 
-    }
+recompensasLogInBotonLatam.addEventListener('click',()=>{
+    decrementCoinsUser(userId,coins,"No tienes cantidad suficiente",'-10% en vuelos',60000)
 });
 
 function mostrarAlerta(contenido) {
