@@ -68,8 +68,24 @@ a{
     border-radius: 5px;
     text-align: center;
     padding: 10px;
-    width: 117px;
     height: 45px;
+    display: flex;
+    width: 220px;
+    justify-content: center;
+    align-items: center;
+}
+
+#contenidoMonedero{
+    display: inline-block;
+    width: 60px;
+}
+
+.banner_button a, .navbarLogIn_banner_button{
+    width: 150px;
+}
+
+.banner_button_monedero p{
+    width:fit-content;
 }
 .banner_button_login, .navbarLogIn_banner_button{
     background-color: var(--primary_color);
