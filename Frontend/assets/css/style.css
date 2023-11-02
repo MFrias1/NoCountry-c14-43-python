@@ -337,13 +337,10 @@ div.formContacto_title{
     border-style: none;
 }
 
-input:focus {
+.input:focus, .input:active {
     outline: none;
-}
-
-input:focus, input:active {
     border: none;
-}
+  }
 
 .formContacto_Mesaje{
     height: 100px;
