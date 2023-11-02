@@ -82,6 +82,7 @@ document.addEventListener("DOMContentLoaded", function () {
         .then(valorObtenido => {
                 // Muestra el contenido en el div
                 contenidoMonedero.innerText = valorObtenido.coins;
+                localStorage.setItem('coins',valorObtenido.coins);
         }) //si la solicitud no tiene éxito, el método .catch advetirá del error.
         .catch(error => {
                 console.error('Error al obtener datos de la API: ', error);

@@ -11,35 +11,30 @@ let recompensasLogInBotonLatam= document.getElementById('recompensasLogInBotonLa
 const userId = parseInt(localStorage.getItem('userId'));
 const coins = parseInt(localStorage.getItem('coins'));
 
-recompensasLogInBotonCinecolombia.addEventListener('click', () => {
-    if (coins < 10000) {
+function decrementCoinsUser (id,coin,title1,title2,limit){
+    if (coins < limit) {
         Swal.fire({
-            title: "No tienes la cantidad suficiente"
+            title:title1
         });
     } else {
         const contenido = {
-            title: 'Entrada a cine x1',
+            title: title2,
             confirmButtonText: 'Descargar'
         };
-        enviarPuntosAlBackend();
+        mostrarAlerta(contenido);
+        enviarPuntosAlBackend(coin,limit,id);
     }
+}
+recompensasLogInBotonCinecolombia.addEventListener('click', () => {
+  decrementCoinsUser(userId,coins,"No tienes cantidad suficiente",'Entrada a cine x1',10000)  
 });
 
 //Aca se agrega evento al boton para que aparezca una ventana emergente que compare las monedas en localStorage con el valor de la recompensa.
 
 recompensasLogInBotonMcDonalds.addEventListener('click',()=>{
-    if (coins < 25000) {
-        Swal.fire({
-            title: "No tienes la cantidad suficiente"
-        });
-    } else {
-        const contenido = {
-            title: 'Combo McDonalds',
-            confirmButtonText: 'Descargar'
-        };
-        enviarPuntosAlBackend();
-    }
+    decrementCoinsUser(userId,coins,"No tienes cantidad suficiente",'Combo McDonalds',25000)  
 });
+
 recompensasLogInBotonKFC.addEventListener('click',()=>{
     if (coins < 25000) {
         Swal.fire({
@@ -50,6 +45,7 @@ recompensasLogInBotonKFC.addEventListener('click',()=>{
             title: 'Combo KFC',
             confirmButtonText: 'Descargar'
         };
+        mostrarAlerta(contenido);
         enviarPuntosAlBackend();
     }
 });
@@ -63,6 +59,7 @@ recompensasLogInBotonCinecolombiaMensual.addEventListener('click',()=>{
             title: 'Entradas a cine X2',
             confirmButtonText: 'Descargar'
         };
+        mostrarAlerta(contenido);
         enviarPuntosAlBackend();
     }
 });
@@ -76,6 +73,7 @@ recompensasLogInBotonApple.addEventListener('click',()=>{
             title: '-10% en Apple',
             confirmButtonText: 'Descargar'
         };
+        mostrarAlerta(contenido);
         enviarPuntosAlBackend();
     }
 });
@@ -89,6 +87,7 @@ recompensasLogInBotonPizza.addEventListener('click',()=>{
             title: 'Pizza familiar',
             confirmButtonText: 'Descargar'
         };
+        mostrarAlerta(contenido);
         enviarPuntosAlBackend();
     }
 });
@@ -103,6 +102,7 @@ recompensasLogInBotonXiaomi.addEventListener('click', () => {
             title: '-10% en Xiaomi',
             confirmButtonText: 'Descargar'
         };
+        mostrarAlerta(contenido);
         enviarPuntosAlBackend();
     }
 });
@@ -116,7 +116,9 @@ recompensasLogInBotonLatam.addEventListener('click',()=>{
             title: '-10% en vuelos',
             confirmButtonText: 'Descargar'
         };
+        mostrarAlerta(contenido);
         enviarPuntosAlBackend();
+
     }
 });
 
@@ -160,14 +162,14 @@ function generateQR() {
 
 //enviar datos al Back
 
-async function enviarPuntosAlBackend() {
+async function enviarPuntosAlBackend(coins,limit,idUser) {
     try {
      //validaciones de las recompensas
       const datos = {
-        user_id: userId,
+        user_id: idUser,
         name: "premio",
         description: "Descripción del evento",
-        coins: coins,
+        coins: limit*-1,
         date: new Date().toISOString(),
         origin: "premio"
       };
@@ -181,8 +183,8 @@ async function enviarPuntosAlBackend() {
       });
   
       if (response.ok) {
-        mostrarAlerta(contenido);
- 
+        getUserById(idUser);
+        
       } else {
         const responseData = await response.json(); // Obtener información adicional del servidor si está disponible
         throw new Error(`Error en la respuesta del servidor: ${response.status} - ${response.statusText}. Detalles: ${JSON.stringify(responseData)}`);
