@@ -337,14 +337,12 @@ div.formContacto_title{
     border-style: none;
 }
 
-input:focus{
-    outline:none;
-    &:focus {
-        border: none;
-    }
-    &:active{
-        border:none;
-    }
+input:focus {
+    outline: none;
+}
+
+input:focus, input:active {
+    border: none;
 }
 
 .formContacto_Mesaje{
