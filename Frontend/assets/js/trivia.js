@@ -68,6 +68,7 @@ function escogerPreguntaAleatoria() {
         }).then((result) => {
           if (result.isConfirmed) {
             enviarPuntosAlBackend(); // Envía los puntos al backend
+            window.location.href = `login.html`;
             
           }
           });
@@ -195,6 +196,7 @@ async function enviarPuntosAlBackend() {
   try {
     const userId = parseInt(localStorage.getItem('userId'));
     const puntosAcumulados = puntosTotales;
+    localStorage.setItem('coins', puntosAcumulados);
 
     const datos = {
       user_id: userId,
@@ -214,7 +216,8 @@ async function enviarPuntosAlBackend() {
     });
 
     if (response.ok) {
-      window.location.href = `login.html`;
+      getUserById(userId);
+      
     } else {
       const responseData = await response.json(); // Obtener información adicional del servidor si está disponible
       throw new Error(`Error en la respuesta del servidor: ${response.status} - ${response.statusText}. Detalles: ${JSON.stringify(responseData)}`);

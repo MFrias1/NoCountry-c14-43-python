@@ -7,64 +7,119 @@ let recompensasLogInBotonPizza= document.getElementById('recompensasLogInBotonPi
 let recompensasLogInBotonXiaomi = document.getElementById('recompensasLogInBotonXiaomi');
 let recompensasLogInBotonLatam= document.getElementById('recompensasLogInBotonLatam');
 
-recompensasLogInBotonCinecolombia.addEventListener('click',()=>{
-    const contenido ={
-        title: 'Entrada a cine x1',
-        confirmButtonText: 'Descargar',
-    };
-    mostrarAlerta(contenido);
+//variables del localstorage
+const userId = parseInt(localStorage.getItem('userId'));
+const coins = parseInt(localStorage.getItem('coins'));
+
+function decrementCoinsUser (id,coin,title1,title2,limit){
+    if (coins < limit) {
+        Swal.fire({
+            title:title1
+        });
+    } else {
+        const contenido = {
+            title: title2,
+            confirmButtonText: 'Descargar'
+        };
+        mostrarAlerta(contenido);
+        enviarPuntosAlBackend(coin,limit,id);
+    }
+}
+recompensasLogInBotonCinecolombia.addEventListener('click', () => {
+  decrementCoinsUser(userId,coins,"No tienes cantidad suficiente",'Entrada a cine x1',10000)  
 });
+
+//Aca se agrega evento al boton para que aparezca una ventana emergente que compare las monedas en localStorage con el valor de la recompensa.
+
 recompensasLogInBotonMcDonalds.addEventListener('click',()=>{
-    const contenido ={
-        title: 'Combo Mc Donalds',
-        confirmButtonText: 'Descargar',
-    };
-    mostrarAlerta(contenido);
+    decrementCoinsUser(userId,coins,"No tienes cantidad suficiente",'Combo McDonalds',25000)  
 });
+
 recompensasLogInBotonKFC.addEventListener('click',()=>{
-    const contenido = {
-        title: 'Combo KFC',
-        confirmButtonText: 'Descargar',
-    };
-    mostrarAlerta(contenido);
+    if (coins < 25000) {
+        Swal.fire({
+            title: "No tienes la cantidad suficiente"
+        });
+    } else {
+        const contenido = {
+            title: 'Combo KFC',
+            confirmButtonText: 'Descargar'
+        };
+        mostrarAlerta(contenido);
+        enviarPuntosAlBackend();
+    }
 });
 recompensasLogInBotonCinecolombiaMensual.addEventListener('click',()=>{
-    const contenido ={
-        title: 'Entrada a cine x2',
-        confirmButtonText: 'Descargar',
-    };
-    mostrarAlerta(contenido);
+    if (coins < 20000) {
+        Swal.fire({
+            title: "No tienes la cantidad suficiente"
+        });
+    } else {
+        const contenido = {
+            title: 'Entradas a cine X2',
+            confirmButtonText: 'Descargar'
+        };
+        mostrarAlerta(contenido);
+        enviarPuntosAlBackend();
+    }
 });
 recompensasLogInBotonApple.addEventListener('click',()=>{
-    const contenido ={
-        title: '-10% en Apple',
-        confirmButtonText: 'Descargar',
-    };
-    mostrarAlerta(contenido);
+    if (coins < 50000) {
+        Swal.fire({
+            title: "No tienes la cantidad suficiente"
+        });
+    } else {
+        const contenido = {
+            title: '-10% en Apple',
+            confirmButtonText: 'Descargar'
+        };
+        mostrarAlerta(contenido);
+        enviarPuntosAlBackend();
+    }
 });
 recompensasLogInBotonPizza.addEventListener('click',()=>{
-    const contenido ={
-        title: "-10% en Xiaomi",
-        confirmButtonText: 'Descargar',
-    };
-    mostrarAlerta(contenido);
+    if (coins < 30000) {
+        Swal.fire({
+            title: "No tienes la cantidad suficiente"
+        });
+    } else {
+        const contenido = {
+            title: 'Pizza familiar',
+            confirmButtonText: 'Descargar'
+        };
+        mostrarAlerta(contenido);
+        enviarPuntosAlBackend();
+    }
 });
 recompensasLogInBotonXiaomi.addEventListener('click', () => {
     // Variable donde se almacena el contenido que se mostrará en la ventana emergente.
-    const contenido = {
-        title: "-10% en Xiaomi",
-        confirmButtonText: 'Descargar',
-    };
-
-    mostrarAlerta(contenido); // Llamado a la función que contiene la ventana emergente.
+    if (coins < 50000) {
+        Swal.fire({
+            title: "No tienes la cantidad suficiente"
+        });
+    } else {
+        const contenido = {
+            title: '-10% en Xiaomi',
+            confirmButtonText: 'Descargar'
+        };
+        mostrarAlerta(contenido);
+        enviarPuntosAlBackend();
+    }
 });
 recompensasLogInBotonLatam.addEventListener('click',()=>{
-    const contenido ={
-        title: "-10% en vuelos de Latam Airlines",
-        text: '¡Perfecto aquí tienes tu premio. Para canjearlo, simplemente presenta este código en el establecimiento correspondiente.',
-        confirmButtonText: 'Descargar',
-    };
-    mostrarAlerta(contenido);
+    if (coins < 60000) {
+        Swal.fire({
+            title: "No tienes la cantidad suficiente"
+        });
+    } else {
+        const contenido = {
+            title: '-10% en vuelos',
+            confirmButtonText: 'Descargar'
+        };
+        mostrarAlerta(contenido);
+        enviarPuntosAlBackend();
+
+    }
 });
 
 function mostrarAlerta(contenido) {
@@ -104,3 +159,38 @@ function generateQR() {
     // Obtén el elemento con el id 'qrcode' y añade la imagen del código QR
     document.getElementById('qrcode').innerHTML='<img src="https://api.qrserver.com/v1/create-qr-code/?data=HelloWorld&amp;size=100x100"/>';
 }
+
+//enviar datos al Back
+
+async function enviarPuntosAlBackend(coins,limit,idUser) {
+    try {
+     //validaciones de las recompensas
+      const datos = {
+        user_id: idUser,
+        name: "premio",
+        description: "Descripción del evento",
+        coins: limit*-1,
+        date: new Date().toISOString(),
+        origin: "premio"
+      };
+  
+      const response = await fetch('https://nocountry-api.onrender.com/create_movement', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(datos),
+      });
+  
+      if (response.ok) {
+        getUserById(idUser);
+        
+      } else {
+        const responseData = await response.json(); // Obtener información adicional del servidor si está disponible
+        throw new Error(`Error en la respuesta del servidor: ${response.status} - ${response.statusText}. Detalles: ${JSON.stringify(responseData)}`);
+      }
+    } catch (error) {
+      console.error('Error al enviar los puntos al servidor:', error);
+      // Aquí puedes manejar el error de una manera más específica si es necesario
+    }
+  }
