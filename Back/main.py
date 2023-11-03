@@ -9,7 +9,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 app.title = 'Recicla_ando'
-app.version = '0.0.1'
+app.version = '1.0.0'
 
 app.include_router(user_router, tags=['user'])
 app.include_router(movement_router, tags=['movement'])
