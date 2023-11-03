@@ -24,7 +24,7 @@ let juegoInhabilitado= document.getElementById('juegoInhabilitado');
 juegoInhabilitado.addEventListener('click', ()=>{
 
     Swal.fire({
-        title: '¡ESTAMOS EN MANTENIMIENTO!',
+        title: '¡PRÓXIMAMENTE DISPONIBLE!',
         text: 'El juego se habilitará próximamente'
       })
 
