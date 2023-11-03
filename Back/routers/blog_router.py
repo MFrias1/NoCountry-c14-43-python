@@ -46,7 +46,7 @@ def update_posts(id:int,posts:UpdateInfoBlog):
             raise Exception(status_code=404, content={'msg':'post no encontrado'})
         return JSONResponse(status_code=201, content={'msg':'post actualizado con éxito'})
     except Exception as e:
-        raise HTTPException(status_code=500, content={'msg':'Error interno del servidor'})
+         raise HTTPException(status_code=500, content={'msg':f'Error interno del servidor {e}'})
 
 @blog_router.delete('/posts/delete_blog{id}', status_code=201, response_model=dict)
 def delete_posts(id:int,posts:DeleteBlog):

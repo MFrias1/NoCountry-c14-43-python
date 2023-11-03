@@ -1,5 +1,5 @@
 <div align="center">
-  <h1>Recicla_ando</h1>
+  <h1>♻Recicla_ando♻</h1>
   <img width="150" style="margin-bottom: 1.5rem" src="./logo_readme.jpg" />
 </div>
 
@@ -37,13 +37,15 @@
 
 * [UI - UX](https://www.figma.com/file/WB9LxtogM5wTH4ZqnZVYDF/Untitled?type=design&node-id=0-1&mode=design&t=gfaIYphjt8YQJS5K-0) Prototipo del Diseño
 
-* [QA](http://example.net/) Revisión de Calidad de la App.
+* [QA](https://drive.google.com/drive/folders/185a_wRun1Hj4qVYqzuImO4YJwd0Bm3Bn) Revisión de Calidad de la App.
+
+* [Documentation](https://www.notion.so/Recicla-ando-Backend-5e0f0cfb3ce144339fdd831ff2f0fe90?pvs=4) Documentación correspondiente a Backend.
 
 * [Deploy](https://fronted-nocountry.onrender.com/) Despliegue de la App.
 
 
 <div align="center">
-  <h1>Edtech sitio web de educación y conciencia de la importancia del reciclaje♻</h1>
+  <h1>♻Edtech sitio web de educación y conciencia de la importancia del reciclaje♻</h1>
 </div>
 
 
@@ -75,6 +77,6 @@
 | <img src="https://media.licdn.com/dms/image/D5603AQFkKbYajJj2vQ/profile-displayphoto-shrink_200_200/0/1696195112759?e=1701907200&v=beta&t=L5qTabQMjOpmWE6AwgkFS1-bw5zy53xY9STsatUXHoU" width="100"> | <img src="https://avatars.githubusercontent.com/u/135530257?v=4" width="100"> | <img src="https://avatars.githubusercontent.com/u/91628860?v=4" width="100"> | <img src="https://ca.slack-edge.com/T02KS88FB0E-U048GLY1P37-04c26581b0e4-512" width="100"> |
 |:---:|:---:|:---:|:---:|
 | **Aaron Torres UI/UX** | **Daniel Alejandro Zinno FrontEnd** | **Mayra Anahi Frias FrontEnd** | **Daniel Cazabat PM- Testing** |
-| [![Behance](https://img.shields.io/badge/Behance-1769ff?style=for-the-badge&logo=behance&logoColor=white)](#) [![LinkedIn](https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/aaron-torres-v/) | [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/danielzinnoprogramador) [![LinkedIn](https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/daniel-zinno/) | [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/MFrias1) [![LinkedIn](https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mayra-anahi-frias/) | [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/AleCalzo) [![LinkedIn](https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/alejandra-calzolari/) | [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/dcazabat) [![LinkedIn](https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/dacazabat/) |
+| [![Behance](https://img.shields.io/badge/Behance-1769ff?style=for-the-badge&logo=behance&logoColor=white)](#) [![LinkedIn](https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/aaron-torres-v/) | [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/danielzinnoprogramador) [![LinkedIn](https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/daniel-zinno/) | [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/MFrias1) [![LinkedIn](https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mayra-anahi-frias/) | [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/dcazabat) [![LinkedIn](https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/dacazabat/) |
 
 

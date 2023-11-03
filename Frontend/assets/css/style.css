@@ -9,6 +9,13 @@
     font-family: 'Roboto', sans-serif;
 }
 
+#botonInicioDeSesionIndex p{
+    text-decoration: none;
+    color: black;
+    margin:0;
+    padding:10px;
+}
+
 a{
     text-decoration: none;
     color:black;
@@ -26,13 +33,14 @@ a{
     align-items: center;
     background-color: white;
     display:flex;
-    justify-content: space-around;
+    justify-content: space-between;
     padding: 2rem; 
 }
 .logo_navbar img {
     height: 70px;
     width: 190px;
 }
+
 .navbar div ul{
     display: flex;
     list-style: none;
@@ -44,6 +52,10 @@ a{
 }
 .navbar a{
     text-decoration: none;
+}
+
+.navbar_enlaces{
+    align-items: center;
 }
 .navbar li a{
     text-decoration: none;
@@ -68,8 +80,25 @@ a{
     border-radius: 5px;
     text-align: center;
     padding: 10px;
-    width: 117px;
     height: 45px;
+    display: flex;
+    width: 220px;
+    justify-content: center;
+    align-items: center;
+}
+
+#contenidoMonedero{
+    display: inline-block;
+    width: 60px;
+}
+
+.banner_button a, .navbarLogIn_banner_button{
+    width: 150px;
+}
+
+.banner_button_monedero p{
+    width:fit-content;
+    margin:0;
 }
 .banner_button_login, .navbarLogIn_banner_button{
     background-color: var(--primary_color);
@@ -337,15 +366,10 @@ div.formContacto_title{
     border-style: none;
 }
 
-input:focus{
-    outline:none;
-    &:focus {
-        border: none;
-    }
-    &:active{
-        border:none;
-    }
-}
+.input:focus, .input:active {
+    outline: none;
+    border: none;
+  }
 
 .formContacto_Mesaje{
     height: 100px;
