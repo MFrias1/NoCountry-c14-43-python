@@ -44,8 +44,8 @@ document.addEventListener("DOMContentLoaded", function () {
         navbar.innerHTML=`
         <a class="logo_navbar" href="./index.html" ><img src="./assets/img/icon/logo.png" alt=""></a>
             <div class="navbar_enlaces_logIn">
-                    <div class="navbarLogIn_banner_button">
-                        <a class="banner_button_login" href="./recompensas.html">Recompensas</a>
+                    <div id="botonRecompensasLogin" class="navbarLogIn_banner_button">
+                        <a class="banner_button_login" href="./login.html">Juegos</a>
                     </div>
                     <div class="navbarLogIn_banner_button">
                         <a class="banner_button_login" href="./blog.html">Blog</a>
@@ -64,6 +64,24 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     };
 
+    function navbarJuegos(){
+        navbar.innerHTML=`
+        <a class="logo_navbar" href="./index.html" ><img src="./assets/img/icon/logo.png" alt=""></a>
+            <div class="navbar_enlaces_logIn">
+                    <div id="botonJuegosLogin" class="navbarLogIn_banner_button">
+                        <a class="banner_button_login" href="./recompensas.html">Recompensas</a>
+                    </div>
+                    <div class="navbarLogIn_banner_button">
+                        <a class="banner_button_login" href="./blog.html">Blog</a>
+                    </div>
+                    <div class="banner_button_monedero">
+                        <p>Monedero $ </p><p id="contenidoMonedero"></p>
+                    </div>
+                    <a href="" class="logOut" id="logOut" ><img src="./assets/img/landingimg/logout.png" alt="" srcset="" ></a>
+            </div>
+        `;
+    };
+
     function navbarLoginBlog(){
         navbar.innerHTML=`
         <a class="logo_navbar" href="./index.html" ><img src="./assets/img/icon/logo.png" alt=""></a>
@@ -72,7 +90,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         <a class="banner_button_login" href="./recompensas.html">Recompensas</a>
                     </div>
                     <div class="navbarLogIn_banner_button">
-                        <a class="banner_button_login" href="./blog.html">Blog</a>
+                        <a class="banner_button_login" href="./login.html">Juegos</a>
                     </div>
                     <div class="anchoMonedero banner_button_monedero">
                         <p>Monedero $ </p><p id="contenidoMonedero"></p>
@@ -140,15 +158,21 @@ document.addEventListener("DOMContentLoaded", function () {
     if (userId && coins && first_name) {
         if (document.title === 'blog') {
             navbarLoginBlog(); // El usuario está logueado y está en la página del Blog
+        } else if (document.title === 'Bienvenido') {
+            navbarJuegos(); // El usuario está logueado y está en la página del Blog
         } else {
             navbarLogin(); // El usuario está logueado en cualquier otra página
         }
     } else {
         if (document.title === 'blog') {
             navbarLogOutBlog(); // El usuario está logueado y está en la página del Blog
+        } else if (document.title === 'Bienvenido') {
+            navbarJuegos(); 
         } else {
             navbarLogOut(); // Si no hay información o no está logueado
         }
     }
 });
+
+
 
