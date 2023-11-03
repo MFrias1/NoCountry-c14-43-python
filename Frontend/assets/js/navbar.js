@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <a class="logo_navbar" href=""><img src="./assets/img/icon/logo.png" alt=""></a>
                         <div class="navbar_enlaces">
                             <div>
-                                <a id="botonInicioDeSesionIndex"  href="./index.html">Inicio</a><!--inicio de sesión-->
+                                <a id="botonInicioDeSesionIndex"  href="./index.html"><p>Inicio</p></a>
                             </div>
                             <div class="banner_button">
                                 <a id="botonInicioDeSesionIndex" class="banner_button_login" href="./iniciodesesion.html">Ingresar</a><!--inicio de sesión-->
@@ -86,6 +86,9 @@ document.addEventListener("DOMContentLoaded", function () {
         navbar.innerHTML=`
         <a class="logo_navbar" href="./index.html" ><img src="./assets/img/icon/logo.png" alt=""></a>
             <div class="navbar_enlaces_logIn">
+                    <div>
+                        <a id="botonInicioDeSesionIndex"  href="./index.html"><p>Inicio</p></a>
+                    </div>
                     <div class="navbarLogIn_banner_button">
                         <a class="banner_button_login" href="./recompensas.html">Recompensas</a>
                     </div>

@@ -9,6 +9,13 @@
     font-family: 'Roboto', sans-serif;
 }
 
+#botonInicioDeSesionIndex p{
+    text-decoration: none;
+    color: black;
+    margin:0;
+    padding:10px;
+}
+
 a{
     text-decoration: none;
     color:black;
