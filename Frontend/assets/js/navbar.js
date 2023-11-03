@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         <a class="banner_button_login" href="./recompensas.html">Recompensas</a>
                     </div>
                     <div class="navbarLogIn_banner_button">
-                        <a class="banner_button_login" href="./blog.html">Blog</a>
+                        <a class="banner_button_login" href="./login.html">Juegos</a>
                     </div>
                     <div class="anchoMonedero banner_button_monedero">
                         <p>Monedero $ </p><p id="contenidoMonedero"></p>

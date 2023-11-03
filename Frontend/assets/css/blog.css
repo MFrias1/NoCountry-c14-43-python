@@ -2,6 +2,11 @@
     font-family: 'Roboto', sans-serif;
 }
 
+#navbar{
+    padding: 2rem;
+    justify-content: space-between;
+}
+
 .logo{
     text-align: center ;
 }
@@ -17,11 +22,20 @@
 
 .cuerpoDelBlog div {
     background-color: none;
-    padding: 2rem;
+    padding-inline: 2rem;
+}
+
+.carruselArticulos{
+    margin-top: 3rem;
+}
+
+.sectionVideos{
+    margin-top: 3rem;
 }
 
 .tituloDelBlog{
     text-align: center;
+    margin-top: 5rem;
 }
 
 .colorBoton{
@@ -30,6 +44,10 @@
     border-radius: 5px;
     text-align:center;
     align-items: center;
+}
+
+.footerBlog{
+    margin-top: 10rem;
 }
 
 .carousel-control-prev-icon{
@@ -50,6 +68,7 @@
     border-color: rgb(220, 219, 219);
     border-style: solid;
     border-radius: 10px;
+    background-color: white;
 }   
 
 
