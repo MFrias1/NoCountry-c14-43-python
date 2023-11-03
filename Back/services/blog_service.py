@@ -1,6 +1,5 @@
 from models.blog_model import Blog
 from config.database import Session
-from datetime import datetime
 from schemas.blog_schema import *
 
 
@@ -26,7 +25,6 @@ class BlogService():
     
     def get_blog_for_id(self,id):
         post = self.db.query(Blog).filter(Blog.publication_id == id).first()
-        self.db.close()
         return post
 
     def blog_update(self, id, data:UpdateInfoBlog):
@@ -39,7 +37,7 @@ class BlogService():
         post.url_video = data.url_video
         post.url_image = data.url_image
         self.db.commit()
-        self.db.refresh(Blog) 
+        self.db.refresh(post) 
         self.db.close()
         
         return post
@@ -54,7 +52,7 @@ class BlogService():
         post.url_video = data.url_video
         post.url_image = data.url_image
         self.db.commit()
-        self.db.refresh(Blog) 
+        self.db.refresh(post) 
         self.db.close()
         return post
         
