@@ -1,6 +1,5 @@
 from config.database import Base
 from sqlalchemy import Column, Integer, String, DateTime
-from datetime import datetime
 from sqlalchemy import func
 
 class Blog(Base):
