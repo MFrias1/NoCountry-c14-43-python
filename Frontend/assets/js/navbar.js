@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     let navbar=document.getElementById('navbar');
+    let uneteANosotros=document.getElementById('botonUnete');
 
     //Funcion que carga el navbar, cuando el usuario esta deslogueado
     function navbarLogOut() {
@@ -21,6 +22,10 @@ document.addEventListener("DOMContentLoaded", function () {
                             </div>
                         </div>
     `;
+    };
+
+    function indexBoton(){
+        uneteANosotros.style.display='none';
     };
 
     function navbarLogOutBlog() {
@@ -163,7 +168,11 @@ document.addEventListener("DOMContentLoaded", function () {
             navbarLoginBlog(); // El usuario está logueado y está en la página del Blog
         } else if (document.title === 'Bienvenido') {
             navbarJuegos(); // El usuario está logueado y está en la página del Blog
-        } else {
+        } else if (document.title === 'Recicla-ando Bienvenidos') {
+            navbarLogin();
+            indexBoton();
+        } 
+        else {
             navbarLogin(); // El usuario está logueado en cualquier otra página
         }
     } else {
@@ -176,6 +185,5 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 });
-
 
 
