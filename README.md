@@ -35,11 +35,15 @@
   <h1>Links de Interés</h1>
 </div>
 
-* [UI - UX](https://www.figma.com/file/WB9LxtogM5wTH4ZqnZVYDF/Untitled?type=design&node-id=0-1&mode=design&t=gfaIYphjt8YQJS5K-0) Prototipo del Diseño
+* [Video](https://www.youtube.com/watch?v=SF-qAwXZ6pI) Promocional del Proyecto.
+
+* [UI - UX](https://www.figma.com/file/WB9LxtogM5wTH4ZqnZVYDF/Untitled?type=design&node-id=0-1&mode=design&t=gfaIYphjt8YQJS5K-0) Prototipo del Diseño.
+
+* [UI - UX](https://drive.google.com/file/d/1PY3mZwG1f2fpxLtsSaDJVRbA-FaBEy4q/view?usp=drive_link ) Prototipo de los Wireframe.
 
 * [QA](https://drive.google.com/drive/folders/185a_wRun1Hj4qVYqzuImO4YJwd0Bm3Bn) Revisión de Calidad de la App.
 
-* [Documentation](https://www.notion.so/Recicla-ando-Backend-5e0f0cfb3ce144339fdd831ff2f0fe90?pvs=4) Documentación correspondiente a Backend.
+* [Documentation](https://www.notion.so/Recicla-ando-Backend-5e0f0cfb3ce144339fdd831ff2f0fe90?pvs=4) Documentación para Iniciar Api.
 
 * [Deploy](https://fronted-nocountry.onrender.com/) Despliegue de la App.
 
